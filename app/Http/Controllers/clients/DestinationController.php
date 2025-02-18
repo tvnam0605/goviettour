@@ -5,15 +5,15 @@ namespace App\Http\Controllers\clients;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class DestinationController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
-        return view(view: 'clients.home');
+        //'
+        return view(view:'clients.destination');
     }
 
     /**
