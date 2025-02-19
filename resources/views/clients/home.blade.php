@@ -518,4 +518,4 @@
 </section>
 <!-- Khu vực Blog kết thúc -->
 
-@include('clients.blocks.footer')
+@include('clients.blocks.footer_home')

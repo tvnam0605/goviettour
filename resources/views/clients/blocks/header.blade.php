@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
 
-<!-- Mirrored from webtendtheme.net/html/2024/ravelo/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 07 Oct 2024 09:28:37 GMT -->
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -12,7 +11,7 @@
  <!-- Title -->
  <title>GoVietTour - Du lịch & Lữ hành</title>
  <!-- Favicon Icon -->
- <link rel="shortcut icon" href="assets/images/logos/favicon.png" type="image/x-icon">
+ <link rel="shortcut icon" href="{{ asset('clients/assets/images/logos/favicon.png')}}" type="image/x-icon">
  <!-- Google Fonts -->
  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap"
      rel="stylesheet">
@@ -34,6 +33,12 @@
  <!-- Main Style -->
  <link rel="stylesheet" href="{{ asset('clients/assets/css/style.css') }}">
 
+
+
+ {{-- boxicons --}}
+ <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
 </head>
 <body>
     <div class="page-wrapper">
@@ -49,7 +54,7 @@
 
                     <div class="header-inner rel d-flex align-items-center">
                         <div class="logo-outer">
-                            <div class="logo"><a href="{{ route('home') }}"><img src="{{ asset('clientsassets/images/logos/logo-two.png')}}" alt="Logo" title="Logo"></a></div>
+                            <div class="logo"><a href="{{ route('home') }}"><img src="{{ asset('clients/assets/images/logos/logo-two.png')}}" alt="Logo" title="Logo"></a></div>
                         </div>
 
                         <div class="nav-outer mx-lg-auto ps-xxl-5 clearfix">
@@ -83,7 +88,7 @@
                                         <li><a href="{{ route('destination') }}">Điểm đến</a></li>
                                         <li><a href="{{ route('contact') }}">Liên hệ</a></li>
                                     
-                                        <li class="{{ route('blogs') }}"><a href="#">Blog</a></li>
+                                        <li class=""><a href="{{ route('blogs') }}">Blog</a></li>
                                     </ul>
                                 </div>
 
@@ -93,17 +98,15 @@
                         
                         <!-- Menu Button -->
                         <div class="menu-btns py-10">
-                            <a href="contact.html" class="theme-btn style-two bgc-secondary">
-                                <span data-hover="Book Now">Book Now</span>
+                            <a href="{{ route('tours') }}" class="theme-btn style-two bgc-secondary">
+                                <span data-hover="Book Now">Đặt ngay</span>
                                 <i class="fal fa-arrow-right"></i>
                             </a>
                             <!-- menu sidbar -->
                             <div class="menu-sidebar">
                                 <button class="bg-transparent">
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
+                                    <i class='bx bxs-user bx-tada' style="font-size: 36px; color: black;"></i>
+                                </button> <!-- Đóng thẻ button đúng cách -->
                             </div>
                         </div>
                     </div>

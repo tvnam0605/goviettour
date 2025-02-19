@@ -35,18 +35,10 @@
                 </select>
             </div>
 
-            <div class="filter-item clearfix">
-                <div class="icon"><i class="fal fa-users"></i></div>
-                <span class="title">Guests</span>
-                <select name="cuests" id="cuests">
-                    <option value="value1">0</option>
-                    <option value="value2">1</option>
-                    <option value="value2">2</option>
-                </select>
-            </div>
+           
             <div class="search-button">
                 <button class="theme-btn">
-                    <span data-hover="Search">Search</span>
+                    <span data-hover="Search">Tìm kiếm</span>
                     <i class="far fa-search"></i>
                 </button>
             </div>
