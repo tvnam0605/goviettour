@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 
 use App\Http\Controllers\clients\HomeController;
+use App\Http\Controllers\clients\LoginController;
 use App\Http\Controllers\clients\TestimonialController;
 use App\Http\Controllers\clients\TourDetailController;
 use App\Http\Controllers\clients\ToursController;
@@ -30,6 +31,7 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/tour-detail', [TourDetailController::class, 'index'])->name('tour-detail');
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs');
 Route::get('/blog-details', [BlogDetailController::class, 'index'])->name('blog-details');
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 
 
 
