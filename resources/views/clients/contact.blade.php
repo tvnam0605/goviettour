@@ -96,7 +96,7 @@
             <div class="col-lg-7">
                 <div class="comment-form bgc-lighter z-1 rel mb-30 rmb-55">
                     <form id="contactForm" class="contactForm" name="contactForm"
-                        action="https://webtendtheme.net/html/2024/ravelo/assets/php/form-process.php" method="post"
+                        action="https://webtendtheme.net/html/2024/GoVietTour/assets/php/form-process.php" method="post"
                         data-aos="fade-left" data-aos-duration="1500" data-aos-offset="50">
                         <div class="section-title">
                             <h2>Liên Hệ Với Chúng Tôi</h2>

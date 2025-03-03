@@ -100,7 +100,7 @@
                          </ul>
                      </div>
                      <div class="widget widget-tour" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
-                         <h6 class="widget-title">Popular Tours</h6>
+                         <h6 class="widget-title">Tours phổ biến</h6>
                          <div class="destination-item tour-grid style-three bgc-lighter">
                              <div class="image">
                                  <span class="badge">10% Off</span>
@@ -108,42 +108,26 @@
                              </div>
                              <div class="content">
                                  <div class="destination-header">
-                                     <span class="location"><i class="fal fa-map-marker-alt"></i> Bali,
-                                         Indonesia</span>
+                                     <span class="location"><i class="fal fa-map-marker-alt"></i> Phú Quốc, Kiên Giang</span>
                                      <div class="ratting">
                                          <i class="fas fa-star"></i>
                                          <span>(4.8)</span>
                                      </div>
                                  </div>
-                                 <h6><a href="tour-details.html">Relinking Beach, Bali, Indonesia</a></h6>
+                                 <h6><a href="tour-details.html">Phú Quốc</a></h6>
                              </div>
                          </div>
-                         <div class="destination-item tour-grid style-three bgc-lighter">
-                             <div class="image">
-                                 <img src="{{ asset('clients/assets/images/widgets/tour1.jpg') }}" alt="Tour">
-                             </div>
-                             <div class="content">
-                                 <div class="destination-header">
-                                     <span class="location"><i class="fal fa-map-marker-alt"></i> Bali,
-                                         Indonesia</span>
-                                     <div class="ratting">
-                                         <i class="fas fa-star"></i>
-                                         <span>(4.8)</span>
-                                     </div>
-                                 </div>
-                                 <h6><a href="tour-details.html">Relinking Beach, Bali, Indonesia</a></h6>
-                             </div>
-                         </div>
+                        
                      </div>
                  </div>
 
                  <div class="widget widget-cta mt-30" data-aos="fade-up" data-aos-duration="1500"
                      data-aos-offset="50">
                      <div class="content text-white">
-                         <span class="h6">Explore The World</span>
-                         <h3>Best Tourist Place</h3>
+                         <span class="h6">Khám phá Việt Nam</span>
+                         <h3>Địa điểm du lịch tốt nhất</h3>
                          <a href="tour-list.html" class="theme-btn style-two bgc-secondary">
-                             <span data-hover="Explore Now">Explore Now</span>
+                             <span data-hover="Explore Now">Khám phá ngay</span>
                              <i class="fal fa-arrow-right"></i>
                          </a>
                      </div>
@@ -178,15 +162,14 @@
                              <div class="destination-item tour-grid style-three bgc-lighter" data-aos="fade-up"
                                  data-aos-duration="1500" data-aos-offset="50">
                                  <div class="image">
-                                     <span class="badge bgc-pink">Featured</span>
+                                     <span class="badge bgc-pink">Nổi bật</span>
                                      <a href="#" class="heart"><i class="fas fa-heart"></i></a>
                                      <img src="{{ asset('clients/assets/images/destinations/tour-list1.jpg') }}"
                                          alt="Tour List">
                                  </div>
                                  <div class="content">
                                      <div class="destination-header">
-                                         <span class="location"><i class="fal fa-map-marker-alt"></i> Bali,
-                                             Indonesia</span>
+                                         <span class="location"><i class="fal fa-map-marker-alt"></i> Miền Trung</span>
                                          <div class="ratting">
                                              <i class="fas fa-star"></i>
                                              <i class="fas fa-star"></i>
@@ -195,14 +178,13 @@
                                              <i class="fas fa-star"></i>
                                          </div>
                                      </div>
-                                     <h6><a href="tour-details.html">Bay Cruise trip by Boat's in Bali,
-                                             Indonesia</a></h6>
+                                     <h6><a href="tour-details.html">Quy Nhơn</a></h6>
                                      <ul class="blog-meta">
-                                         <li><i class="far fa-clock"></i> 3 days 2 nights</li>
-                                         <li><i class="far fa-user"></i> 5-8 guest</li>
+                                         <li><i class="far fa-clock"></i> 3 ngày 2 đêm</li>
+                                         <li><i class="far fa-user"></i> 5-8 khách</li>
                                      </ul>
                                      <div class="destination-footer">
-                                         <span class="price"><span>$58.00</span>/person</span>
+                                         <span class="price"><span>2,999,999 VND</span>/khách</span>
                                          <a href="tour-details.html" class="theme-btn style-two style-three">
                                              <i class="fal fa-arrow-right"></i>
                                          </a>

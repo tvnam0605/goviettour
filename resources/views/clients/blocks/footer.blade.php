@@ -14,53 +14,54 @@
                     </div>
                 </div>
                 <div class="col col-small" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1500" data-aos-offset="50">
-                    <div class="footer-widget footer-links ms-sm-5">
+                    <div class="footer-widget footer-links">
                         <div class="footer-title">
-                            <h5>Services</h5>
+                            <h5>Dịch Vụ</h5>
                         </div>
                         <ul class="list-style-three">
-                            <li><a href="destination-details.html">Best Tour Guide</a></li>
-                            <li><a href="destination-details.html">Tour Booking</a></li>
-                            <li><a href="destination-details.html">Hotel Booking</a></li>
-                            <li><a href="destination-details.html">Ticket Booking</a></li>
+                            <li><a href="destination-details.html">Hướng Dẫn Tour Tốt Nhất</a></li>
+                            <li><a href="destination-details.html">Đặt Tour</a></li>
+                            <li><a href="destination-details.html">Đặt Phòng Khách Sạn</a></li>
+                            <li><a href="destination-details.html">Đặt Vé</a></li>
+                            <li><a href="destination-details.html">Dịch Vụ Cho Thuê</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col col-small" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1500" data-aos-offset="50">
                     <div class="footer-widget footer-links ms-md-4">
                         <div class="footer-title">
-                            <h5>Company</h5>
+                            <h5>Công ti</h5>
                         </div>
                         <ul class="list-style-three">
-                            <li><a href="about.html">About Company</a></li>
-                            <li><a href="blog.html">Community Blog</a></li>
-                            <li><a href="contact.html">Jobs and Careers</a></li>
-                            <li><a href="blog.html">latest News Blog</a></li>
+                            <li><a href="about.html">Thông tin công ti</a></li>
+                            <li><a href="blog.html">Blog cộng đồng</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col col-small" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1500" data-aos-offset="50">
-                    <div class="footer-widget footer-links ms-lg-4">
+                    <div class="footer-widget footer-links">
                         <div class="footer-title">
-                            <h5>Destinations</h5>
+                            <h5>Điểm Đến</h5>
                         </div>
                         <ul class="list-style-three">
-                            <li><a href="destination-details.html">African Safaris</a></li>
-                            <li><a href="destination-details.html">Alaska & Canada</a></li>
-                            <li><a href="destination-details.html">South America</a></li>
-                            <li><a href="destination-details.html">Middle East</a></li>
+                            <li><a href="destination-details.html">Miền bắc</a></li>
+                            <li><a href="destination-details.html">Miền trung</a></li>
+                            <li><a href="destination-details.html">Miền nam</a></li>
                         </ul>
+
                     </div>
                 </div>
                 <div class="col col-md-6 col-10 col-small" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1500" data-aos-offset="50">
                     <div class="footer-widget footer-contact">
                         <div class="footer-title">
-                            <h5>Get In Touch</h5>
+                            <h5>Liên Hệ Với Chúng Tôi</h5>
                         </div>
                         <ul class="list-style-one">
-                            <li><i class="fal fa-map-marked-alt"></i> 578 Level, D-block 45 Street Melbourne, Australia</li>
-                            <li><i class="fal fa-envelope"></i> <a href="mailto:supportrevelo@gmail.com">supportrevelo @gmail.com</a></li>
-                            <li><i class="fal fa-phone-volume"></i> <a href="callto:+88012334588">+880 (123) 345 88</a></li>
+                            <li><i class="fal fa-map-marked-alt"></i>Đà Lạt, Lâm Đồng, Việt Nam</li>
+                            <li><i class="fal fa-envelope"></i> <a
+                                    href="mailto:supportgoviettour@gmail.com">supportgoviettour@gmail.com</a></li>
+                            <li><i class="fal fa-clock"></i> Từ Thứ Hai - Thứ Sáu, 08am - 05pm</li>
+                            <li><i class="fal fa-phone-volume"></i> <a href="callto:+012345678">+84 12345678</a></li>
                         </ul>
                     </div>
                 </div>
@@ -72,17 +73,18 @@
             <div class="row">
                <div class="col-lg-5">
                     <div class="copyright-text text-center text-lg-start">
-                        <p>@Copy 2024 <a href="index.html">Ravelo</a>, All rights reserved</p>
+                        <p>@Copy 2024 <a href="index.html">GoVietTour</a>, All rights reserved</p>
                     </div>
                </div>
                <div class="col-lg-7 text-center text-lg-end">
-                   <ul class="footer-bottom-nav">
-                       <li><a href="about.html">Terms</a></li>
-                       <li><a href="about.html">Privacy Policy</a></li>
-                       <li><a href="about.html">Legal notice</a></li>
-                       <li><a href="about.html">Accessibility</a></li>
-                   </ul>
-               </div>
+                <ul class="footer-bottom-nav">
+                    <li><a href="about.html">Điều khoản</a></li>
+                    <li><a href="about.html">Chính sách bảo mật</a></li>
+                    <li><a href="about.html">Thông báo pháp lý</a></li>
+                    <li><a href="about.html">Khả năng truy cập</a></li>
+                </ul>
+
+            </div>
             </div>
         </div>
     </div>
@@ -119,5 +121,5 @@
 
 </body>
 
-<!-- Mirrored from webtendtheme.net/html/2024/ravelo/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 07 Oct 2024 09:28:00 GMT -->
+<!-- Mirrored from webtendtheme.net/html/2024/GoVietTour/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 07 Oct 2024 09:28:00 GMT -->
 </html>

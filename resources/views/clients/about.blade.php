@@ -158,7 +158,7 @@
                     data-aos-offset="50">
                     <img src="{{ asset('clients/assets/images/team/guide1.jpg') }}" alt="Hướng Dẫn Viên">
                     <div class="content">
-                        <h6>John L. Simmons</h6>
+                        <h6>Tran Van Nam</h6>
                         <span class="designation">Đồng sáng lập</span>
                         <div class="social-style-one inner-content">
                             <a href="contact.html"><i class="fab fa-twitter"></i></a>
@@ -174,7 +174,7 @@
                     data-aos-offset="50">
                     <img src="{{ asset('clients/assets/images/team/guide2.jpg') }}" alt="Hướng Dẫn Viên">
                     <div class="content">
-                        <h6>Andrew K. Manley</h6>
+                        <h6>La O Thi Thanh</h6>
                         <span class="designation">Hướng dẫn viên cao cấp</span>
                         <div class="social-style-one inner-content">
                             <a href="contact.html"><i class="fab fa-twitter"></i></a>
@@ -190,7 +190,7 @@
                     data-aos-duration="1500" data-aos-offset="50">
                     <img src="{{ asset('clients/assets/images/team/guide3.jpg') }}" alt="Hướng Dẫn Viên">
                     <div class="content">
-                        <h6>Drew J. Bridges</h6>
+                        <h6>Truong Tan Diem</h6>
                         <span class="designation">Hướng dẫn viên du lịch</span>
                         <div class="social-style-one inner-content">
                             <a href="contact.html"><i class="fab fa-twitter"></i></a>
@@ -201,22 +201,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-sm-6">
-                <div class="team-item hover-content" data-aos="fade-up" data-aos-delay="150"
-                    data-aos-duration="1500" data-aos-offset="50">
-                    <img src="{{ asset('clients/assets/images/team/guide4.jpg') }}" alt="Hướng Dẫn Viên">
-                    <div class="content">
-                        <h6>Byron F. Simpson</h6>
-                        <span class="designation">Hướng dẫn viên du lịch</span>
-                        <div class="social-style-one inner-content">
-                            <a href="contact.html"><i class="fab fa-twitter"></i></a>
-                            <a href="contact.html"><i class="fab fa-facebook-f"></i></a>
-                            <a href="contact.html"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 </section>
@@ -230,7 +215,7 @@
     <div class="container">
         <div class="section-title text-center text-white counter-text-wrap mb-50" data-aos="fade-up"
             data-aos-duration="1500" data-aos-offset="50">
-            <h2>Cách Hưởng Lợi Từ Ravelo Tours & Travels</h2>
+            <h2>Cách Hưởng Lợi Từ GoVietTour Tours & Travels</h2>
             <p>Một địa điểm <span class="count-text plus" data-speed="3000" data-stop="34500">0</span> trải nghiệm
                 phổ biến nhất mà bạn sẽ nhớ mãi</p>
         </div>

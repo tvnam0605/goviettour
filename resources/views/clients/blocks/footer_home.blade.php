@@ -66,9 +66,6 @@
                          <ul class="list-style-three">
                              <li><a href="about.html">Giới Thiệu Công Ty</a></li>
                              <li><a href="blog.html">Blog Cộng Đồng</a></li>
-                             <li><a href="contact.html">Công Việc và Sự Nghiệp</a></li>
-                             <li><a href="blog.html">Blog Tin Tức Mới Nhất</a></li>
-                             <li><a href="contact.html">Liên Hệ Với Chúng Tôi</a></li>
                          </ul>
                      </div>
 
@@ -80,11 +77,9 @@
                              <h5>Điểm Đến</h5>
                          </div>
                          <ul class="list-style-three">
-                             <li><a href="destination-details.html">Safari Châu Phi</a></li>
-                             <li><a href="destination-details.html">Alaska & Canada</a></li>
-                             <li><a href="destination-details.html">Nam Mỹ</a></li>
-                             <li><a href="destination-details.html">Trung Đông</a></li>
-                             <li><a href="destination-details.html">Nam Mỹ</a></li>
+                             <li><a href="destination-details.html">Miền bắc</a></li>
+                             <li><a href="destination-details.html">Miền trung</a></li>
+                             <li><a href="destination-details.html">Miền nam</a></li>
                          </ul>
 
                      </div>
@@ -112,12 +107,11 @@
                              <h5>Liên Hệ Với Chúng Tôi</h5>
                          </div>
                          <ul class="list-style-one">
-                             <li><i class="fal fa-map-marked-alt"></i> Tầng 578, Khối D, Đường 45, Melbourne, Úc</li>
+                             <li><i class="fal fa-map-marked-alt"></i>Đà Lạt, Lâm Đồng, Việt Nam</li>
                              <li><i class="fal fa-envelope"></i> <a
-                                     href="mailto:supportrevelo@gmail.com">supportrevelo@gmail.com</a></li>
+                                     href="mailto:supportgoviettour@gmail.com">supportgoviettour@gmail.com</a></li>
                              <li><i class="fal fa-clock"></i> Từ Thứ Hai - Thứ Sáu, 08am - 05pm</li>
-                             <li><i class="fal fa-phone-volume"></i> <a href="callto:+88012334588">+880 (123) 345
-                                     88</a></li>
+                             <li><i class="fal fa-phone-volume"></i> <a href="callto:+012345678">+84 12345678</a></li>
                          </ul>
 
                      </div>
@@ -180,6 +174,6 @@
 
  </body>
 
- <!-- Mirrored from webtendtheme.net/html/2024/ravelo/tour-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 07 Oct 2024 09:28:07 GMT -->
+ <!-- Mirrored from webtendtheme.net/html/2024/GoVietTour/tour-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 07 Oct 2024 09:28:07 GMT -->
 
  </html>

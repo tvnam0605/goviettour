@@ -36,13 +36,12 @@
                             alt="Destination">
                     </div>
                     <div class="content">
-                        <span class="location"><i class="fal fa-map-marker-alt"></i> Tours, Pháp</span>
-                        <h5><a href="destination-details.html">Tòa nhà bê tông nâu - Vương cung thánh đường St.
-                                Martin</a></h5>
+                        <span class="location"><i class="fal fa-map-marker-alt"></i> Tours, Nha Trang</span>
+                        <h5><a href="destination-details.html">Tòa nhà bê tông nâu</a></h5>
                         <span class="time">3 ngày 2 đêm - Cặp đôi</span>
                     </div>
                     <div class="destination-footer">
-                        <span class="price"><span>$58.00</span>/mỗi người</span>
+                        <span class="price"><span>1.999.999 VND</span>/mỗi người</span>
                         <a href="#" class="read-more">Đặt ngay <i class="fal fa-angle-right"></i></a>
                     </div>
 
@@ -145,7 +144,7 @@
                                     alt="Destination">
                             </div>
                             <div class="content">
-                                <h6><a href="destination-details.html">Bãi biển Thái Lan</a></h6>
+                                <h6><a href="destination-details.html">Bãi biển Quy Nhơn</a></h6>
                                 <span class="time">5352+ tour & 856+ hoạt động</span>
                                 <a href="#" class="more"><i class="fas fa-chevron-right"></i></a>
                             </div>
@@ -161,73 +160,14 @@
                                     alt="Destination">
                             </div>
                             <div class="content">
-                                <h6><a href="destination-details.html">Parga, Hy Lạp</a></h6>
+                                <h6><a href="destination-details.html">Phú Quốc</a></h6>
                                 <span class="time">5352+ tour & 856+ hoạt động</span>
                                 <a href="#" class="more"><i class="fas fa-chevron-right"></i></a>
                             </div>
 
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="destination-item style-two" data-aos="flip-up" data-aos-delay="200"
-                            data-aos-duration="1500" data-aos-offset="50">
-                            <div class="image">
-                                <a href="#" class="heart"><i class="fas fa-heart"></i></a>
-                                <img src="{{ asset('clients/assets/images/destinations/destination3.jpg') }}"
-                                    alt="Destination">
-                            </div>
-                            <div class="content">
-                                <h6><a href="destination-details.html">Castellammare del Golfo, Italy</a></h6>
-                                <span class="time">5352+ tours & 856+ Activity</span>
-                                <a href="#" class="more"><i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="destination-item style-two" data-aos="flip-up" data-aos-duration="1500"
-                            data-aos-offset="50">
-                            <div class="image">
-                                <a href="#" class="heart"><i class="fas fa-heart"></i></a>
-                                <img src="{{ asset('clients/assets/images/destinations/destination4.jpg') }}"
-                                    alt="Destination">
-                            </div>
-                            <div class="content">
-                                <h6><a href="destination-details.html">Reserve of Canada, Canada</a></h6>
-                                <span class="time">5352+ tours & 856+ Activity</span>
-                                <a href="#" class="more"><i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="destination-item style-two" data-aos="flip-up" data-aos-delay="100"
-                            data-aos-duration="1500" data-aos-offset="50">
-                            <div class="image">
-                                <a href="#" class="heart"><i class="fas fa-heart"></i></a>
-                                <img src="{{ asset('clients/assets/images/destinations/destination5.jpg') }}"
-                                    alt="Destination">
-                            </div>
-                            <div class="content">
-                                <h6><a href="destination-details.html">Dubai united states</a></h6>
-                                <span class="time">5352+ tours & 856+ Activity</span>
-                                <a href="#" class="more"><i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="destination-item style-two" data-aos="flip-up" data-aos-delay="200"
-                            data-aos-duration="1500" data-aos-offset="50">
-                            <div class="image">
-                                <a href="#" class="heart"><i class="fas fa-heart"></i></a>
-                                <img src="{{ asset('clients/assets/images/destinations/destination6.jpg') }}"
-                                    alt="Destination">
-                            </div>
-                            <div class="content">
-                                <h6><a href="destination-details.html">Milos, Greece</a></h6>
-                                <span class="time">5352+ tours & 856+ Activity</span>
-                                <a href="#" class="more"><i class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -456,7 +396,7 @@
                     <div class="content">
                         <a href="blog.html" class="category">Du lịch</a>
                         <h5><a href="blog-details.html">Hướng Dẫn Tối Ưu để Lên Kế Hoạch Cho Kỳ Nghỉ Mơ Ước Cùng Đại Lý
-                                Du Lịch Ravelo</a></h5>
+                                Du Lịch GoVietTour</a></h5>
                         <ul class="blog-meta">
                             <li><i class="far fa-calendar-alt"></i> <a href="#">25 Tháng 2, 2024</a></li>
                             <li><i class="far fa-comments"></i> <a href="#">Bình luận (5)</a></li>

@@ -103,6 +103,8 @@
 
                                         <li class=""><a href="{{ route('blogs') }}">Blog</a></li>
                                     </ul>
+
+
                                 </div>
 
                             </nav>
