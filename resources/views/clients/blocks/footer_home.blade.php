@@ -171,7 +171,9 @@
  <script src="{{ asset('clients/assets/js/aos.js') }}"></script>
  <!-- Custom script -->
  <script src="{{ asset('clients/assets/js/script.js') }}"></script>
-
+<!-- Custom script -->
+<script src="{{ asset('clients/assets/js/custom-js.js') }}"></script>
+<script src="{{ asset('clients/assets/js/jquery.datetimepicker.full.min.js') }}"></script>
  </body>
 
  <!-- Mirrored from webtendtheme.net/html/2024/GoVietTour/tour-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 07 Oct 2024 09:28:07 GMT -->

@@ -1,0 +1,9 @@
+.datetimpicker-custom{
+    padding: 0;
+}
+.datetimpicker-custom:focus{
+    border: none;
+}
+.main-header.header-one .main-menu .navbar-collapse .navigation .active{
+    background: var(--primary-color);
+}

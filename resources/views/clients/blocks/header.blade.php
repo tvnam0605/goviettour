@@ -120,7 +120,7 @@
                             <!-- menu sidbar -->
                             <div class="menu-sidebar">
                                 <button class="bg-transparent">
-                                    <i class='bx bxs-user bx-tada' style="font-size: 36px; color: black;"></i>
+                                    <a href="{{ route('login') }}"></a>
                                 </button> <!-- Đóng thẻ button đúng cách -->
                             </div>
                         </div>

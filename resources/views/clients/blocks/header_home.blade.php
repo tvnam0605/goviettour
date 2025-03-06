@@ -33,10 +33,14 @@
     <link rel="stylesheet" href="{{ asset('clients/assets/css/slick.min.css') }}">
     <!-- Main Style -->
     <link rel="stylesheet" href="{{ asset('clients/assets/css/style.css') }}">
-
+    
     {{-- boxicons --}}
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {{-- Date time  picker --}}
+    <link rel="stylesheet" href="{{ asset('clients/assets/css/jquery.datetimepicker.min.css') }}" />
 
+    {{-- custom-css --}}
+    <link rel="stylesheet" href="{{ asset('clients/assets/css/custom-css.css') }}" />
 </head>
 
 <body>
@@ -82,18 +86,17 @@
 
                                 <div class="navbar-collapse collapse clearfix">
                                     <ul class="navigation clearfix">
-                                        <li class="current"><a href="{{ route('home') }}">Trang chủ</a></li>
-                                        <li><a href="{{ route('about') }}">Giới thiệu</a></li>
-                                        <li class="dropdown"><a href="#">Tours</a>
+                                        <li class="{{ Request::url() == route('home') ? 'active' : ''}}"><a href="{{ route('home') }}">Trang chủ</a></li>
+                                        <li class="{{ Request::url() == route('about') ? 'active' : ''}}"><a href="{{ route('about') }}">Giới thiệu</a></li>
+                                        <li class="dropdown{{ Request::url() == route('tours') ? 'active' : ''}}"><a href="#">Tours</a>
                                             <ul>
                                                 <li><a href="{{ route('tours') }}">Tour</a></li>
                                                 <li><a href="{{ route('team') }}">Hướng dẫn viên</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="{{ route('destination') }}">Điểm đến</a></li>
-                                        <li><a href="{{ route('contact') }}">Liên hệ</a></li>
-
-                                        <li class=""><a href="{{ route('blogs') }}">Blog</a></li>
+                                        <li class="{{ Request::url() == route('destination') ? 'active' : ''}}"><a href="{{ route('destination') }}">Điểm đến</a></li>
+                                        <li class="{{ Request::url() == route('contact') ? 'active' : ''}}"><a href="{{ route('contact') }}">Liên hệ</a></li>
+                                        <li class="{{ Request::url() == route('blogs') ? 'active' : ''}}"><a href="{{ route('blogs') }}">Blog</a></li>
                                     </ul>
 
 
