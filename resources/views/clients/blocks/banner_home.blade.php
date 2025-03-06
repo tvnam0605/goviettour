@@ -10,9 +10,9 @@
                 <div class="icon"><i class="fal fa-map-marker-alt"></i></div>
                 <span class="title">Điểm đến</span>
                 <select name="city" id="city">
-                    <option value="value1">City or Region</option>
-                    <option value="value2">City</option>
-                    <option value="value2">Region</option>
+                    <option value="value1">Thành phố hoặc Khu vực</option>
+                    <option value="value2">Thành phố</option>
+                    <option value="value2">Khu vực</option>
                 </select>
             </div>
           
