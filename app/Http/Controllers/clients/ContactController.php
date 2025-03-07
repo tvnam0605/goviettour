@@ -12,8 +12,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
-        return view(view:'clients.contact');
+        $title = 'Liên hệ';
+        return view(view:'clients.contact', data: compact(var_name: 'title'));
     }
 
     /**

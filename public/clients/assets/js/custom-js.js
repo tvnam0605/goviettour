@@ -21,4 +21,10 @@ $(document).ready(function(){
         format: "d/m/Y",
         timepicker: false, 
     });
+    //icon Đăng nhập
+    $("#userDropdown").click(function(){
+        $("#dropdownMenu").toggle();
+    });
 });
+    
+

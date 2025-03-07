@@ -101,23 +101,24 @@
                      </div>
                      <div class="widget widget-tour" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
                          <h6 class="widget-title">Tours phổ biến</h6>
-                         <div class="destination-item tour-grid style-three bgc-lighter">
+                         @foreach ($tours as $tour)
+                         <div class="destination-item tour-grid style-three bgc-lighter block_tours">
                              <div class="image">
                                  <span class="badge">10% Off</span>
-                                 <img src="{{ asset('clients/assets/images/widgets/tour1.jpg') }}" alt="Tour">
+                                 <img src="{{ asset('clients/assets/images/gallery-tours/'.$tour->images[0].'') }}" alt="Tour">
                              </div>
                              <div class="content">
                                  <div class="destination-header">
-                                     <span class="location"><i class="fal fa-map-marker-alt"></i> Phú Quốc, Kiên Giang</span>
+                                     <span class="location"><i class="fal fa-map-marker-alt"></i>{{ $tour->destination }}</span>
                                      <div class="ratting">
                                          <i class="fas fa-star"></i>
                                          <span>(4.8)</span>
                                      </div>
                                  </div>
-                                 <h6><a href="tour-details.html">Phú Quốc</a></h6>
+                                 <h6><a href="{{ route('tour-detail', ['id' => $tour->tourId]) }}">{{ $tour->title }}</a></h6>
                              </div>
                          </div>
-                        
+                         @endforeach
                      </div>
                  </div>
 
@@ -158,41 +159,40 @@
 
                  <div class="tour-grid-wrap">
                      <div class="row">
-                         <div class="col-xl-4 col-md-6">
-                             <div class="destination-item tour-grid style-three bgc-lighter" data-aos="fade-up"
-                                 data-aos-duration="1500" data-aos-offset="50">
-                                 <div class="image">
-                                     <span class="badge bgc-pink">Nổi bật</span>
-                                     <a href="#" class="heart"><i class="fas fa-heart"></i></a>
-                                     <img src="{{ asset('clients/assets/images/destinations/tour-list1.jpg') }}"
-                                         alt="Tour List">
-                                 </div>
-                                 <div class="content">
-                                     <div class="destination-header">
-                                         <span class="location"><i class="fal fa-map-marker-alt"></i> Miền Trung</span>
-                                         <div class="ratting">
-                                             <i class="fas fa-star"></i>
-                                             <i class="fas fa-star"></i>
-                                             <i class="fas fa-star"></i>
-                                             <i class="fas fa-star"></i>
-                                             <i class="fas fa-star"></i>
-                                         </div>
-                                     </div>
-                                     <h6><a href="tour-details.html">Quy Nhơn</a></h6>
-                                     <ul class="blog-meta">
-                                         <li><i class="far fa-clock"></i> 3 ngày 2 đêm</li>
-                                         <li><i class="far fa-user"></i> 5-8 khách</li>
-                                     </ul>
-                                     <div class="destination-footer">
-                                         <span class="price"><span>2,999,999 VND</span>/khách</span>
-                                         <a href="tour-details.html" class="theme-btn style-two style-three">
-                                             <i class="fal fa-arrow-right"></i>
-                                         </a>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-
+                        @foreach ($tours as $tour)
+                        <div class="col-xl-4 col-md-6">
+                            <div class="destination-item tour-grid style-three bgc-lighter block_tours" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
+                                <div class="image">
+                                    <span class="badge bgc-pink">Nổi bật</span>
+                                    <a href="#" class="heart"><i class="fas fa-heart"></i></a>
+                                    <img src="{{ asset('clients/assets/images/gallery-tours/' .$tour->images[0].'')}}" alt="Tour List">
+                                </div>
+                                <div class="content">
+                                    <div class="destination-header">
+                                        <span class="location"><i class="fal fa-map-marker-alt"></i>{{ $tour->destination }}</span>
+                                        <div class="ratting">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <h6><a href="{{ route('tour-detail', ['id' => $tour->tourId]) }}">{{ $tour->title }}</a></h6>
+                                    <ul class="blog-meta">
+                                        <li><i class="far fa-clock"></i>{{ $tour->time }}</li>
+                                        <li><i class="far fa-user"></i>{{ $tour->quantity }}</li>
+                                    </ul>
+                                    <div class="destination-footer">
+                                        <span class="price"><span>{{ number_format($tour->priceAdult,0, ',','.') }}</span>VNĐ / người</span>
+                                        <a href="{{ route('tour-detail', ['id' => $tour->tourId]) }}" class="theme-btn style-two style-three">
+                                            <i class="fal fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
                          <div class="col-lg-12">
                              <ul class="pagination justify-content-center pt-15 flex-wrap" data-aos="fade-up"
                                  data-aos-duration="1500" data-aos-offset="50">
@@ -222,5 +222,5 @@
  </section>
  <!-- Tour Grid Area end -->
 
- @include('clients.blocks.newsletter')
+ @include('clients.blocks.new_letter')
  @include('clients.blocks.footer')

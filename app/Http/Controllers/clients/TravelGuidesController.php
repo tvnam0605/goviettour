@@ -12,8 +12,8 @@ class TravelGuidesController extends Controller
      */
     public function index()
     {
-        //
-        return view(view:'clients.travel-guides');
+        $title = 'Hướng dẫn viên';
+        return view(view:'clients.travel-guides', data: compact(var_name: 'title'));
     }
 
     /**
