@@ -171,5 +171,5 @@
 <!-- Hot Deals Area end -->
 
 
-@include('clients.blocks.newsletter')
+@include('clients.blocks.new_letter')
 @include('clients.blocks.footer')

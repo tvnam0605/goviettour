@@ -12,8 +12,8 @@ class LoginController extends Controller
      */
     public function index()
     {
-        //
-        return view(view:'clients.login');
+        $title ='Đăng nhập';
+        return view(view:'clients.login', data: compact(var_name: 'title'));
     }
 
     /**

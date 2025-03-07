@@ -34,7 +34,7 @@
                     <i class="far fa-search"></i>
                 </button>
             </div>
-        </div>
+        </div> 
     </div>
 </section>
 <!-- Hero Area End -->

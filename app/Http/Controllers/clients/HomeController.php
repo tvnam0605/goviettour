@@ -4,18 +4,32 @@ namespace App\Http\Controllers\clients;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\clients\Home;
+use App\Models\clients\Tours;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    
+    private $homeTours;
+
+    public function __construct()
     {
-        //
-        return view(view: 'clients.home');
+        $this->homeTours = new Home();
+        
     }
 
+    public function index()
+    {
+        $title = 'Trang chủ';
+        $tours = $this->homeTours->getHomeTours();
+
+        //dd(vars: $tours);
+        return view('clients.home', compact('title', 'tours'));
+
+    }
+
+   /*      @return \Illuminate\Http\Response
     /**
      * Show the form for creating a new resource.
      */
