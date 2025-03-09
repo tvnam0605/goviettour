@@ -264,7 +264,7 @@ body {
   margin: 0 55px; }
 
 .form-title {
-  margin-bottom: 33px; }
+  margin-bottom: 10px; }
 
 .signup-image {
   margin-top: 45px; }
@@ -620,4 +620,6 @@ label.valid {
     color: #222;
 
   }
+
+
 }

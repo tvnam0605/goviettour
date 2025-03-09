@@ -29,8 +29,10 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/tour-detail/{id} ', [TourDetailController::class, 'index'])->name('tour-detail');
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs');
 Route::get('/blog-details', [BlogDetailController::class, 'index'])->name('blog-details');
-Route::get('/login', [LoginController::class, 'index'])->name('login');
 
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'register'])->name('register');
+Route::get('/activate-account/{token}', [LoginController::class, 'activateAccount'])->name('activate.account');
 
 
 Route::fallback(function () {
