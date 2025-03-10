@@ -18,15 +18,9 @@ $(document).ready(function(){
     });
     $('#message').hide();
     $('#error').hide();
-    // Kích hoạt datetimepicker 
-    $("#start_date, #end_date").datetimepicker({
-        format: "d/m/Y",
-        timepicker: false, 
-    });
-    //icon Đăng nhập
-    $("#userDropdown").click(function(){
-        $("#dropdownMenu").toggle();
-    });
+    $('#error_login').hide();
+
+    
     //Trienkhaidangky
     $("#register-form").on("submit", function (e) {
         e.preventDefault();
@@ -121,7 +115,7 @@ $(document).ready(function(){
     //Phandangnhap
     $("#login-form").on("submit", function (e) {
         e.preventDefault();
-        var username = $("#username_login").val().trim();
+        var userName = $("#username_login").val().trim();
         var password = $("#password_login").val().trim();
 
         // Đặt lại nội dung thông báo lỗi và ẩn chúng
@@ -140,7 +134,7 @@ $(document).ready(function(){
 
         // Kiểm tra tên đăng nhập và mật khẩu không chứa ký tự đặc biệt (SQL injection)
         
-        if (sqlInjectionPattern.test(username)) {
+        if (sqlInjectionPattern.test(userName)) {
             isValid = false;
             $("#validate_username")
                 .show()
@@ -153,6 +147,44 @@ $(document).ready(function(){
                 .show()
                 .text("Mật khẩu không được chứa ký tự đặc biệt.");
         }
+
+        if (isValid) {
+            var formData = {
+                username: userName,
+                password: password,
+                _token: $('input[name="_token"]').val(),
+            };
+            console.log(formData, $(this).attr("action"));
+            console.log(formData);
+
+            
+            $.ajax({
+                type: "POST",
+                url: $(this).attr("action"),
+                data: formData,
+                success: function (response) {
+                    if (response.success) {
+                       window.location.href = '/';
+                       //console.log(formData);
+
+                    } else {
+                        $('#error_login').text(response.message).show();
+                    }
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("Có lỗi xảy ra. Vui lòng thử lại sau.");
+                },
+            });
+        }
+    });
+    // Kích hoạt datetimepicker 
+    $("#start_date, #end_date").datetimepicker({
+        format: "d/m/Y",
+        timepicker: false, 
+    });
+    //icon Đăng nhập
+    $("#userDropdown").click(function(){
+        $("#dropdownMenu").toggle();
     });
     
 });

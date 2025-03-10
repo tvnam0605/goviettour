@@ -85,4 +85,40 @@ class LoginController extends Controller
         }
     }
 
+
+    // xử lý người dùng đăng nhập
+    public function login(Request $request)
+    {
+        $username = $request->username;
+        $password = $request->password;
+
+        $data_login=[
+            'username'=>$username,
+            'password'=>md5($password)
+
+        ];
+
+        $user =$this->login->login($data_login);
+        if($user != null){
+           $request->session()->put('username', $username);
+           return response()->json([
+            'success' => true,
+            'message' => 'Đăng nhập thành công!',
+            'redirect' => route('home'),
+        ]);
+        }else{
+            return response()->json([
+                'success' => false,
+                'message' => 'Tên người dùng hoặc mật khẩu không đúng!',
+            ]);
+    }
+}
+    // xy ly dang xuat
+    public function logout(Request $request)
+    {
+        $request->session()->forget('username');
+        return redirect()->route('home');
+    }
+
+
 }

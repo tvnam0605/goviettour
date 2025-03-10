@@ -60,16 +60,17 @@
     
                         <div class="signin-form">
                             <h2 class="form-title">Đăng nhập</h2>
-                            <form method="POST" class="register-form" id="login-form">
+                            <span id="error_login" class="alert alert-danger" style="padding: 10px 3px"></span>
+                            <form action="{{ route('user-login') }}" method="POST" class="login-form" id="login-form" style="margin-top: 15px">
                                 <div class="form-group">
-                                    <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                    <input type="text" name="your_name" id="your_name" placeholder="Tên đăng nhập"/>
+                                    <label for="username_login"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                    <input type="text" name="username_login" id="username_login" placeholder="Tên đăng nhập"/>
                                 </div>
                                 <div class="invalid-feedback" style="margin-top:-15px" id="validate_username"></div>
-                               
+                               @csrf
                                 <div class="form-group">
-                                    <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                    <input type="password" name="your_pass" id="your_pass" placeholder="Mật khẩu"/>
+                                    <label for="password_login"><i class="zmdi zmdi-lock"></i></label>
+                                    <input type="password" name="password_login" id="password_login" placeholder="Mật khẩu"/>
                                 </div>
                                 <div class="form-group">
                                     <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
