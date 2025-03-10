@@ -11,10 +11,12 @@ use Illuminate\Support\Facades\View;
 
 use App\Http\Controllers\clients\HomeController;
 use App\Http\Controllers\clients\LoginController;
+use App\Http\Controllers\clients\LoginGoogleController;
 use App\Http\Controllers\clients\TestimonialController;
 use App\Http\Controllers\clients\TourDetailController;
 use App\Http\Controllers\clients\ToursController;
 use App\Http\Controllers\clients\TravelGuidesController;
+use App\Http\Controllers\LoginGoogleController as ControllersLoginGoogleController;
 
 // Route::get('/', function () {
 //     return view('home');
@@ -34,8 +36,13 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/register', [LoginController::class, 'register'])->name('register');
 Route::post('/login', [LoginController::class, 'login'])->name('user-login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-
 Route::get('/activate-account/{token}', [LoginController::class, 'activateAccount'])->name('activate.account');
+
+
+//login with google
+Route::get('auth/google',[LoginGoogleController::class, 'redirectToGoogle'])->name('login-google');
+Route::get('auth/google/callback',[LoginGoogleController::class, 'handleGoogleCallback']);
+
 
 
 Route::fallback(function () {

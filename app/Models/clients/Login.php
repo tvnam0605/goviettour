@@ -53,4 +53,11 @@ class Login extends Model
 
         return $getUser;
     }
+    // Kiểm tra người dùng tồn tại theo email
+    public function checkUserExistGoogle($google_id){
+        $check = DB::table($this->table)
+        ->where('google_id', $google_id)->first();
+
+        return $check;
+    }
 }
