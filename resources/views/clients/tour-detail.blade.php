@@ -70,8 +70,8 @@
                 </div>
                 <div class="col-xl-4 col-lg-5 text-lg-end" data-aos="fade-right" data-aos-duration="1500" data-aos-offset="50">
                     <div class="tour-header-social mb-10">
-                        <a href="#"><i class="far fa-share-alt"></i>Share tours</a>
-                        <a href="#"><i class="fas fa-heart bgc-secondary"></i>Wish list</a>
+                        <a href="#"><i class="far fa-share-alt"></i>Chia sẻ</a>
+                        <a href="#"><i class="fas fa-heart bgc-secondary"></i>Yêu thích</a>
                     </div>
                 </div>
             </div>
@@ -142,7 +142,7 @@
                     </div>
                     <h3>Bản đồ</h3>
                     <div class="tour-map mt-30 mb-50">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d96777.16150026117!2d-74.00840582560909!3d40.71171357405996!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1706508986625!5m2!1sen!2sbd" style="border:0; width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.2878659858575!2d108.44162997576724!3d11.95456038827512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317112d959f88991%3A0x9c66baf1767356fa!2zVHLGsOG7nW5nIMSQ4bqhaSBI4buNYyDEkMOgIEzhuqF0!5e0!3m2!1svi!2s!4v1739975814251!5m2!1svi!2s" style="border:0; width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
 
                     <h3>Nhận xét của khách hàng</h3>
@@ -234,7 +234,7 @@
                                 <img src="assets/images/blog/comment-author1.jpg" alt="Author">
                             </div>
                             <div class="content">
-                                <h6>Lonnie B. Horwitz</h6>
+                                <h6>Van A</h6>
                                 <div class="ratting">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -242,9 +242,9 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star-half-alt"></i>
                                 </div>
-                                <span class="time">Venice, Rome and Milan – 9 Days 8 Nights</span>
-                                <p>Tours and travels play a crucial role in enriching lives by offering unique experiences, cultural exchanges, and the joy of exploration.</p>
-                                <a class="read-more" href="#">Reply <i class="far fa-angle-right"></i></a>
+                                <span class="time">PHÚ QUỐC 3 ngày 2 đêm</span>
+                                <p>Các chuyến tham quan và du lịch đóng vai trò quan trọng trong việc làm phong phú thêm cuộc sống bằng cách mang đến những trải nghiệm độc đáo, giao lưu văn hóa và niềm vui khám phá.</p>
+                                <a class="read-more" href="#">Phản hồi <i class="far fa-angle-right"></i></a>
                             </div>
                         </div>
                         <div class="comment-body comment-child" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
@@ -252,7 +252,7 @@
                                 <img src="assets/images/blog/comment-author2.jpg" alt="Author">
                             </div>
                             <div class="content">
-                                <h6>William G. Edwards</h6>
+                                <h6>Van B</h6>
                                 <div class="ratting">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -260,8 +260,8 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star-half-alt"></i>
                                 </div>
-                                <span class="time">Venice, Rome and Milan – 9 Days 8 Nights</span>
-                                <p>Tours and travels play a crucial role in enriching lives by offering unique experiences, cultural exchanges, and the joy of exploration.</p>
+                                <span class="time">PHÚ QUỐC 3 ngày 2 đêm</span>
+                                <p>Các chuyến tham quan và du lịch đóng vai trò quan trọng trong việc làm phong phú thêm cuộc sống bằng cách mang đến những trải nghiệm độc đáo, giao lưu văn hóa và niềm vui khám phá.</p>
                                 <a class="read-more" href="#">Reply <i class="far fa-angle-right"></i></a>
                             </div>
                         </div>
@@ -270,7 +270,7 @@
                                 <img src="assets/images/blog/comment-author3.jpg" alt="Author">
                             </div>
                             <div class="content">
-                                <h6>Jaime B. Wilson</h6>
+                                <h6>Van C</h6>
                                 <div class="ratting">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -278,8 +278,8 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star-half-alt"></i>
                                 </div>
-                                <span class="time">Venice, Rome and Milan – 9 Days 8 Nights</span>
-                                <p>Tours and travels play a crucial role in enriching lives by offering unique experiences, cultural exchanges, and the joy of exploration.</p>
+                                <span class="time">PHÚ QUỐC 3 ngày 2 đêm</span>
+                                <p>Các chuyến tham quan và du lịch đóng vai trò quan trọng trong việc làm phong phú thêm cuộc sống bằng cách mang đến những trải nghiệm độc đáo, giao lưu văn hóa và niềm vui khám phá.</p>
                                 <a class="read-more" href="#">Reply <i class="far fa-angle-right"></i></a>
                             </div>
                         </div>
@@ -391,7 +391,7 @@
                     <div class="blog-sidebar tour-sidebar">
                        
                         <div class="widget widget-booking" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
-                            <h5 class="widget-title">Tour Booking</h5>
+                            <h5 class="widget-title">Đặt ngay</h5>
                             <form action="#">
                                 <div class="date mb-25">
                                     <b>Ngày bắt đầu</b>
@@ -418,7 +418,7 @@
                                     </li>
                                 </ul>
                                 <hr class="mb-25">
-                                <h6>Tổng tiền: <span class="price">$74</span></h6>
+                                <h6>Tổng tiền: <span class="price">1.000.000</span></h6>
                                 <button type="submit" class="theme-btn style-two w-100 mt-15 mb-5">
                                     <span data-hover="Book Now">Đặt ngay</span>
                                     <i class="fal fa-arrow-right"></i>

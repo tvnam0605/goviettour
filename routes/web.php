@@ -31,7 +31,9 @@ Route::get('/blogs', [BlogController::class, 'index'])->name('blogs');
 Route::get('/blog-details', [BlogDetailController::class, 'index'])->name('blog-details');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
-
+//Handle GEt tours, filter Tours
+Route::get('/tours',[ToursController::class, 'index'])->name(('tours'));
+Route::get('/filter-tours',[ToursController::class, 'filterTours'])->name(('filter-tours'));
 
 Route::fallback(function () {
     return view('clients.errors.404');

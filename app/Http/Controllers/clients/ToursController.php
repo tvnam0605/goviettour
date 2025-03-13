@@ -5,6 +5,7 @@ namespace App\Http\Controllers\clients;
 use App\Models\clients\Tours;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use HasFactory;
 
 class ToursController extends Controller
 {
@@ -17,63 +18,75 @@ class ToursController extends Controller
     }
 
 
-
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $title = 'Tours';
         $tours = $this->tours->getAllTours();
-        return view( 'clients.tours',  compact( 'title', 'tours'));
+        $domain = $this->tours->getDomain();
+        $domainsCount = [
+            'mien_bac' => optional($domain->firstWhere('domain','b'))->count,
+            'mien_trung' => optional($domain->firstWhere('domain','t'))->count,
+            'mien_nam' => optional($domain->firstWhere('domain','n'))->count,
+        ];
+        return view( 'clients.tours',  compact( 'title', 'tours','domainsCount'));
 
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    //Xử lý lọc Tour
+    public function filterTours(Request $req)
     {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $conditions = [];
+        $sorting = [];
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+    // Handle price filter
+    if ($req->filled('minPrice') && $req->filled('maxPrice')) {
+        $minPrice = $req->minPrice;
+        $maxPrice = $req->maxPrice;
+        $conditions[] = ['priceAdult', '>=', $minPrice];
+        $conditions[] = ['priceAdult', '<=', $maxPrice];
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
+        // Handle domain filter
+        if ($req->filled('domain')) {
+            $domain = $req->domain;
+            $conditions[] = ['domain', '=', $domain];
+        }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+        // Handle star rating filter
+        if ($req->filled('star')) {
+            $star = (int) $req->star;
+            $conditions[] = ['averageRating', '=', $star];
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        // Handle duration filter
+        if ($req->filled('time')) {
+            $duration = $req->time;
+            $time = [
+                '3n2d' => '3 ngày 2 đêm',
+                '4n3d' => '4 ngày 3 đêm',
+                '5n4d' => '5 ngày 4 đêm'
+            ];
+            $conditions[] = ['time', '=', $time[$duration]];
+        }
+
+        // Handle orderby filter
+        if ($req->filled('sorting')) {
+            $sortingOption = trim($req->sorting); 
+
+            if ($sortingOption == 'new') {
+                $sorting = ['tourId', 'DESC']; 
+            } elseif ($sortingOption == 'old') {
+                $sorting = ['tourId', 'ASC']; 
+            } elseif ($sortingOption == "hight-to-low") {
+                $sorting = ['priceAdult', 'DESC']; 
+            } elseif ($sortingOption == "low-to-high") {
+                $sorting = ['priceAdult', 'ASC']; 
+            }
+        }
+        
+        //dd($sorting);
+        $tours = $this->tours->filterTours($conditions, $sorting);
+        return view ('clients.partials.filter-tours', compact('tours'));
     }
+    
 }
