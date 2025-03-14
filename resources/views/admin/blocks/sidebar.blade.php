@@ -1,7 +1,7 @@
 <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
-            <a href="#" class="site_title"><i class="fa fa-paw"></i> <span>Admin</span></a>
+            <a href="{{ route('admin.dashboard') }}" class="site_title"><i class="fa fa-paw"></i> <span>Admin</span></a>
         </div>
 
         <div class="clearfix"></div>
@@ -54,7 +54,7 @@
             <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
             </a>
-            <a data-toggle="tooltip" data-placement="top" title="Logout" href="#">
+            <a data-toggle="tooltip" data-placement="top" title="Logout" href="{{ route('admin.logout') }}">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
             </a>
         </div>
@@ -73,13 +73,15 @@
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
                         data-toggle="dropdown" aria-expanded="false">
-                        <img src="/admin/assets/images/user-profile/avt_admin.jpg" alt="">
-                        Admin
+                        <img src="{{ asset('admin/assets/images/user-profile/avt_admin.jpg') }}" alt="">
+                        @if (session()->has('admin'))
+                            {{ session('admin') }}
+                        @endif
                     </a>
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="javascript:;"> Thông tin cá nhân</a>
+                        <a class="dropdown-item" href="{{ route('admin.admin') }}"> Thông tin cá nhân</a>
                         <a class="dropdown-item" href="{{ route('admin.logout') }}"><i
-                            class="fa fa-sign-out pull-right"></i> Đăng xuất</a>
+                                class="fa fa-sign-out pull-right"></i> Đăng xuất</a>
                     </div>
                 </li>
 
@@ -87,18 +89,20 @@
                     <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1"
                         data-toggle="dropdown" aria-expanded="false">
                         <i class="fa fa-envelope-o"></i>
-                        <span class="badge bg-green">0</span>
+                        <span class="badge bg-green"></span>
                     </a>
                     <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
-                        <li class="nav-item">
-                            <a class="dropdown-item" href="#">
-                                <span>
-                                    <b><span>Tên người gửi</span></b>
-                                    <span class="time">Số điện thoại</span>
-                                </span>
-                                <span class="message text-contact-truncate">Nội dung tin nhắn...</span>
-                            </a>
-                        </li>
+                        
+                            <li class="nav-item">
+                                <a class="dropdown-item" href="#">
+                                    <span>
+                                        <b><span></span></b>
+                                        <span class="time"></span>
+                                    </span>
+                                    <span class="message text-contact-truncate" > </span>
+                                </a>
+                            </li>
+                   
                     </ul>
                 </li>
             </ul>

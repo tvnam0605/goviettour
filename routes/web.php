@@ -71,6 +71,8 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 
     ////Handler management admin
     Route::get('/admin', [AdminManagementController::class, 'index'])->name('admin.admin');
+    Route::post('/update-admin', [AdminManagementController::class, 'updateAdmin'])->name('admin.update-admin');
+    Route::post('/update-avatar', [AdminManagementController::class, 'updateAvatar'])->name('admin.update-avatar');
 
 
     //Handler management user
