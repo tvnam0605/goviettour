@@ -45,7 +45,9 @@ Route::get('/activate-account/{token}', [LoginController::class, 'activateAccoun
 Route::get('auth/google',[LoginGoogleController::class, 'redirectToGoogle'])->name('login-google');
 Route::get('auth/google/callback',[LoginGoogleController::class, 'handleGoogleCallback']);
 
-
+//Handle GEt tours, filter Tours
+Route::get('/tours',[ToursController::class, 'index'])->name(('tours'));
+Route::get('/filter-tours',[ToursController::class, 'filterTours'])->name(('filter-tours'));
 
 Route::fallback(function () {
     return view('clients.errors.404');

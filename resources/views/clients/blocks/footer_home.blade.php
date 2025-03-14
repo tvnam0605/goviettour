@@ -29,7 +29,7 @@
                      </div>
 
                      <form class="newsletter-form mb-50" action="#">
-                         <input id="news-email" type="email" placeholder="Email Address" required>
+                         <input id="news-email" type="email" placeholder="Email a " required>
                          <button type="submit" class="theme-btn bgc-secondary style-two">
                              <span data-hover="Subscribe">Subscribe</span>
                              <i class="fal fa-arrow-right"></i>
