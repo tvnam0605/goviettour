@@ -11,10 +11,13 @@ use Illuminate\Support\Facades\View;
 
 use App\Http\Controllers\clients\HomeController;
 use App\Http\Controllers\clients\LoginController;
+use App\Http\Controllers\clients\LoginGoogleController;
+use App\Http\Controllers\clients\SearchController;
 use App\Http\Controllers\clients\TestimonialController;
 use App\Http\Controllers\clients\TourDetailController;
 use App\Http\Controllers\clients\ToursController;
 use App\Http\Controllers\clients\TravelGuidesController;
+use App\Http\Controllers\LoginGoogleController as ControllersLoginGoogleController;
 
 // Route::get('/', function () {
 //     return view('home');
@@ -29,7 +32,18 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/tour-detail/{id} ', [TourDetailController::class, 'index'])->name('tour-detail');
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs');
 Route::get('/blog-details', [BlogDetailController::class, 'index'])->name('blog-details');
+Route::get('/search', [SearchController::class, 'index'])->name('search');
+
 Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/register', [LoginController::class, 'register'])->name('register');
+Route::post('/login', [LoginController::class, 'login'])->name('user-login');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/activate-account/{token}', [LoginController::class, 'activateAccount'])->name('activate.account');
+
+
+//login with google
+Route::get('auth/google',[LoginGoogleController::class, 'redirectToGoogle'])->name('login-google');
+Route::get('auth/google/callback',[LoginGoogleController::class, 'handleGoogleCallback']);
 
 //Handle GEt tours, filter Tours
 Route::get('/tours',[ToursController::class, 'index'])->name(('tours'));
