@@ -6,6 +6,7 @@ use App\Http\Controllers\clients\BlogDetailController;
 use App\Http\Controllers\clients\BookingController;
 use App\Http\Controllers\clients\ContactController;
 use App\Http\Controllers\clients\DestinationController;
+use App\Http\Controllers\clients\UserProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 
@@ -52,3 +53,8 @@ Route::get('/filter-tours',[ToursController::class, 'filterTours'])->name(('filt
 Route::fallback(function () {
     return view('clients.errors.404');
 });
+
+//thongtincanhan
+Route::get('/user-profile',[UserProfileController::class, 'index'])->name(('user-profile'));
+Route::post('/user-profile',[UserProfileController::class, 'update'])->name(('update-user-profile'));
+Route::post('/change-password-profile',[UserProfileController::class, 'changePassword'])->name(('change-password'));

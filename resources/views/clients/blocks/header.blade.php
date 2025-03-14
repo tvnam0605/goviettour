@@ -48,6 +48,10 @@
     <link rel="stylesheet" href="{{ asset('clients/assets/css/css-login/style.css') }}">
     {{-- custom-css --}}
     <link rel="stylesheet" href="{{ asset('clients/assets/css/custom-css.css') }}" />
+    
+    {{-- User Proflie --}}
+    <link rel="stylesheet" href="{{ asset('clients/assets/css/user-profile.css') }}" />
+
 </head>
 
 <body>
@@ -130,7 +134,7 @@
                                 <ul class="dropdown-menu" id="dropdownMenu">
                                     @if(@session()->has('username'))
                                         <li> {{ session()->get('username') }}</li>
-                                        <li><a href="#">Thông tin cá nhân</a></li>
+                                        <li><a href="{{ route('user-profile') }}">Thông tin cá nhân</a></li>
                                         <li><a href="{{ route('logout') }}">Đăng xuất</a></li>
 
                                         
