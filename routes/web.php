@@ -47,14 +47,15 @@ Route::get('auth/google',[LoginGoogleController::class, 'redirectToGoogle'])->na
 Route::get('auth/google/callback',[LoginGoogleController::class, 'handleGoogleCallback']);
 
 //Handle GEt tours, filter Tours
-Route::get('/tours',[ToursController::class, 'index'])->name(('tours'));
-Route::get('/filter-tours',[ToursController::class, 'filterTours'])->name(('filter-tours'));
+Route::get('/tours',[ToursController::class, 'index'])->name('tours');
+Route::get('/filter-tours',[ToursController::class, 'filterTours'])->name('filter-tours');
 
 Route::fallback(function () {
     return view('clients.errors.404');
 });
 
 //thongtincanhan
-Route::get('/user-profile',[UserProfileController::class, 'index'])->name(('user-profile'));
-Route::post('/user-profile',[UserProfileController::class, 'update'])->name(('update-user-profile'));
-Route::post('/change-password-profile',[UserProfileController::class, 'changePassword'])->name(('change-password'));
+Route::get('/user-profile',[UserProfileController::class, 'index'])->name('user-profile');
+Route::post('/user-profile',[UserProfileController::class, 'update'])->name('update-user-profile');
+Route::post('/change-password-profile',[UserProfileController::class, 'changePassword'])->name('change-password');
+Route::post('/change-avatar-profile', [UserProfileController::class, 'changeAvatar'])->name('change-avatar');

@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="{{ asset('clients/assets/css/slick.min.css') }}">
     <!-- Main Style -->
     <link rel="stylesheet" href="{{ asset('clients/assets/css/style.css') }}">
-    
+
     {{-- boxicons --}}
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     {{-- Date time  picker --}}
@@ -43,6 +43,8 @@
 
     {{-- custom-css --}}
     <link rel="stylesheet" href="{{ asset('clients/assets/css/custom-css.css') }}" />
+    <!-- Import CSS for Toastr -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 </head>
 
 <body>
@@ -88,18 +90,24 @@
 
                                 <div class="navbar-collapse collapse clearfix">
                                     <ul class="navigation clearfix">
-                                        <li class="{{ Request::url() == route('home') ? 'active' : ''}}"><a href="{{ route('home') }}">Trang chủ</a></li>
-                                        <li class="{{ Request::url() == route('about') ? 'active' : ''}}"><a href="{{ route('about') }}">Giới thiệu</a></li>
-                                        <li class="dropdown {{ Request::is('tours') || Request::is('team') || Request::is('tour-detail/*') ? 'active' : '' }}">
+                                        <li class="{{ Request::url() == route('home') ? 'active' : '' }}"><a
+                                                href="{{ route('home') }}">Trang chủ</a></li>
+                                        <li class="{{ Request::url() == route('about') ? 'active' : '' }}"><a
+                                                href="{{ route('about') }}">Giới thiệu</a></li>
+                                        <li
+                                            class="dropdown {{ Request::is('tours') || Request::is('team') || Request::is('tour-detail/*') ? 'active' : '' }}">
                                             <a href="#">Tours</a>
                                             <ul>
                                                 <li><a href="{{ route('tours') }}">Tour</a></li>
                                                 <li><a href="{{ route('team') }}">Hướng dẫn viên</a></li>
                                             </ul>
                                         </li>
-                                        <li class="{{ Request::url() == route('destination') ? 'active' : ''}}"><a href="{{ route('destination') }}">Điểm đến</a></li>
-                                        <li class="{{ Request::url() == route('contact') ? 'active' : ''}}"><a href="{{ route('contact') }}">Liên hệ</a></li>
-                                        <li class="{{ Request::url() == route('blogs') ? 'active' : ''}}"><a href="{{ route('blogs') }}">Blog</a></li>
+                                        <li class="{{ Request::url() == route('destination') ? 'active' : '' }}"><a
+                                                href="{{ route('destination') }}">Điểm đến</a></li>
+                                        <li class="{{ Request::url() == route('contact') ? 'active' : '' }}"><a
+                                                href="{{ route('contact') }}">Liên hệ</a></li>
+                                        <li class="{{ Request::url() == route('blogs') ? 'active' : '' }}"><a
+                                                href="{{ route('blogs') }}">Blog</a></li>
                                     </ul>
 
 
@@ -127,25 +135,34 @@
                             <!-- menu sidbar -->
                             <div class="menu-sidebar">
                                 <li class="drop-down">
-                                <button class="dropdown-toggle bg-transparent " id="userDropdown" style="color: white">
-                                    <i class='bx bxs-user bx-tada ' style="font-size: 36px; color: white;"></i>
-                                </button> 
-                                <ul class="dropdown-menu" id="dropdownMenu">
-                                    @if(@session()->has('username'))
-                                        <li> {{ session()->get('username') }}</li>
-                                        <li><a href="{{ route('user-profile') }}">Thông tin cá nhân</a></li>
-                                        <li><a href="{{ route('logout') }}">Đăng xuất</a></li>
+                                    <button class="dropdown-toggle bg-transparent" id="userDropdown"style="color: white">
+                                        @if (session()->has('avatar'))
+                                            @php
+                                                $avatar = session('avatar') ?? 'user_avatar.png';
+                                            @endphp
 
-                                        
-                                    @else
-                                        <li><a href="{{ route('login') }}">Đăng nhập</a></li>
-                                    @endif
-                                </ul>
-                            </li>      
+                                            <img id="avatarPreview" class="img-account-profile rounded-circle "
+                                                src="{{ asset('clients/assets/images/user-profile/' . $avatar) }}"
+                                                style="width: 36px; height: 36px;">
+                                        @else
+                                            <i class='bx bxs-user bx-tada' style="font-size: 36px; color: white;"></i>
+                                        @endif
+                                    </button>
+
+                                    <ul class="dropdown-menu" id="dropdownMenu">
+                                        @if (session()->has('username'))
+                                            <li><a href="{{ route('user-profile') }}">Thông tin cá nhân</a></li>
+                                            <li><a href="{{ route('logout') }}">Đăng xuất</a></li>
+                                        @else
+                                            <li><a href="{{ route('login') }}">Đăng nhập</a></li>
+                                        @endif
+                                    </ul>
+                                </li>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-             </div>
-        </div>
+            </div>
             <!--End Header Upper-->
         </header>

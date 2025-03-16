@@ -16,11 +16,8 @@ $(document).ready(function () {
         $(".signup").hide();
         $(".sign-in").show();
     });
-    $("#message").hide();
-    $("#error").hide();
-    $("#error_login").hide();
 
-    //Trienkhaidangky
+    //Phandangky
     $("#register-form").on("submit", function (e) {
         e.preventDefault();
         $(".loader").show();
@@ -90,23 +87,16 @@ $(document).ready(function () {
                 data: formData,
                 success: function (response) {
                     if (response.success) {
-                        //toastr.success(response.message, { timeOut: 5000 });
-                        $("#message").text(response.message).show();
-                        $("#error").hide();
+                        toastr.success(response.message, { timeOut:5000});
+                        $("#register-form").removeClass("hidden-content").trigger("reset");
+                        $(".loader").hide();
+
                     } else {
-                        //toastr.error(response.message);
-                        $("#message").hide();
-                        $("#error")
-                            .text("Tên tài khoản hoặc mail đã tồn tại!")
-                            .show();
+                        toastr.error(response.message);
                     }
-                    //$("#register-form")
-                    //.removeClass("hidden-content")
-                    //.trigger("reset");
-                    //$(".loader").hide();
                 },
                 error: function (xhr, textStatus, errorThrown) {
-                    alert("Có lỗi xảy ra. Vui lòng thử lại sau.");
+                    toastr.error("Có lỗi xảy ra. Vui lòng thử lại sau.");
                 },
             });
         }
@@ -164,13 +154,12 @@ $(document).ready(function () {
                 success: function (response) {
                     if (response.success) {
                         window.location.href = "/";
-                        //console.log(formData);
                     } else {
-                        $("#error_login").text(response.message).show();
+                        toastr.error(response.message);
                     }
                 },
                 error: function (xhr, textStatus, errorThrown) {
-                    alert("Có lỗi xảy ra. Vui lòng thử lại sau.");
+                    toastr.error("Có lỗi xảy ra. Vui lòng thử lại sau.");
                 },
             });
         }
@@ -251,7 +240,7 @@ $(document).ready(function () {
         filterTours(0, 7000000);
     });
     // >>>>>>> Stashed changes
-    // =======
+
     // ===========UserProfile==========
     $(".updateUser").on("submit", function (e) {
         e.preventDefault();
@@ -275,22 +264,26 @@ $(document).ready(function () {
             url: $(this).attr("action"),
             data: dataUpdate,
             success: function (response) {
-                console.log(response);
-
                 if (response.success) {
-                   alert(response.message);
+                    toastr.success(response.message);
                 } else {
-                    alert(response.message);
+                    toastr.error(response.message);
                 }
             },
             error: function (xhr, textStatus, errorThrown) {
-                alert("Có lỗi xảy ra. Vui lòng thử lại sau.");
+                toastr.error("Có lỗi xảy ra. Vui lòng thử lại sau.");
             },
         });
     });
-    $("#update_change_password").click(function () {
-        $("#card_change_password").toggle();
+
+    $(document).ready(function () {
+        $("#card_change_password").hide();
+
+        $("#update_change_password").click(function () {
+            $("#card_change_password").toggle();
+        });
     });
+
     $(".change_password_profile").on("submit", function (e) {
         e.preventDefault();
         var oldPass = $("#inputOldPass").val();
@@ -328,19 +321,73 @@ $(document).ready(function () {
                 data: updatePass,
                 success: function (response) {
                     if (response.success) {
-                        alert("Đổi mật khẩu thành công!");
+                        $("#validate_passwword").hide().text("");
+                        toastr.success(response.message);
                     } else {
-                        alert("Mật khẩu cũ không đúng hoặc có lỗi xảy ra.");
+                        toastr.error(response.message);
                     }
-                    console.log(response);
                 },
                 error: function (xhr, textStatus, errorThrown) {
-                    alert("Mật khẩu cũ không chính xác. Vui lòng thử lại.");
+                    $("#validate_passwword")
+                        .show()
+                        .text(xhr.responseJSON.message);
+
+                    toastr.error(xhr.responseJSON.message);
                 },
             });
         }
     });
-    
-    
-});
+    //Update avatar//
+    $("#avatar").on("change", function (event) {
+        const file = event.target.files[0];
 
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                $("#avatarPreview").attr("src", e.target.result);
+            };
+            reader.readAsDataURL(file);
+
+            // Khởi tạo formData TRƯỚC khi sử dụng
+            const formData = new FormData();
+            formData.append("avatar", file);
+
+            var __token = $(this)
+                .closest(".card-body")
+                .find("input.__token")
+                .val();
+            var url = $(this)
+                .closest(".card-body")
+                .find("input.label_avatar")
+                .val();
+
+            // Kiểm tra FormData để gửi qua Ajax
+            for (let pair of formData.entries()) {
+                console.log(pair[0] + "," + pair[1]);
+            }
+
+            console.log(formData.get("avatar"));
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                headers: {
+                    "X-CSRF-TOKEN": __token,
+                },
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response.success) {
+                        toastr.success(response.message);
+                    } else {
+                        toastr.error(response.message);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    toastr.error("Có lỗi xảy ra. Vui lòng thử lại sau.");
+                },
+            });
+        }
+    });
+});
