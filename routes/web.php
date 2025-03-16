@@ -10,6 +10,7 @@ use App\Http\Controllers\clients\BlogDetailController;
 use App\Http\Controllers\clients\BookingController;
 use App\Http\Controllers\clients\ContactController;
 use App\Http\Controllers\clients\DestinationController;
+use App\Http\Controllers\clients\UserProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 
@@ -50,13 +51,19 @@ Route::get('auth/google', [LoginGoogleController::class, 'redirectToGoogle'])->n
 Route::get('auth/google/callback', [LoginGoogleController::class, 'handleGoogleCallback']);
 
 //Handle GEt tours, filter Tours
-Route::get('/tours', [ToursController::class, 'index'])->name(('tours'));
-Route::get('/filter-tours', [ToursController::class, 'filterTours'])->name(('filter-tours'));
+Route::get('/tours',[ToursController::class, 'index'])->name('tours');
+Route::get('/filter-tours',[ToursController::class, 'filterTours'])->name('filter-tours');
+
 
 Route::fallback(function () {
     return view('clients.errors.404');
 });
 
+//thongtincanhan
+Route::get('/user-profile',[UserProfileController::class, 'index'])->name('user-profile');
+Route::post('/user-profile',[UserProfileController::class, 'update'])->name('update-user-profile');
+Route::post('/change-password-profile',[UserProfileController::class, 'changePassword'])->name('change-password');
+Route::post('/change-avatar-profile', [UserProfileController::class, 'changeAvatar'])->name('change-avatar');
 
 //ADMIN
 Route::prefix('admin')->group(function () {
