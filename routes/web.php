@@ -30,7 +30,6 @@ use App\Http\Controllers\LoginGoogleController as ControllersLoginGoogleControll
 //Route::get(uri:'/', action:[HomeController::class,'index'])->name(name:'home');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name(('about'));
-Route::get('/tours', [ToursController::class, 'index'])->name(('tours'));
 Route::get('/travel-guides', [TravelGuidesController::class, 'index'])->name(('team'));
 Route::get('/destination', [DestinationController::class, 'index'])->name('destination');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
@@ -60,7 +59,6 @@ Route::fallback(function () {
 });
 
 //thongtincanhan
-<<<<<<< HEAD
 Route::get('/user-profile',[UserProfileController::class, 'index'])->name('user-profile');
 Route::post('/user-profile',[UserProfileController::class, 'update'])->name('update-user-profile');
 Route::post('/change-password-profile',[UserProfileController::class, 'changePassword'])->name('change-password');
@@ -86,8 +84,3 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::post('/active-user', [UserManagementController::class, 'activeUser'])->name('admin.active-user');
     Route::post('/status-user', [UserManagementController::class, 'changeStatus'])->name('admin.status-user');
 });
-=======
-Route::get('/user-profile',[UserProfileController::class, 'index'])->name(('user-profile'));
-Route::post('/user-profile',[UserProfileController::class, 'update'])->name(('update-user-profile'));
-Route::post('/change-password-profile',[UserProfileController::class, 'changePassword'])->name(('change-password'));
->>>>>>> parent of f419a28 (Chức Năng Update Avatar Bằng AJAX/Tích Hợp Toast Notification/Xử Lý Thông Báo Đăng Ký và Thiết Lập Avatar)
