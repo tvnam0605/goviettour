@@ -5,7 +5,6 @@ namespace App\Http\Controllers\clients;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\clients\Login;
-use App\Models\clients\User;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
@@ -16,11 +15,9 @@ class LoginController extends Controller
 {
     private $login;
 
-    private $user;
     public function __construct()
     {
         $this->login = new Login();
-        $this->user = new User();
     }
     public function index()
     {
@@ -101,34 +98,25 @@ class LoginController extends Controller
 
         ];
 
-        $user_login = $this->login->login($data_login);
-        $userId = $this->user->getUserId($username);
-        $user = $this->user->getUser($userId);
-
-        if ($user_login != null) {
-            $request->session()->put('username', $username);
-            $request->session()->put('avatar', $user->avatar);
-            toastr()->success("Đăng nhập thành công!", ['title' => 'Thông báo']);
-            return response()->json([
-                'success' => true,
-                'message' => 'Đăng nhập thành công!',
-                'redirectUrl' => route('home'),  // Optional: dynamic home route
-            ]);
-
-        } else {
+        $user =$this->login->login($data_login);
+        if($user != null){
+           $request->session()->put('username', $username);
+           return response()->json([
+            'success' => true,
+            'message' => 'Đăng nhập thành công!',
+            'redirect' => route('home'),
+        ]);
+        }else{
             return response()->json([
                 'success' => false,
-                'message' => 'Thông tin tài khoản không chính xác!',
+                'message' => 'Tên người dùng hoặc mật khẩu không đúng!',
             ]);
-        }
+    }
 }
     // xy ly dang xuat
     public function logout(Request $request)
     {
         $request->session()->forget('username');
-        $request->session()->forget('avatar');
-        toastr()->success("Đăng xuất thành công!", ['title' => 'Thông báo']);
-
         return redirect()->route('home');
     }
 

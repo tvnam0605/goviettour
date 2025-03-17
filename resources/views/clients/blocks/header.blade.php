@@ -52,8 +52,6 @@
     {{-- User Proflie --}}
     <link rel="stylesheet" href="{{ asset('clients/assets/css/user-profile.css') }}" />
 
-    <!-- Import CSS for Toastr -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 </head>
 
 <body>

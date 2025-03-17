@@ -6,16 +6,12 @@
                 <div class="card mb-4 mb-xl-0">
                     <div class="card-header">Ảnh</div>
                     <div class="card-body text-center">
-                        <img id="avatarPreview" class="img-account-profile rounded-circle mb-2"
+                        <img class="img-account-profile rounded-circle mb-2"
                             src="{{ asset('clients/assets/images/user-profile/' . $user->avatar) }}"
                             alt="Ảnh đại diện {{ $user->avatar }}">
-
                         <div class="small font-italic text-muted mb-4">JPG hoặc PNG không lớn hơn 5 MB</div>
-                        <input type="file" name="avatar" id="avatar" style="display: none"accept="image/*" >
-                        <input type="hidden" name="_token"value="{{ csrf_token() }}" class="__token">
-                        <input type="hidden" name=""value="{{ route('change-avatar') }}" class="label_avatar">
-                        <label for="avatar" class="btn btn-primary" >Tải ảnh lên</label>
-                       
+
+                        <button class="btn btn-primary" type="button">Tải ảnh lên</button>
                     </div>
                 </div>
                 <div class="card mb-4 mb-xl-0">
