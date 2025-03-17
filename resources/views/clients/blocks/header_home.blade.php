@@ -133,7 +133,11 @@
                                 <ul class="dropdown-menu" id="dropdownMenu">
                                     @if(@session()->has('username'))
                                         <li> {{ session()->get('username') }}</li>
+<<<<<<< HEAD
                                         <li><a href="{{ route('user-profile') }}">Thông tin cá nhân</a></li>
+=======
+                                        <li><a href="#">Thông tin cá nhân</a></li>
+>>>>>>> parent of 467a4b5 (Merge pull request #4 from tvnam0605/main)
                                         <li><a href="{{ route('logout') }}">Đăng xuất</a></li>
 
                                         

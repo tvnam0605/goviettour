@@ -1,25 +1,33 @@
-$(document).ready(function () {
+$(document).ready(function(){
     var sqlInjectionPattern = /[<>'"%;()&+]/;
     // Đăng nhập/ đăng ký
     $(".signup").hide();
 
-    $("#sign-up").click(function (event) {
-        event.preventDefault();
+    $("#sign-up").click(function(event) {
+        event.preventDefault(); 
         console.log("Switch to Sign Up");
         $(".sign-in").hide();
         $(".signup").show();
     });
 
-    $("#sign-in").click(function (event) {
+    $("#sign-in").click(function(event) {
         event.preventDefault();
         console.log("Switch to Sign In");
         $(".signup").hide();
         $(".sign-in").show();
     });
+<<<<<<< HEAD
     $("#message").hide();
     $("#error").hide();
     $("#error_login").hide();
 
+=======
+    $('#message').hide();
+    $('#error').hide();
+    $('#error_login').hide();
+
+    
+>>>>>>> parent of 467a4b5 (Merge pull request #4 from tvnam0605/main)
     //Trienkhaidangky
     $("#register-form").on("submit", function (e) {
         e.preventDefault();
@@ -91,6 +99,7 @@ $(document).ready(function () {
                 success: function (response) {
                     if (response.success) {
                         //toastr.success(response.message, { timeOut: 5000 });
+<<<<<<< HEAD
                         $("#message").text(response.message).show();
                         $("#error").hide();
                     } else {
@@ -103,6 +112,19 @@ $(document).ready(function () {
                     //$("#register-form")
                     //.removeClass("hidden-content")
                     //.trigger("reset");
+=======
+                        $('#message').text(response.message).show();
+                        $('#error').hide();
+                    
+                    } else {
+                        //toastr.error(response.message);
+                        $('#message').hide();
+                        $('#error').text('Tên tài khoản hoặc mail đã tồn tại!').show();
+                    }
+                    //$("#register-form")
+                        //.removeClass("hidden-content")
+                        //.trigger("reset");
+>>>>>>> parent of 467a4b5 (Merge pull request #4 from tvnam0605/main)
                     //$(".loader").hide();
                 },
                 error: function (xhr, textStatus, errorThrown) {
@@ -133,7 +155,7 @@ $(document).ready(function () {
         }
 
         // Kiểm tra tên đăng nhập và mật khẩu không chứa ký tự đặc biệt (SQL injection)
-
+        
         if (sqlInjectionPattern.test(userName)) {
             isValid = false;
             $("#validate_username")
@@ -157,16 +179,25 @@ $(document).ready(function () {
             console.log(formData, $(this).attr("action"));
             console.log(formData);
 
+            
             $.ajax({
                 type: "POST",
                 url: $(this).attr("action"),
                 data: formData,
                 success: function (response) {
                     if (response.success) {
+<<<<<<< HEAD
                         window.location.href = "/";
                         //console.log(formData);
                     } else {
                         $("#error_login").text(response.message).show();
+=======
+                       window.location.href = '/';
+                       //console.log(formData);
+
+                    } else {
+                        $('#error_login').text(response.message).show();
+>>>>>>> parent of 467a4b5 (Merge pull request #4 from tvnam0605/main)
                     }
                 },
                 error: function (xhr, textStatus, errorThrown) {
@@ -175,18 +206,19 @@ $(document).ready(function () {
             });
         }
     });
-    // Kích hoạt datetimepicker
+    // Kích hoạt datetimepicker 
     $("#start_date, #end_date").datetimepicker({
         format: "d/m/Y",
-        timepicker: false,
+        timepicker: false, 
     });
     //icon Đăng nhập
-    $("#userDropdown").click(function () {
+    $("#userDropdown").click(function(){
         $("#dropdownMenu").toggle();
     });
-    // <<<<<<< diem
-    // <<<<<<< Updated upstream
-    // =======
+// <<<<<<< diem
+// <<<<<<< Updated upstream
+// =======
+    
 
     //Trang Tours
     if ($(".price-slider-range").length) {
@@ -198,9 +230,11 @@ $(document).ready(function () {
     $('input[name="filter_star"]').on("change", filterTours);
     $('input[name="duration"]').on("change", filterTours);
 
+
     $("#sorting_tours").on("change", function () {
         filterTours(null, null);
     });
+
 
     function filterTours(minPrice = null, maxPrice = null) {
         $(".loader").show();
@@ -214,7 +248,7 @@ $(document).ready(function () {
         var domain = $('input[name="domain"]:checked').val();
         var star = $('input[name="filter_star"]:checked').val();
         var duration = $('input[name="duration"]:checked').val();
-        var sorting = $("#sorting_tours").val();
+        var sorting = $('#sorting_tours').val();
 
         formDataFilter = {
             minPrice: minPrice,
@@ -222,12 +256,12 @@ $(document).ready(function () {
             domain: domain,
             star: star,
             time: duration,
-            sorting: sorting,
+            sorting : sorting
         };
         console.log(formDataFilter);
 
         $.ajax({
-            url: filterToursUrl,
+            url :filterToursUrl,
             method: "GET",
             data: formDataFilter,
             success: function (res) {
@@ -237,6 +271,7 @@ $(document).ready(function () {
             },
         });
     }
+
 
     $(".clear_filter a").on("click", function (e) {
         e.preventDefault();
@@ -250,6 +285,7 @@ $(document).ready(function () {
 
         filterTours(0, 7000000);
     });
+<<<<<<< HEAD
     // >>>>>>> Stashed changes
     // =======
     // ===========UserProfile==========
@@ -343,4 +379,12 @@ $(document).ready(function () {
     
     
 });
+=======
+// >>>>>>> Stashed changes
+// =======
+    
+// >>>>>>> master
+});
+    
+>>>>>>> parent of 467a4b5 (Merge pull request #4 from tvnam0605/main)
 

@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 10, 2025 lúc 12:55 PM
--- Phiên bản máy phục vụ: 10.4.32-MariaDB
--- Phiên bản PHP: 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: Mar 07, 2025 at 06:59 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `goviettour`
+-- Database: `goviettour`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `cache`
+-- Table structure for table `cache`
 --
 
 CREATE TABLE `cache` (
@@ -36,7 +36,7 @@ CREATE TABLE `cache` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `cache_locks`
+-- Table structure for table `cache_locks`
 --
 
 CREATE TABLE `cache_locks` (
@@ -48,7 +48,7 @@ CREATE TABLE `cache_locks` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `failed_jobs`
+-- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -64,7 +64,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `jobs`
+-- Table structure for table `jobs`
 --
 
 CREATE TABLE `jobs` (
@@ -80,7 +80,7 @@ CREATE TABLE `jobs` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `job_batches`
+-- Table structure for table `job_batches`
 --
 
 CREATE TABLE `job_batches` (
@@ -99,7 +99,7 @@ CREATE TABLE `job_batches` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -109,7 +109,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -120,7 +120,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `password_reset_tokens`
+-- Table structure for table `password_reset_tokens`
 --
 
 CREATE TABLE `password_reset_tokens` (
@@ -132,7 +132,7 @@ CREATE TABLE `password_reset_tokens` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `sessions`
+-- Table structure for table `sessions`
 --
 
 CREATE TABLE `sessions` (
@@ -145,17 +145,16 @@ CREATE TABLE `sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `sessions`
+-- Dumping data for table `sessions`
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('901df7NDqmLFJB97YaUbRgEcopyn8AZCybPIE6yZ', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiVmtOYm5TQUJmZll3RVFTQW9DVjlURTJHZUNrSUJDTDhuNzNZUjBBeCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hdXRoL2dvb2dsZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NToic3RhdGUiO3M6NDA6IjFScGtDRjNnRkxNMlZHaXRvV0R1aGF1ZVJUNG5DZGRXcnM2d1VEa1EiO30=', 1741605332),
-('qN3qzLJ8NIt5vSNPezwwkTI5qEmU8hJDPlzgjrV8', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicXJuQ1BPclFWRWg2eE5zcU5RUFN3T1F0WjY4NXVmdDBPeWt0VU1hUSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MTA0OiJodHRwOi8vbG9jYWxob3N0OjgwMDAvY2xpZW50cy9hc3NldHMvZm9udHMvZmxhdGljb25fR29WaWV0VG91cjEwZjMudHRmPzZhMTdlOWUyNmRiYjVhMjM2MGY1MTVlMTIzYzhlOTIxPSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1741607679);
+('NSS3cHGJGIvtMOF4SdTc6UTHm2953yMJHxF3WYAj', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiZHU3WFVzVFRsVEdXUXZOcGJSU0szd2lOVFlrNm1DdTl0S3JJbXA3RSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NjI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hc3NldHMvaW1hZ2VzL2JhY2tncm91bmRzL2Zvb3Rlci10d28ucG5nIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1741369882);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_admin`
+-- Table structure for table `tbl_admin`
 --
 
 CREATE TABLE `tbl_admin` (
@@ -169,7 +168,7 @@ CREATE TABLE `tbl_admin` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_booking`
+-- Table structure for table `tbl_booking`
 --
 
 CREATE TABLE `tbl_booking` (
@@ -187,7 +186,7 @@ CREATE TABLE `tbl_booking` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_chat`
+-- Table structure for table `tbl_chat`
 --
 
 CREATE TABLE `tbl_chat` (
@@ -203,7 +202,7 @@ CREATE TABLE `tbl_chat` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_checkout`
+-- Table structure for table `tbl_checkout`
 --
 
 CREATE TABLE `tbl_checkout` (
@@ -219,7 +218,7 @@ CREATE TABLE `tbl_checkout` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_history`
+-- Table structure for table `tbl_history`
 --
 
 CREATE TABLE `tbl_history` (
@@ -233,7 +232,7 @@ CREATE TABLE `tbl_history` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_images`
+-- Table structure for table `tbl_images`
 --
 
 CREATE TABLE `tbl_images` (
@@ -245,7 +244,7 @@ CREATE TABLE `tbl_images` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_images`
+-- Dumping data for table `tbl_images`
 --
 
 INSERT INTO `tbl_images` (`imageId`, `tourId`, `imageURL`, `description`, `uploadDate`) VALUES
@@ -273,7 +272,7 @@ INSERT INTO `tbl_images` (`imageId`, `tourId`, `imageURL`, `description`, `uploa
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_invoice`
+-- Table structure for table `tbl_invoice`
 --
 
 CREATE TABLE `tbl_invoice` (
@@ -287,7 +286,7 @@ CREATE TABLE `tbl_invoice` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_promotion`
+-- Table structure for table `tbl_promotion`
 --
 
 CREATE TABLE `tbl_promotion` (
@@ -302,7 +301,7 @@ CREATE TABLE `tbl_promotion` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_reviews`
+-- Table structure for table `tbl_reviews`
 --
 
 CREATE TABLE `tbl_reviews` (
@@ -317,7 +316,7 @@ CREATE TABLE `tbl_reviews` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_timeline`
+-- Table structure for table `tbl_timeline`
 --
 
 CREATE TABLE `tbl_timeline` (
@@ -328,7 +327,7 @@ CREATE TABLE `tbl_timeline` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_timeline`
+-- Dumping data for table `tbl_timeline`
 --
 
 INSERT INTO `tbl_timeline` (`timeLineId`, `tourId`, `title`, `description`) VALUES
@@ -349,7 +348,7 @@ INSERT INTO `tbl_timeline` (`timeLineId`, `tourId`, `title`, `description`) VALU
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_tours`
+-- Table structure for table `tbl_tours`
 --
 
 CREATE TABLE `tbl_tours` (
@@ -369,7 +368,7 @@ CREATE TABLE `tbl_tours` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_tours`
+-- Dumping data for table `tbl_tours`
 --
 
 INSERT INTO `tbl_tours` (`tourId`, `title`, `time`, `description`, `quantity`, `priceAdult`, `priceChild`, `destination`, `domain`, `availability`, `reviews`, `startDate`, `endDate`) VALUES
@@ -381,41 +380,27 @@ INSERT INTO `tbl_tours` (`tourId`, `title`, `time`, `description`, `quantity`, `
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tlb_users`
+-- Table structure for table `tlb_users`
 --
 
 CREATE TABLE `tlb_users` (
   `userId` int(11) NOT NULL,
-  `google_id` varchar(50) DEFAULT NULL,
-  `fullName` varchar(255) DEFAULT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `userName` varchar(50) NOT NULL,
+  `passWord` varchar(50) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phoneNumber` varchar(15) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
   `ipAddress` varchar(50) DEFAULT NULL,
   `isActive` enum('y','n') NOT NULL DEFAULT 'n' COMMENT 'y: yes n: no',
   `status` enum('d','b') DEFAULT NULL COMMENT 'd: delete b: banned',
-  `createdDate` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updatedDate` timestamp NOT NULL DEFAULT current_timestamp(),
-  `activation_token` varchar(255) DEFAULT NULL
+  `createdDate` date NOT NULL,
+  `updatedDate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Đang đổ dữ liệu cho bảng `tlb_users`
---
-
-INSERT INTO `tlb_users` (`userId`, `google_id`, `fullName`, `username`, `password`, `email`, `phoneNumber`, `address`, `ipAddress`, `isActive`, `status`, `createdDate`, `updatedDate`, `activation_token`) VALUES
-(9, NULL, NULL, 'haha', 'e36f42b72dead51a788200bbfdac58d8', 'laathanh09@gmail.com', NULL, NULL, NULL, 'y', NULL, '2025-03-08 18:46:51', '2025-03-08 18:46:51', NULL),
-(14, NULL, NULL, 'hihi', '96e79218965eb72c92a549dd5a330112', '2115268@dlu.edu.vn', NULL, NULL, NULL, 'n', NULL, '2025-03-08 19:13:48', '2025-03-08 19:13:48', 'VMzjTE9qRL4Z5rXMos3D78EseM7nvrcAcvE0QmlxojklZ2hXowlItMbI1RLW'),
-(15, NULL, NULL, 'thanhla', '96e79218965eb72c92a549dd5a330112', 'totiiteee@gmail.com', NULL, NULL, NULL, 'n', NULL, '2025-03-08 19:15:35', '2025-03-08 19:15:35', '2nRBdELpIk71ZGGDEar4zt1hQbmdz00gN2XouNpDMVOQ186z2KG1xbxYeDrw'),
-(16, NULL, NULL, 'tvnam', 'e10adc3949ba59abbe56e057f20f883e', 'anhmk864@gmail.com', NULL, NULL, NULL, 'y', NULL, '2025-03-10 02:45:05', '2025-03-10 02:45:05', NULL),
-(18, '117262954282976031887', 'Nam Tran Van', 'user-google', '25d55ad283aa400af464c76d713c07ad', 'trannamvan0605@gmail.com', NULL, NULL, NULL, 'y', NULL, '2025-03-10 11:25:15', '2025-03-10 11:25:15', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -430,55 +415,55 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `cache`
+-- Indexes for table `cache`
 --
 ALTER TABLE `cache`
   ADD PRIMARY KEY (`key`);
 
 --
--- Chỉ mục cho bảng `cache_locks`
+-- Indexes for table `cache_locks`
 --
 ALTER TABLE `cache_locks`
   ADD PRIMARY KEY (`key`);
 
 --
--- Chỉ mục cho bảng `failed_jobs`
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Chỉ mục cho bảng `jobs`
+-- Indexes for table `jobs`
 --
 ALTER TABLE `jobs`
   ADD PRIMARY KEY (`id`),
   ADD KEY `jobs_queue_index` (`queue`);
 
 --
--- Chỉ mục cho bảng `job_batches`
+-- Indexes for table `job_batches`
 --
 ALTER TABLE `job_batches`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `password_reset_tokens`
+-- Indexes for table `password_reset_tokens`
 --
 ALTER TABLE `password_reset_tokens`
   ADD PRIMARY KEY (`email`);
 
 --
--- Chỉ mục cho bảng `sessions`
+-- Indexes for table `sessions`
 --
 ALTER TABLE `sessions`
   ADD PRIMARY KEY (`id`),
@@ -486,20 +471,20 @@ ALTER TABLE `sessions`
   ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
--- Chỉ mục cho bảng `tbl_admin`
+-- Indexes for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`adminId`);
 
 --
--- Chỉ mục cho bảng `tbl_booking`
+-- Indexes for table `tbl_booking`
 --
 ALTER TABLE `tbl_booking`
   ADD PRIMARY KEY (`bookingId`),
   ADD KEY `fk_booking_tour` (`tourId`);
 
 --
--- Chỉ mục cho bảng `tbl_chat`
+-- Indexes for table `tbl_chat`
 --
 ALTER TABLE `tbl_chat`
   ADD PRIMARY KEY (`chatId`),
@@ -507,14 +492,14 @@ ALTER TABLE `tbl_chat`
   ADD KEY `fk_chat_admin` (`adminId`);
 
 --
--- Chỉ mục cho bảng `tbl_checkout`
+-- Indexes for table `tbl_checkout`
 --
 ALTER TABLE `tbl_checkout`
   ADD PRIMARY KEY (`checkoutId`),
   ADD KEY `fk_checkout_booking` (`bookingId`);
 
 --
--- Chỉ mục cho bảng `tbl_history`
+-- Indexes for table `tbl_history`
 --
 ALTER TABLE `tbl_history`
   ADD PRIMARY KEY (`historyId`),
@@ -522,27 +507,27 @@ ALTER TABLE `tbl_history`
   ADD KEY `fk_history_tour` (`tourId`);
 
 --
--- Chỉ mục cho bảng `tbl_images`
+-- Indexes for table `tbl_images`
 --
 ALTER TABLE `tbl_images`
   ADD PRIMARY KEY (`imageId`),
   ADD KEY `fk_image_tour` (`tourId`);
 
 --
--- Chỉ mục cho bảng `tbl_invoice`
+-- Indexes for table `tbl_invoice`
 --
 ALTER TABLE `tbl_invoice`
   ADD PRIMARY KEY (`invoiceId`),
   ADD KEY `fk_invoice` (`bookingId`);
 
 --
--- Chỉ mục cho bảng `tbl_promotion`
+-- Indexes for table `tbl_promotion`
 --
 ALTER TABLE `tbl_promotion`
   ADD PRIMARY KEY (`promotionId`);
 
 --
--- Chỉ mục cho bảng `tbl_reviews`
+-- Indexes for table `tbl_reviews`
 --
 ALTER TABLE `tbl_reviews`
   ADD PRIMARY KEY (`reviewId`),
@@ -550,182 +535,182 @@ ALTER TABLE `tbl_reviews`
   ADD KEY `fk_revirew_tour` (`tourId`);
 
 --
--- Chỉ mục cho bảng `tbl_timeline`
+-- Indexes for table `tbl_timeline`
 --
 ALTER TABLE `tbl_timeline`
   ADD PRIMARY KEY (`timeLineId`),
   ADD KEY `fk_tour` (`tourId`);
 
 --
--- Chỉ mục cho bảng `tbl_tours`
+-- Indexes for table `tbl_tours`
 --
 ALTER TABLE `tbl_tours`
   ADD PRIMARY KEY (`tourId`);
 
 --
--- Chỉ mục cho bảng `tlb_users`
+-- Indexes for table `tlb_users`
 --
 ALTER TABLE `tlb_users`
   ADD PRIMARY KEY (`userId`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `failed_jobs`
+-- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `jobs`
+-- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_admin`
+-- AUTO_INCREMENT for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   MODIFY `adminId` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_booking`
+-- AUTO_INCREMENT for table `tbl_booking`
 --
 ALTER TABLE `tbl_booking`
   MODIFY `bookingId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_chat`
+-- AUTO_INCREMENT for table `tbl_chat`
 --
 ALTER TABLE `tbl_chat`
   MODIFY `chatId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_checkout`
+-- AUTO_INCREMENT for table `tbl_checkout`
 --
 ALTER TABLE `tbl_checkout`
   MODIFY `checkoutId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_history`
+-- AUTO_INCREMENT for table `tbl_history`
 --
 ALTER TABLE `tbl_history`
   MODIFY `historyId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_images`
+-- AUTO_INCREMENT for table `tbl_images`
 --
 ALTER TABLE `tbl_images`
   MODIFY `imageId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_invoice`
+-- AUTO_INCREMENT for table `tbl_invoice`
 --
 ALTER TABLE `tbl_invoice`
   MODIFY `invoiceId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_promotion`
+-- AUTO_INCREMENT for table `tbl_promotion`
 --
 ALTER TABLE `tbl_promotion`
   MODIFY `promotionId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_reviews`
+-- AUTO_INCREMENT for table `tbl_reviews`
 --
 ALTER TABLE `tbl_reviews`
   MODIFY `reviewId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_timeline`
+-- AUTO_INCREMENT for table `tbl_timeline`
 --
 ALTER TABLE `tbl_timeline`
   MODIFY `timeLineId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_tours`
+-- AUTO_INCREMENT for table `tbl_tours`
 --
 ALTER TABLE `tbl_tours`
   MODIFY `tourId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `tlb_users`
+-- AUTO_INCREMENT for table `tlb_users`
 --
 ALTER TABLE `tlb_users`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `tbl_booking`
+-- Constraints for table `tbl_booking`
 --
 ALTER TABLE `tbl_booking`
   ADD CONSTRAINT `fk_booking_tour` FOREIGN KEY (`tourId`) REFERENCES `tbl_tours` (`tourId`);
 
 --
--- Các ràng buộc cho bảng `tbl_chat`
+-- Constraints for table `tbl_chat`
 --
 ALTER TABLE `tbl_chat`
   ADD CONSTRAINT `fk_chat_admin` FOREIGN KEY (`adminId`) REFERENCES `tbl_admin` (`adminId`),
   ADD CONSTRAINT `fk_chat_user` FOREIGN KEY (`userId`) REFERENCES `tlb_users` (`userId`);
 
 --
--- Các ràng buộc cho bảng `tbl_checkout`
+-- Constraints for table `tbl_checkout`
 --
 ALTER TABLE `tbl_checkout`
   ADD CONSTRAINT `fk_checkout_booking` FOREIGN KEY (`bookingId`) REFERENCES `tbl_booking` (`bookingId`);
 
 --
--- Các ràng buộc cho bảng `tbl_history`
+-- Constraints for table `tbl_history`
 --
 ALTER TABLE `tbl_history`
   ADD CONSTRAINT `fk_history_tour` FOREIGN KEY (`tourId`) REFERENCES `tbl_tours` (`tourId`),
   ADD CONSTRAINT `fk_history_user` FOREIGN KEY (`userId`) REFERENCES `tlb_users` (`userId`);
 
 --
--- Các ràng buộc cho bảng `tbl_images`
+-- Constraints for table `tbl_images`
 --
 ALTER TABLE `tbl_images`
   ADD CONSTRAINT `fk_image_tour` FOREIGN KEY (`tourId`) REFERENCES `tbl_tours` (`tourId`);
 
 --
--- Các ràng buộc cho bảng `tbl_invoice`
+-- Constraints for table `tbl_invoice`
 --
 ALTER TABLE `tbl_invoice`
   ADD CONSTRAINT `fk_invoice` FOREIGN KEY (`bookingId`) REFERENCES `tbl_booking` (`bookingId`);
 
 --
--- Các ràng buộc cho bảng `tbl_reviews`
+-- Constraints for table `tbl_reviews`
 --
 ALTER TABLE `tbl_reviews`
   ADD CONSTRAINT `fk_review_user` FOREIGN KEY (`userId`) REFERENCES `tlb_users` (`userId`),
   ADD CONSTRAINT `fk_revirew_tour` FOREIGN KEY (`tourId`) REFERENCES `tbl_tours` (`tourId`);
 
 --
--- Các ràng buộc cho bảng `tbl_timeline`
+-- Constraints for table `tbl_timeline`
 --
 ALTER TABLE `tbl_timeline`
   ADD CONSTRAINT `fk_tour` FOREIGN KEY (`tourId`) REFERENCES `tbl_tours` (`tourId`);
