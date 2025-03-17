@@ -42,6 +42,7 @@ class LoginGoogleController extends Controller
             } else {
                 $data_google = [
                     'google_id' => $user->id,
+                    'avatar' => $user->avatar,
                     'fullName' => $user->name,
                     'username' => 'user-google',
                     'password' => md5('12345678'),
