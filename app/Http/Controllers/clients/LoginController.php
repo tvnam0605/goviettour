@@ -127,6 +127,7 @@ class LoginController extends Controller
     {
         $request->session()->forget('username');
         $request->session()->forget('avatar');
+        $request->session()->forget('userId');
         toastr()->success("Đăng xuất thành công!", ['title' => 'Thông báo']);
 
         return redirect()->route('home');

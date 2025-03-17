@@ -42,11 +42,14 @@ class UserProfileController extends Controller
         $email = $req->email;
         $phone = $req->phone;
 
+        
+
         $dataUpdate = [
             'username' => $fullName,
             'address' => $address,
             'email' => $email,
-            'phoneNumber' => $phone
+            'phoneNumber' => $phone,
+            
         ];
 
         $userId = $this->getUserId();

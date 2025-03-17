@@ -12,27 +12,34 @@ class Login extends Model
 
     protected $table = 'tlb_users';
 
-   
+
 
     //Đăng ký người dùng mới
     public function registerAccount($data)
     {
-         return DB::table($this->table)->insert($data);
+        $userId = DB::table($this->table)->insertGetId($data);
 
+        if ($userId) {
+            return DB::table($this->table)->where('userId', $userId)->first(); // Lấy user mới tạo
+        }
+
+        return null;
     }
+
     //Kiểm tra username or email người dùng đã tồn tại hay chưa return true false
     public function checkUserExist($username, $email)
     {
         $check = DB::table($this->table)
             ->where('username', $username)
             ->orWhere('email', $email)
-            ->exists(); 
+            ->exists();
 
         return $check;
     }
 
     // Kiểm tra người dùng tồn tại theo token kích hoạt
-    public function getUserByToken($token){
+    public function getUserByToken($token)
+    {
         return DB::table($this->table)->where('activation_token', $token)->first();
     }
 
@@ -47,18 +54,26 @@ class Login extends Model
     public function login($account)
     {
         $getUser = DB::table($this->table)
-        ->where('username', $account['username'])
-        ->where('password', $account['password'])
-        ->first();
+            ->where('username', $account['username'])
+            ->where('password', $account['password'])
+            ->first();
 
         return $getUser;
     }
     // Kiểm tra người dùng tồn tại theo email
-    public function checkUserExistGoogle($google_id){
+    public function checkUserExistGoogle($google_id)
+    {
         $check = DB::table($this->table)
-        ->where('google_id', $google_id)->first();
-        dd($this->table);
-
+            ->where('google_id', $google_id)->first();
         return $check;
     }
+    public function getUserById($id)
+    {
+        return DB::table($this->table)->where('userId', $id)->first();
+    }
+    public function getUserByGoogleId($googleId)
+{
+    return DB::table('tlb_users')->where('google_id', $googleId)->first();
+}
+
 }

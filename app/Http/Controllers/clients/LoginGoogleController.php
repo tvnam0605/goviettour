@@ -24,39 +24,43 @@ class LoginGoogleController extends Controller
     }
 
     public function handleGoogleCallback()
-    {
-        try {
-            $user = Socialite::driver('google')->user();
-            $finduser = $this->user->checkUserExistGoogle($user->id); //Kiểm tra xem thử có id người dùng với email này chưa
-            // dd($finduser);
-            if ($finduser) {
-                session()->put('username', $finduser->username);
+{
+    try {
+        $user = Socialite::driver('google')->user();
+        $finduser = $this->user->checkUserExistGoogle($user->id); // Kiểm tra user đã tồn tại chưa
+
+        if ($finduser) {
+            // Đổi cách lấy user từ database bằng `google_id`
+            $dbUser = $this->user->getUserByGoogleId($finduser->google_id); 
+
+            // Lưu session với avatar từ database
+            session()->put('username', $dbUser->username);
+            session()->put('avatar', $dbUser->avatar); 
+
+            return redirect()->intended('/');
+        } else {
+            $data_google = [
+                'google_id' => $user->id,
+                'fullName' => $user->name,
+                'avatar' => $user->avatar, // Avatar từ Google chỉ lưu lần đầu
+                'username' => 'user-google',
+                'password' => md5('12345678'),
+                'email' => $user->email,
+                'isActive' => 'y'
+            ];
+            $newUser = $this->user->registerAccount($data_google);
+
+            if ($newUser) {
+                session()->put('username', $newUser->username);
+                session()->put('avatar', $newUser->avatar);
                 return redirect()->intended('/');
             } else {
-                $data_google = [
-                    'google_id' => $user->id,
-                    'avatar' => $user->avatar,
-                    'fullName' => $user->name,
-                    'username' => 'user-google',
-                    'password' => md5('12345678'),
-                    'email' => $user->email,
-                    'isActive' => 'y'
-                ];
-                $newUser = $this->user->registerAccount($data_google);
-                dd($newUser);
-
-                // Kiểm tra xem $newUser có hợp lệ không
-                if ($newUser && isset($newUser->username)) {
-                    // Lưu thông tin người dùng mới vào session
-                    session()->put('username', $newUser->username);
-                    return redirect()->intended('/');
-                } else {
-                    // Nếu có lỗi khi đăng ký người dùng mới, xử lý lỗi
-                    return redirect()->back()->with('error', 'Có lỗi xảy ra trong quá trình đăng ký người dùng mới');
-                }
+                return redirect()->back()->with('error', 'Có lỗi xảy ra khi đăng ký người dùng mới');
             }
-        } catch (Exception $e) {
-            dd($e->getMessage());
         }
+    } catch (Exception $e) {
+        dd($e->getMessage());
     }
+}
+
 }
