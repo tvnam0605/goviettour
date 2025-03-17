@@ -57,6 +57,7 @@ class Login extends Model
     public function checkUserExistGoogle($google_id){
         $check = DB::table($this->table)
         ->where('google_id', $google_id)->first();
+        dd($this->table);
 
         return $check;
     }

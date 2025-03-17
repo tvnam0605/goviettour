@@ -12,24 +12,17 @@ use Illuminate\Support\Facades\Auth;
 class LoginGoogleController extends Controller
 {
 
-    private $user;
-    public function __construct(User $user)
+    protected $user;
+    public function __construct()
     {
         $this->user = new Login();
     }
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
+
     public function redirectToGoogle()
-
     {
-
         return Socialite::driver('google')->redirect();
     }
+
     public function handleGoogleCallback()
     {
         try {
@@ -50,8 +43,10 @@ class LoginGoogleController extends Controller
                     'isActive' => 'y'
                 ];
                 $newUser = $this->user->registerAccount($data_google);
-               // Kiểm tra xem $newUser có hợp lệ không
-                if ($newUser instanceof User && isset($newUser->username)) {
+                dd($newUser);
+
+                // Kiểm tra xem $newUser có hợp lệ không
+                if ($newUser && isset($newUser->username)) {
                     // Lưu thông tin người dùng mới vào session
                     session()->put('username', $newUser->username);
                     return redirect()->intended('/');
@@ -59,57 +54,9 @@ class LoginGoogleController extends Controller
                     // Nếu có lỗi khi đăng ký người dùng mới, xử lý lỗi
                     return redirect()->back()->with('error', 'Có lỗi xảy ra trong quá trình đăng ký người dùng mới');
                 }
-                return redirect()->intended('/login');
             }
         } catch (Exception $e) {
             dd($e->getMessage());
         }
-    }
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }
