@@ -67,7 +67,9 @@
 
 {{-- datetimepicker  --}}
 <script src="{{ asset('admin/assets/js/jquery.datetimepicker.full.min.js') }}"></script>
-<!-- Custom Scripts By DevDien -->
+
+<script src="{{ asset('admin/vendors/Chart.js/dist/Chart.min.js') }}"></script>
+
 <script src="{{ asset('admin/assets/js/custom-js.js') }}"></script>
 
 </body>

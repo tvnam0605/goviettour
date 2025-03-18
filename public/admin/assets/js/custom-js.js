@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
     /********************************************
      * USER MANAGEMENT                          *
@@ -907,4 +909,73 @@ $(document).ready(function () {
     /********************************************
      * DASHBOARD                                  *
      ********************************************/
+ 
+
+
 });
+function initChart() {
+    console.log("🔄 Bắt đầu khởi tạo biểu đồ...");
+
+    // Kiểm tra Chart.js đã load chưa
+    if (typeof Chart !== "function") {
+        console.error("❌ Chart.js chưa được load!");
+        return;
+    }
+
+    // Kiểm tra xem canvas có tồn tại không
+    let canvas = document.querySelector(".canvasDoughnut");
+    if (!canvas) {
+        console.error("❌ Không tìm thấy phần tử canvasDoughnut!");
+        return;
+    }
+
+    // Lấy dữ liệu từ data-chart-values
+    let dataValues = canvas.getAttribute("data-chart-values");
+    if (!dataValues) {
+        console.error("❌ Không có dữ liệu biểu đồ trong data-chart-values!");
+        return;
+    }
+
+    // Kiểm tra dữ liệu hợp lệ không
+    let data;
+    try {
+        data = JSON.parse(dataValues);
+    } catch (e) {
+        console.error("❌ Lỗi khi parse JSON:", e);
+        return;
+    }
+
+    // Kiểm tra dữ liệu có hợp lệ không (phải là mảng số)
+    if (!Array.isArray(data) || data.length === 0 || data.some(isNaN)) {
+        console.error("❌ Dữ liệu không hợp lệ! Phải là mảng số.");
+        return;
+    }
+
+    // Khởi tạo biểu đồ
+    let ctx = canvas.getContext("2d");
+    new Chart(ctx, {
+        type: "doughnut",
+        data: {
+            labels: ["Miền Bắc", "Miền Trung", "Miền Nam"],
+            datasets: [{
+                data: data,
+                backgroundColor: ["#FF0000", "#00FF00", "#800080"]
+            }]
+        },
+        options: {
+            responsive: true, // Cho phép biểu đồ thay đổi kích thước
+            maintainAspectRatio: false, // Tắt duy trì tỷ lệ khung hình
+        }
+    });
+
+    console.log("✅ Biểu đồ Doughnut đã khởi tạo!");
+}
+
+// Gọi hàm initChart sau khi trang đã load
+document.addEventListener("DOMContentLoaded", function() {
+    initChart();
+});
+
+    
+    
+

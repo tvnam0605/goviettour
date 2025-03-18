@@ -26,7 +26,7 @@
             <div class="menu_section">
                 <h3>Tổng quan</h3>
                 <ul class="nav side-menu">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a> </li>
+                    <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a> </li>
                     <li><a href="{{ route('admin.admin') }}"><i class="fa fa-table"></i> Quản lý Admin</a> </li>
                     <li><a href="{{ route('admin.users') }}"><i class="fa fa-table"></i> Quản lý người dùng</a> </li>
                     <li><a><i class="fa fa-table"></i> Quản lý Tours<span class="fa fa-chevron-down"></span></a>
