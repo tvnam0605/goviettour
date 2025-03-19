@@ -104,3 +104,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::post('/add-temp-images', [ToursManagementController::class, 'uploadTempImagesTours'])->name('admin.add-temp-images');
 
 });
+
+//Hanlde checkout 
+Route::post('/booking/{id?}',[BookingController::class, 'index'])->name('booking');
+Route::post('/submit-booking}',[BookingController::class, 'createBooking'])->name('create-booking');
