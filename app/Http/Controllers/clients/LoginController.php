@@ -16,7 +16,7 @@ class LoginController extends Controller
 {
     private $login;
 
-    protected $user;
+    private $user;
     public function __construct()
     {
         $this->login = new Login();

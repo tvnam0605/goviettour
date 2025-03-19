@@ -84,5 +84,14 @@ class Tours extends Model
         //dd($queryLog);
         return $tours;
         }
+
+        public function updateTours($tourId, $data)
+        {
+            $update = DB::table($this->table)
+            ->where('tourId', $tourId)
+            ->update($data);
+
+        return $update;
+        }
     }
 

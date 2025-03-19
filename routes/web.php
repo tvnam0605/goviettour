@@ -102,9 +102,8 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('/tour-edit', [ToursManagementController::class, 'getTourEdit'])->name('admin.tour-edit');
     Route::post('/edit-tour', [ToursManagementController::class, 'updateTour'])->name('admin.edit-tour');
     Route::post('/add-temp-images', [ToursManagementController::class, 'uploadTempImagesTours'])->name('admin.add-temp-images');
-
 });
 
 //Hanlde checkout 
-Route::post('/booking/{id?}',[BookingController::class, 'index'])->name('booking');
-Route::post('/submit-booking}',[BookingController::class, 'createBooking'])->name('create-booking');
+Route::post('/booking/{id?}', [BookingController::class, 'index'])->name('booking');
+Route::post('/submit-booking}', [BookingController::class, 'createBooking'])->name('create-booking');

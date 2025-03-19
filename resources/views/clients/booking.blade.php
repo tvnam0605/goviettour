@@ -46,7 +46,7 @@
                     <label>Người lớn</label>
                     <div class="input__quanlity">
                         <button type="button" class="quantity-btn">-</button>
-                        <input type="number" class="quantity-input" value="1" min="1" id="numAdults"
+                        <input type="number" class="quantity-input" value="1" min="1" id="numAdults" name="numAdults"
                          data-price-adults="100000" readonly>
                         <button type="button" class="quantity-btn">+</button>
                     </div>
@@ -56,7 +56,7 @@
                     <label>Trẻ em</label>
                     <div class="input__quanlity">
                         <button type="button" class="quantity-btn">-</button>
-                        <input type="number" class="quantity-input" value="0" min="0" id="numChildren"
+                        <input type="number" class="quantity-input" value="0" min="0" id="numChildren" name="numChildren"
                          data-price-children="50000" readonly>
                         <button type="button" class="quantity-btn">+</button>
                     </div>
@@ -102,9 +102,11 @@
             <div class="summary-section">
                 <div>
                     <p>Mã tour : {{ $tour->tourId }}</p>
+                    <input type="hidden" name="tourId" id="tourId" value="{{ $tour->tourId }}">
                     <h5 class="widget-title">{{  $tour->title }}</h4>
-                    <p>Ngày khởi hành : {{ $tour->startDate }}</p>
-                    <p>Ngày kết thúc : {{ $tour->endDate  }}</p>
+                    <p>Ngày khởi hành : {{ date('d-m-Y', strtotime($tour->startDate))  }}</p>
+                    <p>Ngày kết thúc : {{ date('d-m-Y', strtotime($tour->endDate))  }}</p>
+                    <p class="quantityAvailable">Số chỗ còn nhận : {{ $tour->quantity }}</p>
                 </div>
                 <div class="order-summary">
                     <div class="summary-item">
@@ -132,6 +134,7 @@
                     <div class="summary-item total-price">
                         <span>Tổng cộng:</span>
                         <span>0 VNĐ</span>
+                        <input type="hidden" class="totalPrice" name="totalPrice" value="">
                     </div>
                 </div>
                 <div class="order-coupon">

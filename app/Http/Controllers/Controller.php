@@ -14,9 +14,9 @@ class Controller extends BaseController
 
     protected $user;
 
-    public function __construct(User $user)
+    public function __construct()
     {
-        $this->user = $user;
+        $this->user = new User();
     }
 
 
@@ -29,5 +29,6 @@ class Controller extends BaseController
                 session()->put('userId',$userId);
             }
         }
+        return session()->get('userId');
     }
 }

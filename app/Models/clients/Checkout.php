@@ -2,18 +2,19 @@
 
 namespace App\Models\clients;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
-class Booking extends Model
+class Checkout extends Model
 {
     use HasFactory;
 
-    protected $table = "tbl_booking";
+    protected $table = "tbl_checkout";
 
-    public function createBooking($data) {
+    public function createCheckout($data) {
         //chèn dlieu và trả về ID của bản vừa tạo
         return DB::table($this->table)->insertGetId($data);
     }
+
 }
