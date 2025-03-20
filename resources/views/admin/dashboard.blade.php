@@ -115,7 +115,7 @@
                         </div>
                         <div class="x_content">
 
-                            <div id="echart_donut" data-payment-method='#'
+                            <div id="echart_donut" data-payment-method='{{ json_encode($paymentStatus) }}'
                                 style="height: 350px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative; background-color: transparent;"
                                 _echarts_instance_="ec_1733563825119">
                                 <div

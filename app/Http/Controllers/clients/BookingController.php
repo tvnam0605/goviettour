@@ -62,14 +62,20 @@ class BookingController extends Controller
             'bookingId' => $bookingId,
             'paymentMethod' => $paymentMethod,
             'amount' => $totalPrice,
-            'paymentStatus' => 'n',
+            'paymentStatus' => ($paymentMethod === 'paypal-payment' || $paymentMethod === 'momo-payment') ? 'y' : 'n',
         ];
-        $checkout = $this->checkout->createCheckout($dataCheckout);
-
-        if (empty($bookingId) && !$checkout) {
-            toastr()->error('Có vấn đề khi đặt tour!');
-            return redirect()->back();
+        if ($paymentMethod === 'paypal-payment') {
+            $dataCheckout['transactionId'] = $req->transactionIdPaypal;
+        } elseif ($paymentMethod === 'momo-payment') {
+            $dataCheckout['transactionId'] = $req->transactionIdMomo;
         }
+        $checkoutId = $this->checkout->createCheckout($dataCheckout);
+
+        if (empty($bookingId) && !$checkoutId) {
+            toastr()->error('Có vấn đề khi đặt tour!');
+            return redirect()->back(); // Quay lại trang hiện tại nếu có lỗi
+        }
+      
 
         //Update quantity mới cho tour đó, -số lượng
         $tour = $this->tour->getTourDetail($tourId);
@@ -81,6 +87,9 @@ class BookingController extends Controller
 
         /********************** */
         toastr()->success('Đặt tour thành công!');
-        return redirect()->route('tours');
+        return redirect()->route('tour-booked', [
+            'bookingId' => $bookingId,
+            'checkoutId' => $checkoutId,
+        ]);
     }
 }

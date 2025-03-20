@@ -42,6 +42,14 @@ class DashboardModel extends Model
             ->get()
             ->pluck('count', 'domain');  // Trả về mảng với key là domain và value là count
     }
+    public function getValuePayment()
+    {
+        return DB::table('tbl_checkout')
+            ->select('paymentMethod', DB::raw('COUNT(*) as count'))
+            ->groupBy('paymentMethod')
+            ->get()
+            ->toArray();
+    }
     public function getMostTourBooked()
     {
         return DB::table('tbl_tours')

@@ -20,6 +20,7 @@ use App\Http\Controllers\clients\LoginController;
 use App\Http\Controllers\clients\LoginGoogleController;
 use App\Http\Controllers\clients\SearchController;
 use App\Http\Controllers\clients\TestimonialController;
+use App\Http\Controllers\clients\TourBookedController;
 use App\Http\Controllers\clients\TourDetailController;
 use App\Http\Controllers\clients\ToursController;
 use App\Http\Controllers\clients\TravelGuidesController;
@@ -65,12 +66,6 @@ Route::post('/user-profile', [UserProfileController::class, 'update'])->name('up
 Route::post('/change-password-profile', [UserProfileController::class, 'changePassword'])->name('change-password');
 Route::post('/change-avatar-profile', [UserProfileController::class, 'changeAvatar'])->name('change-avatar');
 
-
-
-
-
-
-
 //ADMIN
 //route without middleware
 Route::prefix('admin')->group(function () {
@@ -106,4 +101,9 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 
 //Hanlde checkout 
 Route::post('/booking/{id?}', [BookingController::class, 'index'])->name('booking');
+Route::post('/create-booking', [BookingController::class, 'createBooking'])->name('create-booking');
 Route::post('/submit-booking}', [BookingController::class, 'createBooking'])->name('create-booking');
+
+
+//tour booked
+Route::get('/tour-booked', [TourBookedController::class, 'index'])->name('tour-booked')->middleware('checkLoginClient');

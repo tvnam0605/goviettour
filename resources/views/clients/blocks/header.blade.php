@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>GoVietTour - {{ $title }}</title>
+    <title>GovietTour - {{ $title }}</title>
     <!-- Favicon Icon -->
     <link rel="shortcut icon" href="{{ asset('clients/assets/images/logos/favicon.png') }}" type="image/x-icon">
     <!-- Google Fonts -->
@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="{{ asset('clients/assets/css/magnific-popup.min.css') }}">
     <!-- Nice Select -->
     <link rel="stylesheet" href="{{ asset('clients/assets/css/nice-select.min.css') }}">
-    <!--jQuery UI-->
+    <!-- jQuery UI -->
     <link rel="stylesheet" href="{{ asset('clients/assets/css/jquery-ui.min.css') }}">
     <!-- Animate -->
     <link rel="stylesheet" href="{{ asset('clients/assets/css/aos.css') }}">
@@ -35,25 +35,24 @@
     <!-- Main Style -->
     <link rel="stylesheet" href="{{ asset('clients/assets/css/style.css') }}">
 
-
-
     {{-- boxicons --}}
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-
+    {{-- Login  --}}
     <!-- Font Icon -->
     <link rel="stylesheet"
         href="{{ asset('clients/assets/css/css-login/fonts/material-icon/css/material-design-iconic-font.min.css') }}">
     <!-- Main css -->
     <link rel="stylesheet" href="{{ asset('clients/assets/css/css-login/style.css') }}">
-    {{-- custom-css --}}
+    {{-- custom css by Dien --}}
     <link rel="stylesheet" href="{{ asset('clients/assets/css/custom-css.css') }}" />
-    
-    {{-- User Proflie --}}
+
+    {{-- User Profile  --}}
     <link rel="stylesheet" href="{{ asset('clients/assets/css/user-profile.css') }}" />
 
     <!-- Import CSS for Toastr -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+
 </head>
 
 <body>
@@ -96,12 +95,12 @@
                                         <span class="icon-bar"></span>
                                     </button>
                                 </div>
-
                                 <div class="navbar-collapse collapse clearfix">
                                     <ul class="navigation clearfix">
                                         <li class="current"><a href="{{ route('home') }}">Trang chủ</a></li>
                                         <li><a href="{{ route('about') }}">Giới thiệu</a></li>
-                                        <li class="dropdown {{ Request::is('tours') || Request::is('team') || Request::is('tour-detail/*') ? 'active' : '' }}">
+                                        <li
+                                            class="dropdown {{ Request::is('tours') || Request::is('team') || Request::is('tour-detail/*') ? 'active' : '' }}">
                                             <a href="#">Tours</a>
                                             <ul>
                                                 <li><a href="{{ route('tours') }}">Tour</a></li>
@@ -110,8 +109,6 @@
                                         </li>
                                         <li><a href="{{ route('destination') }}">Điểm đến</a></li>
                                         <li><a href="{{ route('contact') }}">Liên hệ</a></li>
-
-                                        <li class=""><a href="{{ route('blogs') }}">Blog</a></li>
                                     </ul>
 
 
@@ -122,30 +119,33 @@
                         </div>
 
                         <!-- Menu Button -->
-                        <div class="menu-btns py-10">
-                            <a href="{{ route('tours') }}" class="theme-btn style-two bgc-secondary">
-                                <span data-hover="Book Now">Đặt ngay</span>
-                                <i class="fal fa-arrow-right"></i>
-                            </a>
-                            <!-- menu sidbar -->
-                            <div class="menu-sidebar">
-                                <li class="drop-down">
-                                <button class="dropdown-toggle bg-transparent " id="userDropdown">
-                                    <i class='bx bxs-user bx-tada ' style="font-size: 36px; color: black;"></i>
-                                </button> 
-                                <ul class="dropdown-menu" id="dropdownMenu">
-                                    @if(@session()->has('username'))
-                                        <li> {{ session()->get('username') }}</li>
-                                        <li><a href="{{ route('user-profile') }}">Thông tin cá nhân</a></li>
-                                        <li><a href="{{ route('logout') }}">Đăng xuất</a></li>
+                         <!-- menu sidbar -->
+                         <div class="menu-sidebar">
+                            <li class="drop-down">
+                                <button class="dropdown-toggle bg-transparent" id="userDropdown"style="color: white">
+                                    @if (session()->has('avatar'))
+                                        @php
+                                            $avatar = session('avatar') ?? 'user_avatar.png';
+                                        @endphp
 
-                                        
+                                        <img id="avatarPreview" class="img-account-profile rounded-circle "
+                                            src="{{ asset('clients/assets/images/user-profile/' . $avatar) }}"
+                                            style="width: 36px; height: 36px;">
+                                    @else
+                                        <i class='bx bxs-user bx-tada' style="font-size: 36px; color: white;"></i>
+                                    @endif
+                                </button>
+
+                                <ul class="dropdown-menu" id="dropdownMenu">
+                                    @if (session()->has('username'))
+                                        <li><a href="{{ route('user-profile') }}">Thông tin cá nhân</a></li>
+                                        <li><a href="{{ route('tour-booked') }}">Tour đã đặt</a></li>
+                                        <li><a href="{{ route('logout') }}">Đăng xuất</a></li>
                                     @else
                                         <li><a href="{{ route('login') }}">Đăng nhập</a></li>
                                     @endif
                                 </ul>
-                            </li>      
-                        </div>
+                            </li>
                         </div>
                     </div>
                 </div>

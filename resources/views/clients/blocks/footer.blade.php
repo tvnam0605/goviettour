@@ -95,33 +95,44 @@
 <!--End pagewrapper-->
 
 
+@if(session('error'))
+<script>
+    alert("{{ session('error') }}");
+</script>
+@endif
 <!-- Jquery -->
-<script src="{{ asset('clients/assets/js/jquery-3.6.0.min.js') }}"></script>
+<script src="{{asset('clients/assets/js/jquery-3.6.0.min.js')}}"></script>
 <!-- Bootstrap -->
-<script src="{{ asset('clients/assets/js/bootstrap.min.js') }}"></script>
+<script src="{{asset('clients/assets/js/bootstrap.min.js')}}"></script>
 <!-- Appear Js -->
-<script src="{{ asset('clients/assets/js/appear.min.js') }}"></script>
+<script src="{{asset('clients/assets/js/appear.min.js')}}"></script>
 <!-- Slick -->
-<script src="{{ asset('clients/assets/js/slick.min.js') }}"></script>
+<script src="{{asset('clients/assets/js/slick.min.js')}}"></script>
 <!-- Magnific Popup -->
-<script src="{{ asset('clients/assets/js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{asset('clients/assets/js/jquery.magnific-popup.min.js')}}"></script>
 <!-- Nice Select -->
-<script src="{{ asset('clients/assets/js/jquery.nice-select.min.js') }}"></script>
+<script src="{{asset('clients/assets/js/jquery.nice-select.min.js')}}"></script>
 <!-- Image Loader -->
-<script src="{{ asset('clients/assets/js/imagesloaded.pkgd.min.js') }}"></script>
+<script src="{{asset('clients/assets/js/imagesloaded.pkgd.min.js')}}"></script>
+<!-- Skillbar -->
+<script src="{{asset('clients/assets/js/skill.bars.jquery.min.js')}}"></script>
 <!-- Jquery UI -->
-<script src="{{ asset('clients/assets/js/jquery-ui.min.js') }}"></script>
+<script src="{{asset('clients/assets/js/jquery-ui.min.js')}}"></script>
 <!-- Isotope -->
-<script src="{{ asset('clients/assets/js/isotope.pkgd.min.js') }}"></script>
+<script src="{{asset('clients/assets/js/isotope.pkgd.min.js')}}"></script>
 <!--  AOS Animation -->
-<script src="{{ asset('clients/assets/js/aos.js') }}"></script>
+<script src="{{asset('clients/assets/js/aos.js')}}"></script>
 <!-- Custom script -->
-<script src="{{ asset('clients/assets/js/script.js') }}"></script>
-<!-- Custom script -->
-<script src="{{ asset('clients/assets/js/custom-js.js') }}"></script>
-<script src="{{ asset('clients/assets/js/jquery.datetimepicker.full.min.js') }}"></script>
+<script src="{{asset('clients/assets/js/script.js')}}"></script>
 {{-- jquery-toast  --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+{{-- paypal-payment  --}}
+<script src="https://www.paypal.com/sdk/js?client-id=ARN9v4XnRJd84r-8HRkKWQxWBFC3uakGrxkhA-15LpSRvUyqBNRpNEdU93AvbA02x2AglaiCq6zqVPwc"></script>
+
+<!-- Custom script by Dev dien-->
+<script src="{{asset('clients/assets/js/custom-js.js')}}"></script>
+<script src="{{asset('clients/assets/js/jquery.datetimepicker.full.min.js')}}"></script>
 </body>
 
 <!-- Mirrored from webtendtheme.net/html/2024/GoVietTour/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 07 Oct 2024 09:28:00 GMT -->

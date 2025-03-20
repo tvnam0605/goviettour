@@ -16,12 +16,12 @@ class CheckLoggedInClients
      */
     public function handle(Request $request, Closure $next)
     {
-        
-        if(!$request->session()->has('username'))
-        {
-            toastr()->error('Vui lòng đăng nhập để thực hiện.', "Thông báo");
+        // Kiểm tra nếu user chưa đăng nhập và không phải là admin
+        if (!$request->session()->has('username') && !$request->session()->has('admin')) {
+            toastr()->error('Vui lòng đăng nhập để tiếp tục.', "Thông báo");
             return redirect()->route('login');
         }
+
         return $next($request);
     }
 }
