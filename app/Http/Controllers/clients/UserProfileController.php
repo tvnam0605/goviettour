@@ -9,23 +9,14 @@ use Illuminate\Support\Facades\File;
 
 class UserProfileController extends Controller
 {
-    private $user;
+    protected $user;
 
     public function __construct()
     {
+        parent::__construct();
         $this->user = new User();
     }
-    protected function getUserId()
-    {
-        if (!session()->has('userId')) {
-            $username = session()->get('username');
-            if ($username) {
-                $userId = $this->user->getUserId($username);
-                session()->put('userId', $userId); //lưu userId vào sesion để dừng lại
-            }
-        }
-        return session()->get('userId');
-    }
+
     public function index()
     {
         $title = 'Thông tin cá nhân';
