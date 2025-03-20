@@ -247,7 +247,7 @@
                                 <a class="read-more" href="#">Phản hồi <i class="far fa-angle-right"></i></a>
                             </div>
                         </div>
-                        <div class="comment-body comment-child" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
+                        {{-- <div class="comment-body comment-child" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
                             <div class="author-thumb">
                                 <img src="assets/images/blog/comment-author2.jpg" alt="Author">
                             </div>
@@ -262,12 +262,12 @@
                                 </div>
                                 <span class="time">PHÚ QUỐC 3 ngày 2 đêm</span>
                                 <p>Các chuyến tham quan và du lịch đóng vai trò quan trọng trong việc làm phong phú thêm cuộc sống bằng cách mang đến những trải nghiệm độc đáo, giao lưu văn hóa và niềm vui khám phá.</p>
-                                <a class="read-more" href="#">Reply <i class="far fa-angle-right"></i></a>
+                                <a class="read-more" href="#">Phản hồi <i class="far fa-angle-right"></i></a>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="comment-body" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
                             <div class="author-thumb">
-                                <img src="assets/images/blog/comment-author3.jpg" alt="Author">
+                                <img src="\assets\images\blog\user-review.jpg" alt="Author">
                             </div>
                             <div class="content">
                                 <h6>Van C</h6>
@@ -280,7 +280,7 @@
                                 </div>
                                 <span class="time">PHÚ QUỐC 3 ngày 2 đêm</span>
                                 <p>Các chuyến tham quan và du lịch đóng vai trò quan trọng trong việc làm phong phú thêm cuộc sống bằng cách mang đến những trải nghiệm độc đáo, giao lưu văn hóa và niềm vui khám phá.</p>
-                                <a class="read-more" href="#">Reply <i class="far fa-angle-right"></i></a>
+                                <a class="read-more" href="#">Phản hồi <i class="far fa-angle-right"></i></a>
                             </div>
                         </div>
                     </div>
