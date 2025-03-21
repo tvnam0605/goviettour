@@ -16,7 +16,6 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap"
         rel="stylesheet">
-
     <!-- Flaticon -->
     <link rel="stylesheet" href="{{ asset('clients/assets/css/flaticon.min.css') }}">
     <!-- Font Awesome -->
@@ -27,7 +26,7 @@
     <link rel="stylesheet" href="{{ asset('clients/assets/css/magnific-popup.min.css') }}">
     <!-- Nice Select -->
     <link rel="stylesheet" href="{{ asset('clients/assets/css/nice-select.min.css') }}">
-    <!--jQuery UI-->
+    <!-- jQuery UI -->
     <link rel="stylesheet" href="{{ asset('clients/assets/css/jquery-ui.min.css') }}">
     <!-- Animate -->
     <link rel="stylesheet" href="{{ asset('clients/assets/css/aos.css') }}">
@@ -38,10 +37,9 @@
 
     {{-- boxicons --}}
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    {{-- Date time  picker --}}
+    {{-- date time picker  --}}
     <link rel="stylesheet" href="{{ asset('clients/assets/css/jquery.datetimepicker.min.css') }}" />
-
-    {{-- custom-css --}}
+    {{-- custom css by Dien --}}
     <link rel="stylesheet" href="{{ asset('clients/assets/css/custom-css.css') }}" />
     <!-- Import CSS for Toastr -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
@@ -106,8 +104,7 @@
                                                 href="{{ route('destination') }}">Điểm đến</a></li>
                                         <li class="{{ Request::url() == route('contact') ? 'active' : '' }}"><a
                                                 href="{{ route('contact') }}">Liên hệ</a></li>
-                                        <li class="{{ Request::url() == route('blogs') ? 'active' : '' }}"><a
-                                                href="{{ route('blogs') }}">Blog</a></li>
+                                        
                                     </ul>
 
 
@@ -152,6 +149,7 @@
                                     <ul class="dropdown-menu" id="dropdownMenu">
                                         @if (session()->has('username'))
                                             <li><a href="{{ route('user-profile') }}">Thông tin cá nhân</a></li>
+                                            <li><a href="{{ route('tour-booked') }}">Tour đã đặt</a></li>
                                             <li><a href="{{ route('logout') }}">Đăng xuất</a></li>
                                         @else
                                             <li><a href="{{ route('login') }}">Đăng nhập</a></li>

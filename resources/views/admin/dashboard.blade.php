@@ -100,7 +100,7 @@
                 <div class="col-md-6 col-sm-4  ">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h2>Đặt tour</h2>
+                            <h2>Phương thức thanh toán</h2>
                             <ul class="nav navbar-right panel_toolbox">
                                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                 </li>
@@ -115,7 +115,7 @@
                         </div>
                         <div class="x_content">
 
-                            <div id="echart_donut" data-payment-method='#'
+                            <div id="echart_donut" data-payment-method='{{ json_encode($paymentStatus) }}'
                                 style="height: 350px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative; background-color: transparent;"
                                 _echarts_instance_="ec_1733563825119">
                                 <div
@@ -169,13 +169,20 @@
                     </div>
                 </div>
 
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-6 col-sm-6  ">
                     <div class="x_panel">
                         <div class="x_title">
                             <h2>Đơn đặt mới</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
+
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
@@ -187,15 +194,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>0</td>
-                                        <td>Khách hàng Demo</td>
-                                        <td>Tour Demo</td>
-                                        <td>0</td>
-                                        <td><span class="badge badge-warning">Chưa xác nhận</span></td>
-                                    </tr>
+                                    @foreach ($newBooking as $item)
+                                        <tr>
+                                            <th scope="row">
+                                                <a href="#">{{ $item->bookingId }}</a>
+                                            </th>
+                                            <td>{{ $item->fullName }}</td>
+                                            <td>{{ $item->tour_name }}</td>
+                                            <td>{{ number_format($item->totalPrice, 0, ',', '.') }}</td>
+                                            <td>
+                                                <span class="badge badge-warning">Chưa xác nhận</span>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
+
                         </div>
                     </div>
                 </div>

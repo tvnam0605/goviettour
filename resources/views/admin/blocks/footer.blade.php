@@ -69,6 +69,7 @@
 <script src="{{ asset('admin/assets/js/jquery.datetimepicker.full.min.js') }}"></script>
 
 <script src="{{ asset('admin/vendors/Chart.js/dist/Chart.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
 
 <script src="{{ asset('admin/assets/js/custom-js.js') }}"></script>
 

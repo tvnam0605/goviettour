@@ -12,43 +12,44 @@ class Tours extends Model
 
     protected $table = 'tbl_tours';
     //Lấy tất cả
-    public function getAllTours(){
-        
+    public function getAllTours()
+    {
+
         $allTours = DB::table($this->table)->get();
-        foreach ($allTours as $tour)
-        {
+        foreach ($allTours as $tour) {
             //lấy danh sách hình ảnh tour
             $tour->images = DB::table('tbl_images')
-                ->where( 'tourId', $tour->tourId)
-                ->pluck( 'imageUrl');
+                ->where('tourId', $tour->tourId)
+                ->pluck('imageUrl');
         }
-        
+
         return $allTours;
     }
     //Lấy chi tiết Tour
     public function getTourDetail($id)
     {
         $getTourDetail = DB::table($this->table)
-        ->where('tourId', $id)
-        ->first();
+            ->where('tourId', $id)
+            ->first();
 
-        if ($getTourDetail){
+        if ($getTourDetail) {
             //lấy danh sách hình ảnh thuộc về tour
             $getTourDetail->images = DB::table('tbl_images')
-                ->where( 'tourId', $getTourDetail->tourId)
+                ->where('tourId', $getTourDetail->tourId)
                 ->limit(5)
-                ->pluck( 'imageUrl');
-        
+                ->pluck('imageUrl');
+
             /*lấy danh sách timeline thuộc về tour*/
-         $getTourDetail->timeline = DB::table('tbl_timeline')
-            ->where('tourId', $getTourDetail->tourId)
-            ->get() ;
+            $getTourDetail->timeline = DB::table('tbl_timeline')
+                ->where('tourId', $getTourDetail->tourId)
+                ->get();
         }
         return $getTourDetail;
     }
     //Lấy khu vực đến b-t-n
 
-    function getDomain() {
+    function getDomain()
+    {
         return DB::table($this->table)
             ->select('domain', DB::raw('COUNT(*) as count'))
             ->whereIn('domain', ['b', 't', 'n'])
@@ -56,12 +57,13 @@ class Tours extends Model
             ->get();
     }
     // Filter tours
-    public function filterTours($filters = [], $sorting =null, $perPage = null){
+    public function filterTours($filters = [], $sorting = null, $perPage = null)
+    {
 
         DB::enableQueryLog();
-        $getTours = DB::table($this-> table);
+        $getTours = DB::table($this->table);
 
-        if(!empty($filters)) {
+        if (!empty($filters)) {
 
             $getTours = $getTours->where($filters);
         }
@@ -69,29 +71,40 @@ class Tours extends Model
         if (!empty($sorting) && isset($sorting[0]) && isset($sorting[1])) {
             $getTours = $getTours->orderBy($sorting[0], $sorting[1]);
         }
-        
+
         $tours = $getTours->get();
 
         $queryLog = DB::getQueryLog();
 
-        foreach ($tours as $tour)
-        {
+        foreach ($tours as $tour) {
             //lấy danh sách hình ảnh tour
             $tour->images = DB::table('tbl_images')
-                ->where( 'tourId', $tour->tourId)
-                ->pluck( 'imageUrl');
+                ->where('tourId', $tour->tourId)
+                ->pluck('imageUrl');
         }
         //dd($queryLog);
         return $tours;
-        }
+    }
 
-        public function updateTours($tourId, $data)
-        {
-            $update = DB::table($this->table)
+    public function updateTours($tourId, $data)
+    {
+        $update = DB::table($this->table)
             ->where('tourId', $tourId)
             ->update($data);
 
         return $update;
-        }
     }
-
+     //Lấy detail tour đã đặt
+     public function tourBooked($bookingId, $checkoutId)
+     {
+         $booked = DB::table($this->table)
+             ->join('tbl_booking', 'tbl_tours.tourId', '=', 'tbl_booking.tourId')
+             ->join('tbl_checkout', 'tbl_booking.bookingId', '=', 'tbl_checkout.bookingId')
+             ->where('tbl_booking.bookingId', '=', $bookingId)
+             ->where('tbl_checkout.checkoutId', '=', $checkoutId)
+             ->first();
+ 
+         return $booked;
+     }
+ 
+}

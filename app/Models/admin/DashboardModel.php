@@ -42,6 +42,14 @@ class DashboardModel extends Model
             ->get()
             ->pluck('count', 'domain');  // Trả về mảng với key là domain và value là count
     }
+    public function getValuePayment()
+    {
+        return DB::table('tbl_checkout')
+            ->select('paymentMethod', DB::raw('COUNT(*) as count'))
+            ->groupBy('paymentMethod')
+            ->get()
+            ->toArray();
+    }
     public function getMostTourBooked()
     {
         return DB::table('tbl_tours')
@@ -51,6 +59,17 @@ class DashboardModel extends Model
             ->orderByDesc(DB::raw('SUM(tbl_booking.numAdults + tbl_booking.numChildren)')) // Sắp xếp theo số lượng đặt tour giảm dần
             ->take(3) // Lấy 3 tour có số lượng đặt cao nhất
             ->get();
+    }
+    public function getNewBooking()
+    {
+        return DB::table('tbl_booking')
+            ->join('tbl_tours', 'tbl_booking.tourId', '=', 'tbl_tours.tourId')
+            ->where('tbl_booking.bookingStatus', 'n')
+            ->orderByDesc('tbl_booking.bookingDate')
+            ->select('tbl_booking.*', 'tbl_tours.title as tour_name') // Chọn tất cả các cột từ tbl_booking và thêm tên tour từ tbl_tours
+            ->take(3)
+            ->get();
+
     }
 
 }

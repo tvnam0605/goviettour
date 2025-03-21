@@ -18,8 +18,10 @@ use Illuminate\Support\Facades\View;
 use App\Http\Controllers\clients\HomeController;
 use App\Http\Controllers\clients\LoginController;
 use App\Http\Controllers\clients\LoginGoogleController;
+use App\Http\Controllers\clients\PaypalController;
 use App\Http\Controllers\clients\SearchController;
 use App\Http\Controllers\clients\TestimonialController;
+use App\Http\Controllers\clients\TourBookedController;
 use App\Http\Controllers\clients\TourDetailController;
 use App\Http\Controllers\clients\ToursController;
 use App\Http\Controllers\clients\TravelGuidesController;
@@ -55,9 +57,6 @@ Route::get('auth/google/callback', [LoginGoogleController::class, 'handleGoogleC
 Route::get('/tours', [ToursController::class, 'index'])->name('tours');
 Route::get('/filter-tours', [ToursController::class, 'filterTours'])->name('filter-tours');
 
-Route::fallback(function () {
-    return view('clients.errors.404');
-});
 
 //thongtincanhan
 Route::get('/user-profile', [UserProfileController::class, 'index'])->name('user-profile');
@@ -65,9 +64,26 @@ Route::post('/user-profile', [UserProfileController::class, 'update'])->name('up
 Route::post('/change-password-profile', [UserProfileController::class, 'changePassword'])->name('change-password');
 Route::post('/change-avatar-profile', [UserProfileController::class, 'changeAvatar'])->name('change-avatar');
 
+//Hanlde checkout 
+Route::post('/booking/{id?}', [BookingController::class, 'index'])->name('booking');
+Route::post('/create-booking', [BookingController::class, 'createBooking'])->name('create-booking');
+Route::post('/submit-booking}', [BookingController::class, 'createBooking'])->name('create-booking');
+Route::get('/booking', [BookingController::class, 'handlePaymentMomoCallback'])->name('handlePaymentMomoCallback');
+
+
+//Payment with paypal
+Route::get('create-transaction', [PaypalController::class, 'createTransaction'])->name('createTransaction');
+Route::get('process-transaction', [PayPalController::class, 'processTransaction'])->name('processTransaction');
+Route::get('success-transaction', [PayPalController::class, 'successTransaction'])->name('successTransaction');
+Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
+
+//Payment with Momo
+Route::post('/create-momo-payment', [BookingController::class, 'createMomoPayment'])->name('createMomoPayment');
 
 
 
+//tour booked
+Route::get('/tour-booked', [TourBookedController::class, 'index'])->name('tour-booked')->middleware('checkLoginClient');
 
 
 
@@ -104,6 +120,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::post('/add-temp-images', [ToursManagementController::class, 'uploadTempImagesTours'])->name('admin.add-temp-images');
 });
 
-//Hanlde checkout 
-Route::post('/booking/{id?}', [BookingController::class, 'index'])->name('booking');
-Route::post('/submit-booking}', [BookingController::class, 'createBooking'])->name('create-booking');
+
+Route::fallback(function () {
+    return view('clients.errors.404');
+});

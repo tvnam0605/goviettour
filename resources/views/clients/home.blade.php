@@ -82,7 +82,7 @@
                         </div>
                     </div>
 
-                    <a href="destination1.html" class="theme-btn mt-10 style-two">
+                    <a href="#" class="theme-btn mt-10 style-two">
                         <span data-hover="Khám phá điểm đến">Khám phá điểm đến</span>
                         <i class="fal fa-arrow-right"></i>
                     </a>
@@ -140,7 +140,7 @@
                                     alt="Destination">
                             </div>
                             <div class="content">
-                                <h6><a href="destination-details.html">Bãi biển Quy Nhơn</a></h6>
+                                <h6><a href="{{ route('destination') }}">Bãi biển Quy Nhơn</a></h6>
                                 <span class="time">5352+ tour & 856+ hoạt động</span>
                                 <a href="#" class="more"><i class="fas fa-chevron-right"></i></a>
                             </div>
@@ -156,7 +156,7 @@
                                     alt="Destination">
                             </div>
                             <div class="content">
-                                <h6><a href="destination-details.html">Phú Quốc</a></h6>
+                                <h6><a href="{{ route('destination') }}">Phú Quốc</a></h6>
                                 <span class="time">5352+ tour & 856+ hoạt động</span>
                                 <a href="#" class="more"><i class="fas fa-chevron-right"></i></a>
                             </div>

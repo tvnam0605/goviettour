@@ -29,9 +29,12 @@ class DashboardController extends Controller
                 $valueTour['n'] ?? 0
             ]
         ];
+        $paymentStatus = $this->dashboard->getValuePayment();
         $toursBooked = $this->dashboard->getMostTourBooked();
+        $newBooking = $this->dashboard->getNewBooking();
+        // dd($paymentStatus);
 
 
-        return view('admin.dashboard', compact('title', 'summary', 'dataDomain','toursBooked'));
+        return view('admin.dashboard', compact('title', 'summary', 'dataDomain','paymentStatus','toursBooked','newBooking'));
     }
 }
