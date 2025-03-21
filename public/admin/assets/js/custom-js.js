@@ -976,6 +976,31 @@ document.addEventListener("DOMContentLoaded", function() {
     initChart();
 });
 
-    
-    
+document.addEventListener('DOMContentLoaded', function () {
+    let chartElement = document.getElementById('echart_donut');
+    if (!chartElement) return console.error("🚨 Không tìm thấy phần tử #echart_donut!");
+
+    let paymentStatus = chartElement.getAttribute('data-payment-method');
+    if (!paymentStatus) return console.error("🚨 Không có dữ liệu paymentStatus!");
+
+    try {
+        paymentStatus = JSON.parse(paymentStatus);
+    } catch (error) {
+        return console.error("🚨 Lỗi parse JSON:", error);
+    }
+
+    if (!Array.isArray(paymentStatus) || paymentStatus.length === 0) return console.error("🚨 Dữ liệu trống hoặc không hợp lệ!");
+
+    let myChart = echarts.init(chartElement);
+    myChart.setOption({
+        tooltip: { trigger: 'item' },
+        series: [{
+            type: 'pie',
+            radius: ['45%', '70%'],
+            label: { show: true, formatter: '{b}: {d}%' },
+            data: paymentStatus.map(item => ({ name: item.paymentMethod, value: item.count })),
+            color:  ["#FF0000", "#00FF00", "#800080"]
+        }]
+    });
+});
 

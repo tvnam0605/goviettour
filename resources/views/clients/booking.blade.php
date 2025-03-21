@@ -84,7 +84,8 @@
 
             <label class="payment-option">
                 <input type="radio" name="payment" value="paypal-payment" required>
-                <img src="{{ asset('clients/assets/images/booking/tich-hop-cong-thanh-toan-paypal.jpg') }}" alt="PayPal">
+                <img src="{{ asset('clients/assets/images/booking/tich-hop-cong-thanh-toan-paypal.jpg') }}"
+                    alt="PayPal">
                 Thanh toán bằng PayPal
             </label>
 
@@ -151,7 +152,9 @@
                 <button type="submit" class="booking-btn btn-submit-booking">Xác Nhận</button>
 
                 <button id="btn-momo-payment" class="booking-btn" style="display: none;"
-                    data-urlmomo = "#">Thanh toán với Momo <img src="{{ asset('clients/assets/images/booking/icon-thanh-toan-momo.png') }}" alt="" style="width: 10%"></button>
+                    data-urlmomo = "{{ route('createMomoPayment') }}">Thanh toán với Momo <img
+                        src="{{ asset('clients/assets/images/booking/icon-thanh-toan-momo.png') }}" alt=""
+                        style="width: 10%"></button>
 
             </div>
         </div>

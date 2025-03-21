@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\clients;
 
 use App\Http\Controllers\Controller;
+use App\Models\clients\Tours;
 use Illuminate\Http\Request;
 
 class DestinationController extends Controller
@@ -10,10 +11,16 @@ class DestinationController extends Controller
     /**
      * Display a listing of the resource.
      */
+    private $tours;
+    public function __construct(){
+        $this->tours = new Tours();
+    }
+
     public function index()
     {
         $title = 'Điểm đến';
-        return view(view:'clients.destination', data: compact(var_name: 'title'));
+        $tours = $this->tours->getAllTours( 9);
+        return view('clients.destination', compact('title','tours'));
     }
 
     /**
