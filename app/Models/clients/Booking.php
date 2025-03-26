@@ -16,4 +16,9 @@ class Booking extends Model
         //chèn dlieu và trả về ID của bản vừa tạo
         return DB::table($this->table)->insertGetId($data);
     }
+    public function cancelBooking($bookingId){
+        return DB::table($this->table)
+        ->where('bookingId', $bookingId)
+        ->update(['bookingStatus' => 'c']);
+    }
 }

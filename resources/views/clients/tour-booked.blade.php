@@ -4,7 +4,7 @@
 <section class="container" style="margin-top:50px; margin-bottom: 100px">
     {{-- <h1 class="text-center booking-header">Tổng Quan Về Chuyến Đi</h1> --}}
 
-    <form action="#" method="POST" class="booking-container">
+    <form action="{{ route('cancel-booking') }}" method="POST" class="booking-container">
         @csrf
         <!-- Contact Information -->
         <div class="booking-info">
