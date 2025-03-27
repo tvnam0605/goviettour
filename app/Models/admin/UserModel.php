@@ -10,7 +10,7 @@ class UserModel extends Model
 {
     //
     use HasFactory;
-    protected $table = 'tlb_users';
+    protected $table = 'tbl_users';
 
     public function getAllUsers()
     {

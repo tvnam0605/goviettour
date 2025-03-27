@@ -7,16 +7,20 @@
             <a href="#" class="heart"><i class="fas fa-heart"></i></a>
             <img src="{{ asset('clients/assets/images/gallery-tours/' .$tour->images[0].'')}}" alt="Tour List">
         </div>
-        <div class="content">
+        <div class="content equal-content-fix">
             <div class="destination-header">
-                <span class="location"><i class="fal fa-map-marker-alt"></i>{{ $tour->destination }}</span>
-                <div class="ratting">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
+                <span class="location"><i class="fal fa-map-marker-alt"></i>
+                    {{ $tour->destination }}</span>
+                    <div class="ratting">
+                        @for ($i = 0; $i < 5; $i++)
+                            @if ($tour->rating && $i < $tour->rating)
+                                <i class="fas fa-star"></i>
+                            @else
+                                <i class="far fa-star"></i>
+                            @endif
+                        @endfor
+
+                    </div>
             </div>
             <h6><a href="{{ route('tour-detail', ['id' => $tour->tourId]) }}">{{ $tour->title }}</a></h6>
             <ul class="blog-meta">

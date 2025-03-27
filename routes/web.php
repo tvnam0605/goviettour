@@ -90,6 +90,10 @@ Route::post('/cancel-booking', [TourBookedController::class, 'cancelBooking'])->
 //My tour
 Route::get('/my-tours', [MyTourController::class, 'index'])->name('my-tours')->middleware('checkLoginClient');
 
+//get Tour detail and handle submit reviews
+Route::get('/tour-detail/{id?}', [TourDetailController::class, 'index'])->name('tour-detail');
+Route::post('/checkBooking', [BookingController::class, 'checkBooking'])->name('checkBooking')->middleware('checkLoginClient');
+Route::post('/reviews', [TourDetailController::class, 'reviews'])->name('reviews')->middleware('checkLoginClient');
 //ADMIN
 //route without middleware
 Route::prefix('admin')->group(function () {

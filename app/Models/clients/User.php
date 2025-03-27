@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class User extends Model
 {
     use HasFactory;
-    protected $table = 'tlb_users';
+    protected $table = 'tbl_users';
 
     public function getUserId($username){
         return DB::table($this->table)

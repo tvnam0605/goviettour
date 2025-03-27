@@ -7,11 +7,11 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-10 rmb-75">
                 <div class="shop-sidebar">
-                   <div class="div_filter_clear">
-                       <button class="clear_filter" name="btn_clear">
-                           <a href="{{ route('tours') }}">Clear</a>
-                       </button>
-                   </div>
+                    <div class="div_filter_clear">
+                        <button class="clear_filter" name="btn_clear">
+                            <a href="{{ route('tours') }}">Clear</a>
+                        </button>
+                    </div>
                     <div class="widget widget-filter" data-aos="fade-up" data-aos-delay="50" data-aos-duration="1500"
                         data-aos-offset="50">
                         <h6 class="widget-title">Lọc theo giá</h6>
@@ -28,32 +28,31 @@
                         data-aos-offset="50">
                         <h6 class="widget-title">Điểm đến</h6>
                         <ul class="radio-filter">
-                           <li>
-                               <input class="form-check-input" type="radio" name="domain" id="id_mien_bac"
-                                   value="b">
-                               <label for="id_mien_bac">Miền Bắc <span>{{ $domainsCount['mien_bac'] }}</span></label>
-                           </li>
-                           <li>
-                               <input class="form-check-input" type="radio" name="domain" id="id_mien_trung"
-                                   value="t">
-                               <label for="id_mien_trung">Miền Trung
-                                   <span>{{ $domainsCount['mien_trung'] }}</span></label>
-                           </li>
-                           <li>
-                               <input class="form-check-input" type="radio" name="domain" id="id_mien_nam"
-                                   value="n">
-                               <label for="id_mien_nam">Miền Nam <span>{{ $domainsCount['mien_nam'] }}</span></label>
-                           </li>
-                       </ul>
+                            <li>
+                                <input class="form-check-input" type="radio" name="domain" id="id_mien_bac"
+                                    value="b">
+                                <label for="id_mien_bac">Miền Bắc <span>{{ $domainsCount['mien_bac'] }}</span></label>
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="domain" id="id_mien_trung"
+                                    value="t">
+                                <label for="id_mien_trung">Miền Trung
+                                    <span>{{ $domainsCount['mien_trung'] }}</span></label>
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="domain" id="id_mien_nam"
+                                    value="n">
+                                <label for="id_mien_nam">Miền Nam <span>{{ $domainsCount['mien_nam'] }}</span></label>
+                            </li>
+                        </ul>
                     </div>
 
-
-                    <div class="widget widget-reviews" data-aos="fade-up" data-aos-duration="1500"
-                        data-aos-offset="50">
+                    <div class="widget widget-reviews" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
                         <h6 class="widget-title">Đánh giá</h6>
                         <ul class="radio-filter">
                             <li>
-                                <input class="form-check-input" type="radio"  name="filter_star" id="5star" value="5">
+                                <input class="form-check-input" type="radio" name="filter_star" id="5star"
+                                    value="5">
                                 <label for="5star">
                                     <span class="ratting">
                                         <i class="fas fa-star"></i>
@@ -65,8 +64,9 @@
                                 </label>
                             </li>
                             <li>
-                                <input class="form-check-input" type="radio" name="filter_star" id="4star" value="4">
-                                <label for="4star3star">
+                                <input class="form-check-input" type="radio" name="filter_star" id="4star"
+                                    value="4">
+                                <label for="4star">
                                     <span class="ratting">
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
@@ -77,7 +77,8 @@
                                 </label>
                             </li>
                             <li>
-                                <input class="form-check-input" type="radio" name="filter_star" id="3star" value="3">
+                                <input class="form-check-input" type="radio" name="filter_star" id="3star"
+                                    value="3">
                                 <label for="3star">
                                     <span class="ratting">
                                         <i class="fas fa-star"></i>
@@ -89,7 +90,8 @@
                                 </label>
                             </li>
                             <li>
-                                <input class="form-check-input" type="radio" name="filter_star" id="2star" value="2">
+                                <input class="form-check-input" type="radio" name="filter_star" id="2star"
+                                    value="2">
                                 <label for="2star">
                                     <span class="ratting">
                                         <i class="fas fa-star"></i>
@@ -101,7 +103,8 @@
                                 </label>
                             </li>
                             <li>
-                                <input class="form-check-input" type="radio" name="filter_star" id="1star" value="1">
+                                <input class="form-check-input" type="radio" name="filter_star" id="1star"
+                                    value="1">
                                 <label for="1star">
                                     <span class="ratting">
                                         <i class="fas fa-star"></i>
@@ -114,57 +117,66 @@
                             </li>
                         </ul>
                     </div>
+
                     <div class="widget widget-duration" data-aos="fade-up" data-aos-duration="1500"
-                    data-aos-offset="50">
-                    <h6 class="widget-title">Thời gian</h6>
-                    <ul class="radio-filter">
-                        <li>
-                            <input class="form-check-input" type="radio" name="duration" id="3ngay2dem"
-                                value="3n2d">
-                            <label for="3ngay2dem">3 ngày 2 đêm</label>
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="duration" id="4ngay3dem"
-                                value="4n3d">
-                            <label for="4ngay3dem">4 ngày 3 đêm</label>
-                        </li>
-                        <li>
-                            <input class="form-check-input" type="radio" name="duration" id="5ngay4dem"
-                                value="5n4d">
-                            <label for="5ngay4dem">5 ngày 4 đêm</label>
-                        </li>
-                    </ul>
-                </div>
-                    <div class="widget widget-tour" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
-                        <h6 class="widget-title">Tours phổ biến</h6>
-                        @foreach ($tours as $tour)
-                        <div class="destination-item tour-grid style-three bgc-lighter block_tours">
-                            <div class="image">
-                                <span class="badge">10% Off</span>
-                                <img src="{{ asset('clients/assets/images/gallery-tours/'.$tour->images[0].'') }}" alt="Tour">
-                            </div>
-                            <div class="content">
-                                <div class="destination-header">
-                                    <span class="location"><i class="fal fa-map-marker-alt"></i>{{ $tour->destination }}</span>
-                                    <div class="ratting">
-                                        <i class="fas fa-star"></i>
-                                        <span>(4.8)</span>
+                        data-aos-offset="50">
+                        <h6 class="widget-title">Thời gian</h6>
+                        <ul class="radio-filter">
+                            <li>
+                                <input class="form-check-input" type="radio" name="duration" id="3ngay2dem"
+                                    value="3n2d">
+                                <label for="3ngay2dem">3 ngày 2 đêm</label>
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="duration" id="4ngay3dem"
+                                    value="4n3d">
+                                <label for="4ngay3dem">4 ngày 3 đêm</label>
+                            </li>
+                            <li>
+                                <input class="form-check-input" type="radio" name="duration" id="5ngay4dem"
+                                    value="5n4d">
+                                <label for="5ngay4dem">5 ngày 4 đêm</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    @if (!$toursPopular->isEmpty())
+                        <div class="widget widget-tour" data-aos="fade-up" data-aos-duration="1500"
+                            data-aos-offset="50">
+                            <h6 class="widget-title">Phổ biến Tours</h6>
+                            @foreach ($toursPopular as $tour)
+                                <div class="destination-item tour-grid style-three bgc-lighter">
+                                    <div class="image">
+                                        <span class="badge">Giảm giá 10%</span>
+                                        <img src="{{ asset('admin/assets/images/gallery-tours/' . $tour->images[0]) }}"
+                                            alt="Tour">
+                                    </div>
+                                    <div class="content">
+                                        <div class="destination-header">
+                                            <span class="location"><i class="fal fa-map-marker-alt"></i>
+                                                {{ $tour->destination }}</span>
+                                            <div class="ratting">
+                                                <i class="fas fa-star"></i>
+                                                <span>{{ $tour->rating }}</span>
+                                            </div>
+                                        </div>
+                                        <h6><a
+                                                href="{{ route('tour-detail', ['id' => $tour->tourId]) }}">{{ $tour->title }}</a>
+                                        </h6>
                                     </div>
                                 </div>
-                                <h6><a href="{{ route('tour-detail', ['id' => $tour->tourId]) }}">{{ $tour->title }}</a></h6>
-                            </div>
+                            @endforeach
                         </div>
-                        @endforeach
-                    </div>
+                    @endif
                 </div>
 
                 <div class="widget widget-cta mt-30" data-aos="fade-up" data-aos-duration="1500"
                     data-aos-offset="50">
                     <div class="content text-white">
-                        <span class="h6">Khám phá Việt Nam</span>
+                        <span class="h6">Khám Phá Việt Nam</span>
                         <h3>Địa điểm du lịch tốt nhất</h3>
-                        <a href="tour-list.html" class="theme-btn style-two bgc-secondary">
-                            <span data-hover="Explore Now">Khám phá ngay</span>
+                        <a href="{{ route('tours') }}" class="theme-btn style-two bgc-secondary">
+                            <span data-hover="Khám phá ngay">Khám phá ngay</span>
                             <i class="fal fa-arrow-right"></i>
                         </a>
                     </div>
@@ -177,9 +189,8 @@
             </div>
             <div class="col-lg-9">
                 <div class="shop-shorter rel z-3 mb-20">
-
                     <div class="sort-text mb-15 me-4 me-xl-auto">
-                       Tours tìm thấy
+                        Tours tìm thấy
                     </div>
                     <div class="sort-text mb-15 me-4">
                         Sắp xếp theo
@@ -194,29 +205,10 @@
                 </div>
 
                 <div class="tour-grid-wrap">
-                   <div class="loader"></div>
-                    <div class="row" id = "tours-container">
-                       @include('clients.partials.filter-tours')
-                        <div class="col-lg-12">
-                            <ul class="pagination justify-content-center pt-15 flex-wrap" data-aos="fade-up"
-                                data-aos-duration="1500" data-aos-offset="50">
-                                <li class="page-item disabled">
-                                    <span class="page-link"><i class="far fa-chevron-left"></i></span>
-                                </li>
-                                <li class="page-item active">
-                                    <span class="page-link">
-                                        1
-                                        <span class="sr-only">(current)</span>
-                                    </span>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">...</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#"><i class="far fa-chevron-right"></i></a>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="loader"></div>
+                    <div class="row" id="tours-container">
+                        @include('clients.partials.filter-tours')
+
                     </div>
                 </div>
 
@@ -229,5 +221,5 @@
 @include('clients.blocks.new_letter')
 @include('clients.blocks.footer')
 <script>
-   var filterToursUrl = "{{ route('filter-tours') }}";
+    var filterToursUrl = "{{ route('filter-tours') }}";
 </script>
