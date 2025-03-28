@@ -5,7 +5,7 @@ namespace App\Http\Controllers\clients;
 use App\Models\clients\Tours;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use HasFactory;
+
 
 class ToursController extends Controller
 {
@@ -21,7 +21,7 @@ class ToursController extends Controller
     public function index(Request $request)
     {
         $title = 'Tours';
-        $tours = $this->tours->getAllTours(9);
+        $tours = $this->tours->getAllTours(3);
         $domain = $this->tours->getDomain();
         // dd($tours);
         $domainsCount = [
@@ -101,7 +101,7 @@ class ToursController extends Controller
             $tours = new \Illuminate\Pagination\LengthAwarePaginator(
                 $tours, // Collection
                 count($tours), // Total items
-                9, // Per page
+                6, // Per page
                 1, // Current page
                 ['path' => url()->current()] // Path for pagination
             );
