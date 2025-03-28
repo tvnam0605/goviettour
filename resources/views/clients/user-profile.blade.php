@@ -6,9 +6,12 @@
                 <div class="card mb-4 mb-xl-0">
                     <div class="card-header">Ảnh</div>
                     <div class="card-body text-center">
-                        <img id="avatarPreview" class="img-account-profile rounded-circle mb-2"
+                        {{-- <img id="avatarPreview" class="img-account-profile rounded-circle mb-2"
                             src="{{ asset('clients/assets/images/user-profile/' . $user->avatar) }}"
-                            alt="Ảnh đại diện {{ $user->avatar }}">
+                            alt="Ảnh đại diện {{ $user->avatar }}"> --}}
+                            <img id="avatarPreview" class="img-account-profile rounded-circle mb-2"
+                            src="{{ asset('clients/assets/images/user-profile/' . $user?->avatar) }}"
+                            alt="Ảnh đại diện {{ $user?->avatar }}">
 
                         <div class="small font-italic text-muted mb-4">JPG hoặc PNG không lớn hơn 5 MB</div>
                         <input type="file" name="avatar" id="avatar" style="display: none"accept="image/*" >

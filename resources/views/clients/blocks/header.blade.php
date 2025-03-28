@@ -119,13 +119,13 @@
                         </div>
 
                         <!-- Menu Button -->
-                         <!-- menu sidbar -->
-                         <div class="menu-sidebar">
+                        <!-- menu sidbar -->
+                        <div class="menu-sidebar">
                             <li class="drop-down">
                                 <button class="dropdown-toggle bg-transparent" id="userDropdown"style="color: white">
                                     @if (session()->has('avatar'))
                                         @php
-                                            $avatar = session('avatar') ?? 'user_avatar.png';
+                                            $avatar = Auth::user()->avatar ?? 'user_avatar.png';
                                         @endphp
 
                                         <img id="avatarPreview" class="img-account-profile rounded-circle "

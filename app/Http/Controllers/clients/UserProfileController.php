@@ -75,27 +75,35 @@ class UserProfileController extends Controller
         $req->validate([
             'avatar' => 'required|image|mimes:jpg,png,gif|max:5120',
         ]);
+    
         $avatar = $req->file('avatar');
-
         $filename = time() . '.' . $avatar->getClientOriginalExtension();
-        
-        $user =$this->user->getUser($userId);
-        if($user->avatar){
-            $oldAvatarPath = public_path('clients/assets/images/user-profile/' .$user->avatar);
-            //Kiểm tra tệp cũ có tồn tại và xóa nếu có
-            if(file_exists($oldAvatarPath)){
+    
+
+        $user = $this->user->getUser($userId);
+    
+        // Xóa avatar cũ nếu có
+        if ($user->avatar) {
+            $oldAvatarPath = public_path('clients/assets/images/user-profile/' . $user->avatar);
+            if (file_exists($oldAvatarPath)) {
                 unlink($oldAvatarPath);
             }
         }
-
-        //Di chuyển anh vào thư mục
+    
         $avatar->move(public_path('clients/assets/images/user-profile'), $filename);
-        
         $update = $this->user->updateUser($userId, ['avatar' => $filename]);
-
-        if (!$update) {
-            return response()->json(['fail' => true, 'message' => 'Có lỗi khi cập nhật ảnh!']);
+    
+        if ($update) {
+            session()->put('avatar', $filename);
+    
+            return response()->json([
+                'success' => true,
+                'message' => 'Cập nhật ảnh thành công!',
+                'avatar' => asset('clients/assets/images/user-profile/' . $filename) // Trả về đường dẫn ảnh mới
+            ]);
         }
-        return response()->json(['success' => true, 'message' => 'Cập nhật ảnh thành công!']);
+    
+        return response()->json(['fail' => true, 'message' => 'Có lỗi khi cập nhật ảnh!']);
     }
+    
 }

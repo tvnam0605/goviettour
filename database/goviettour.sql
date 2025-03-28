@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 10, 2025 lúc 12:55 PM
+-- Thời gian đã tạo: Th3 22, 2025 lúc 09:54 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -149,8 +149,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('901df7NDqmLFJB97YaUbRgEcopyn8AZCybPIE6yZ', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiVmtOYm5TQUJmZll3RVFTQW9DVjlURTJHZUNrSUJDTDhuNzNZUjBBeCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hdXRoL2dvb2dsZSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NToic3RhdGUiO3M6NDA6IjFScGtDRjNnRkxNMlZHaXRvV0R1aGF1ZVJUNG5DZGRXcnM2d1VEa1EiO30=', 1741605332),
-('qN3qzLJ8NIt5vSNPezwwkTI5qEmU8hJDPlzgjrV8', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicXJuQ1BPclFWRWg2eE5zcU5RUFN3T1F0WjY4NXVmdDBPeWt0VU1hUSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MTA0OiJodHRwOi8vbG9jYWxob3N0OjgwMDAvY2xpZW50cy9hc3NldHMvZm9udHMvZmxhdGljb25fR29WaWV0VG91cjEwZjMudHRmPzZhMTdlOWUyNmRiYjVhMjM2MGY1MTVlMTIzYzhlOTIxPSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1741607679);
+('oy9lF7doeRadPkHiVfH7YPicY8WWL5GiMvBh3p5H', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoia0xYaWpuNnk0T0tab0p5aGNBNWkzN2pyckl2ZWhHYzR1bGt2ZGF5NiI7czoxODoiZmxhc2hlcjo6ZW52ZWxvcGVzIjthOjA6e31zOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czoyMToiaHR0cDovLzEyNy4wLjAuMTo4MDAwIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1OiJhZG1pbiI7czo1OiJhZG1pbiI7czo1OiJzdGF0ZSI7czo0MDoieG1zdlU2YjlFeGx6TVlUeExHSGZ2ZDE0V2I4dXhySE1QcThNM3lHWCI7fQ==', 1742565055),
+('Q6qNlLK0p4jf5ETUklmawudgrJkBiBfqlj7BkIyV', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoicnZqZ0l3Q3c2YUxHZXdpeVV6TElLRzRMSlA0NEVibmF6VWp4WkNqYiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJuZXciO2E6MDp7fXM6Mzoib2xkIjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jbGllbnRzL2Fzc2V0cy9pbWFnZXMvdXNlci1wcm9maWxlLzE3NDIxOTc5NTkuanBnIjt9czoxODoiZmxhc2hlcjo6ZW52ZWxvcGVzIjthOjA6e31zOjg6InVzZXJuYW1lIjtzOjc6InRoYW5obGEiO3M6NjoiYXZhdGFyIjtzOjE0OiIxNzQyMTk3OTU5LmpwZyI7czo2OiJ1c2VySWQiO2k6Mjk7fQ==', 1742564782);
 
 -- --------------------------------------------------------
 
@@ -160,11 +160,20 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 
 CREATE TABLE `tbl_admin` (
   `adminId` int(10) NOT NULL,
+  `fullName` varchar(50) DEFAULT NULL,
+  `address` varchar(50) DEFAULT NULL,
   `userName` varchar(50) NOT NULL,
-  `passWord` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
   `email` varchar(255) NOT NULL,
   `createdDate` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_admin`
+--
+
+INSERT INTO `tbl_admin` (`adminId`, `fullName`, `address`, `userName`, `password`, `email`, `createdDate`) VALUES
+(2, 'Trần Văn Nam', 'Đăk Nông', 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'admin@example.com', '2025-03-21 13:36:16');
 
 -- --------------------------------------------------------
 
@@ -176,13 +185,50 @@ CREATE TABLE `tbl_booking` (
   `bookingId` int(11) NOT NULL,
   `tourId` int(11) NOT NULL,
   `userId` int(11) NOT NULL,
-  `bookingDate` date NOT NULL,
-  `numAdult` int(11) NOT NULL,
-  `numChild` int(11) NOT NULL,
+  `fullName` varchar(255) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phoneNumber` varchar(50) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `bookingDate` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `numAdults` int(11) NOT NULL,
+  `numChildren` int(11) NOT NULL,
   `totalPrice` double NOT NULL,
-  `bookingStatus` varchar(255) NOT NULL,
-  `specialRequests` varchar(255) DEFAULT NULL
+  `bookingStatus` enum('y','n') NOT NULL DEFAULT 'n'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_booking`
+--
+
+INSERT INTO `tbl_booking` (`bookingId`, `tourId`, `userId`, `fullName`, `email`, `phoneNumber`, `address`, `bookingDate`, `numAdults`, `numChildren`, `totalPrice`, `bookingStatus`) VALUES
+(1, 2, 29, 'Trương Tấn Diệm', '2111817@dlu.edu.vn', '1234567890', '45/2 Huyền Trân Công Chúa', '2025-03-19 15:32:01', 1, 1, 150000, 'n'),
+(2, 2, 29, 'Trương Tấn Diệm', 'admin@gmail.com', '0123456789', '45/2 Huyền Trân Công Chúa', '2025-03-19 15:32:59', 2, 1, 250000, 'n'),
+(3, 2, 29, 'Trương Tấn Diệm', 'admin@gmail.com', '0123456789', '45/2 Huyền Trân Công Chúa', '2025-03-19 15:34:12', 2, 1, 250000, 'n'),
+(4, 1, 29, 'Trương Tấn Diệm', 'vendor@gmail.com', '4444444444', '45/2 Huyền Trân Công Chúa', '2025-03-19 15:53:22', 2, 2, 300000, 'n'),
+(5, 1, 29, 'Trương Tấn Diệm', 'vendor@gmail.com', '4444444444', '45/2 Huyền Trân Công Chúa', '2025-03-19 15:54:39', 2, 2, 300000, 'n'),
+(6, 1, 29, 'Trương Tấn Diệm', 'vendor@gmail.com', '4444444444', '45/2 Huyền Trân Công Chúa', '2025-03-19 15:57:49', 2, 2, 300000, 'n'),
+(7, 4, 29, 'Trương Tấn Diệm', '2111817@dlu.edu.vn', '1234567890', '45/2 Huyền Trân Công Chúa', '2025-03-19 16:14:48', 6, 4, 800000, 'n'),
+(8, 4, 29, 'Trương Tấn Diệm', '2111817@dlu.edu.vn', '1234567980', '45/2 Huyền Trân Công Chúa', '2025-03-19 16:17:23', 3, 3, 450000, 'n'),
+(9, 1, 29, 'Trần Văn Nam', 'anhmk864@gmail.com', '0898354417', 'đăk nông', '2025-03-20 08:06:35', 1, 0, 1000000, 'n'),
+(10, 1, 29, 'Trần Văn Nam', 'anhmk864@gmail.com', '0898354417', 'đăk nông', '2025-03-20 08:09:49', 1, 0, 1000000, 'n'),
+(11, 1, 29, 'Trần Văn Nam', 'anhmk864@gmail.com', '0898354417', 'Đăk Nông', '2025-03-20 08:10:35', 1, 0, 1000000, 'n'),
+(12, 1, 29, 'Trần Văn Nam', '2115239@dlu.edu.vn', '0123245566', 'Đăk Nông', '2025-03-20 08:45:25', 2, 1, 2500000, 'n'),
+(13, 1, 29, 'Trần Văn Nam', '2115239@dlu.edu.vn', '0123245566', 'Đăk Nông', '2025-03-20 08:49:32', 1, 0, 1000000, 'n'),
+(14, 2, 29, 'Trần Văn Nam 1', 'anhmk864@gmail.com', '0898354417', 'Đăk Nông', '2025-03-20 09:06:25', 1, 0, 2000000, 'n'),
+(15, 2, 29, 'Trần Văn Nam 1', 'anhmk864@gmail.com', '0898354417', 'Đăk Nông', '2025-03-20 09:06:48', 1, 0, 2000000, 'n'),
+(16, 2, 29, 'Trần Văn Nam 1', 'anhmk864@gmail.com', '0898354417', 'Đăk Nông', '2025-03-20 09:07:46', 1, 0, 2000000, 'n'),
+(17, 1, 29, 'test', 'hehe@gmail.com', '0898354417', 'Đà Lạt', '2025-03-20 09:19:54', 1, 0, 1000000, 'n'),
+(18, 1, 29, 'heheheheheh', 'nam123@gmail.com', '08983455127', 'Đăk Nông', '2025-03-21 03:19:14', 3, 3, 4500000, 'n'),
+(19, 1, 29, 'heheheheheh', 'nam123@gmail.com', '08983455127', 'Đăk Nông', '2025-03-21 03:21:06', 1, 0, 1000000, 'n'),
+(20, 1, 29, 'Trần Văn Nam', 'anhmk864@gmail.com', '0898354417', 'Đăk Nông', '2025-03-21 04:13:48', 1, 0, 1000000, 'n'),
+(21, 1, 29, 'Trần Văn Nam', 'anhmk864@gmail.com', '0898354417', 'Đăk Nông', '2025-03-21 04:13:57', 1, 0, 1000000, 'n'),
+(22, 3, 29, 'Trần Văn Nam', 'anhmk864@gmail.com', '0898354417', 'Đăk Nông', '2025-03-21 04:17:08', 2, 1, 13180000, 'n'),
+(23, 3, 29, 'Trần Văn Nam', 'anhmk864@gmail.com', '0898354417', 'Đăk Nông', '2025-03-21 04:17:33', 1, 0, 4790000, 'n'),
+(24, 1, 29, 'Test thanh toán momo', 'momomo@gmail.com', '0898354417', 'Đăk Ru', '2025-03-21 06:53:11', 2, 1, 2500000, 'n'),
+(25, 1, 29, 'Test thanh toán momo', 'momomo@gmail.com', '0898354417', 'Đăk Ru', '2025-03-21 06:53:19', 1, 0, 1000000, 'n'),
+(26, 3, 29, 'tesst', 'tesst@gmail.com', '0898435682', 'dawk ru', '2025-03-21 07:28:49', 2, 1, 13180000, 'n'),
+(27, 2, 29, 'Trần Văn Nam', 'anhmk864@gmail.com', '8983571211', 'Thôn Tân Binh', '2025-03-21 13:38:31', 2, 1, 5500000, 'n'),
+(28, 2, 29, 'Trần Văn Nam', 'anhmk864@gmail.com', '8983571211', 'Thôn Tân Binh', '2025-03-21 13:38:43', 1, 0, 2000000, 'n');
 
 -- --------------------------------------------------------
 
@@ -213,8 +259,28 @@ CREATE TABLE `tbl_checkout` (
   `paymentDate` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `amount` double NOT NULL,
   `paymentStatus` varchar(255) NOT NULL,
-  `transactionId` varchar(255) NOT NULL
+  `transactionId` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_checkout`
+--
+
+INSERT INTO `tbl_checkout` (`checkoutId`, `bookingId`, `paymentMethod`, `paymentDate`, `amount`, `paymentStatus`, `transactionId`) VALUES
+(1, 6, 'office-payment', '2025-03-19 15:57:49', 300000, 'n', NULL),
+(2, 7, 'momo-payment', '2025-03-19 16:14:48', 800000, 'n', NULL),
+(3, 8, 'paypal-payment', '2025-03-19 16:17:23', 450000, 'n', NULL),
+(4, 11, 'office-payment', '2025-03-20 08:10:35', 1000000, 'n', NULL),
+(5, 13, 'paypal-payment', '2025-03-20 08:49:32', 1000000, 'y', NULL),
+(6, 15, 'paypal-payment', '2025-03-20 09:06:48', 2000000, 'y', NULL),
+(7, 16, 'paypal-payment', '2025-03-20 09:07:46', 2000000, 'y', NULL),
+(8, 17, 'office-payment', '2025-03-20 09:19:54', 1000000, 'n', NULL),
+(9, 19, 'paypal-payment', '2025-03-21 03:21:06', 1000000, 'y', NULL),
+(10, 21, 'momo-payment', '2025-03-21 04:13:57', 1000000, 'y', NULL),
+(11, 23, 'paypal-payment', '2025-03-21 04:17:33', 4790000, 'y', NULL),
+(12, 25, 'momo-payment', '2025-03-21 06:53:19', 1000000, 'y', NULL),
+(13, 26, 'office-payment', '2025-03-21 07:28:49', 13180000, 'n', NULL),
+(14, 28, 'paypal-payment', '2025-03-21 13:38:43', 2000000, 'y', NULL);
 
 -- --------------------------------------------------------
 
@@ -373,10 +439,10 @@ CREATE TABLE `tbl_tours` (
 --
 
 INSERT INTO `tbl_tours` (`tourId`, `title`, `time`, `description`, `quantity`, `priceAdult`, `priceChild`, `destination`, `domain`, `availability`, `reviews`, `startDate`, `endDate`) VALUES
-(1, 'BIỂN ĐẢO 4N3Đ | PHÚ QUỐC', '3 ngày 2 đêm', 'Tham quan: khu du lịch bãi Sao, di tích nhà tù Phú Quốc, Dinh Cậu, Hùng Long Tự, suối Tranh, làng chài cổ Hàm Ninh, Thị trấn Hoàng Hôn, vườn tiêu, nhà thùng nước mắm, cơ sở chế tác Ngọc Trai, cơ sở sản xuất rượu sim rừng…<br> Lưu trú: Khách sạn chuẩn 3 sao, resort 3 sao – 4 sao.<br> Hoạt động khác: tắm biển, lặn biển, ngắm san hô, câu cá và thử sức với các trò chơi biển,…', 50, 1000000, 500000, 'PHÚ QUỐC', 'n', 0, NULL, '2025-03-07', '2025-03-31'),
-(2, 'BIỂN ĐẢO 1N', '1 ngày', '', 50, 2000000, 1500000, 'Côn đảo', 'n', 0, NULL, '2025-03-07', '2025-03-20'),
-(3, 'MIỀN BẮC 4N3Đ | HÀ NỘI – LÀO CAI – SA PA', '4 ngày 3 đêm', '', 50, 4790000, 3600000, 'HÀ NỘI, LÀO CAI, SA PA', 'b', 1, NULL, '2025-03-07', '2025-03-13'),
-(4, 'MIỀN TRUNG 5N4Đ | ĐÀ NẴNG – HỘI AN – BÀ NÀ – HUẾ – PHONG NHA', '5 ngày 4 đêm', '', 50, 4990000, 3750000, 'À NẴNG, HỘI AN, BÀ NÀ, HUẾ, PHONG NHA', 't', 1, NULL, '2025-03-07', '2025-03-20');
+(1, 'BIỂN ĐẢO 4N3Đ | PHÚ QUỐC', '3 ngày 2 đêm', 'Tham quan: khu du lịch bãi Sao, di tích nhà tù Phú Quốc, Dinh Cậu, Hùng Long Tự, suối Tranh, làng chài cổ Hàm Ninh, Thị trấn Hoàng Hôn, vườn tiêu, nhà thùng nước mắm, cơ sở chế tác Ngọc Trai, cơ sở sản xuất rượu sim rừng…<br> Lưu trú: Khách sạn chuẩn 3 sao, resort 3 sao – 4 sao.<br> Hoạt động khác: tắm biển, lặn biển, ngắm san hô, câu cá và thử sức với các trò chơi biển,…', 44, 1000000, 500000, 'PHÚ QUỐC', 'n', 0, NULL, '2025-03-07', '2025-03-31'),
+(2, 'BIỂN ĐẢO 1N', '1 ngày', '', 47, 2000000, 1500000, 'Côn đảo', 'n', 0, NULL, '2025-03-07', '2025-03-20'),
+(3, 'MIỀN BẮC 4N3Đ | HÀ NỘI – LÀO CAI – SA PA', '4 ngày 3 đêm', '', 46, 4790000, 3600000, 'HÀ NỘI, LÀO CAI, SA PA', 'b', 1, NULL, '2025-03-07', '2025-03-13'),
+(4, 'MIỀN TRUNG 5N4Đ | ĐÀ NẴNG – HỘI AN – BÀ NÀ – HUẾ – PHONG NHA', '5 ngày 4 đêm', '', 7, 4990000, 3750000, 'À NẴNG, HỘI AN, BÀ NÀ, HUẾ, PHONG NHA', 't', 1, NULL, '2025-03-07', '2025-03-20');
 
 -- --------------------------------------------------------
 
@@ -391,6 +457,7 @@ CREATE TABLE `tbl_users` (
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
   `phoneNumber` varchar(15) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
   `ipAddress` varchar(50) DEFAULT NULL,
@@ -411,6 +478,7 @@ INSERT INTO `tbl_users` (`userId`, `google_id`, `fullName`, `username`, `passwor
 (15, NULL, NULL, 'thanhla', '96e79218965eb72c92a549dd5a330112', 'totiiteee@gmail.com', NULL, NULL, NULL, 'n', NULL, '2025-03-08 19:15:35', '2025-03-08 19:15:35', '2nRBdELpIk71ZGGDEar4zt1hQbmdz00gN2XouNpDMVOQ186z2KG1xbxYeDrw'),
 (16, NULL, NULL, 'tvnam', 'e10adc3949ba59abbe56e057f20f883e', 'anhmk864@gmail.com', NULL, NULL, NULL, 'y', NULL, '2025-03-10 02:45:05', '2025-03-10 02:45:05', NULL),
 (18, '117262954282976031887', 'Nam Tran Van', 'user-google', '25d55ad283aa400af464c76d713c07ad', 'trannamvan0605@gmail.com', NULL, NULL, NULL, 'y', NULL, '2025-03-10 11:25:15', '2025-03-10 11:25:15', NULL);
+
 
 -- --------------------------------------------------------
 
@@ -601,13 +669,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
-  MODIFY `adminId` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `adminId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_booking`
 --
 ALTER TABLE `tbl_booking`
-  MODIFY `bookingId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `bookingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_chat`
@@ -619,7 +687,7 @@ ALTER TABLE `tbl_chat`
 -- AUTO_INCREMENT cho bảng `tbl_checkout`
 --
 ALTER TABLE `tbl_checkout`
-  MODIFY `checkoutId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `checkoutId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_history`
@@ -668,6 +736,7 @@ ALTER TABLE `tbl_tours`
 --
 ALTER TABLE `tbl_users`
   MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
 
 --
 -- AUTO_INCREMENT cho bảng `users`
