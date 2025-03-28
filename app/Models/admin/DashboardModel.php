@@ -21,7 +21,7 @@ class DashboardModel extends Model
         $totalAmount = DB::table('tbl_checkout')
             ->where('paymentStatus', 'y')
             ->sum('amount');
-        $totalUsers = DB::table('tlb_users') // Thay 'tbl_users' bằng tên bảng người dùng của bạn
+        $totalUsers = DB::table('') // Thay 'tbl_users' bằng tên bảng người dùng của bạn
             ->count();
          // Trả về mảng chứa các dữ liệu tổng hợp
          return [

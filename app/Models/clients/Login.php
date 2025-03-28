@@ -10,7 +10,7 @@ class Login extends Model
 {
     use HasFactory;
 
-    protected $table = 'tlb_users';
+    protected $table = 'tbl_users';
 
 
 
@@ -73,7 +73,7 @@ class Login extends Model
     }
     public function getUserByGoogleId($googleId)
 {
-    return DB::table('tlb_users')->where('google_id', $googleId)->first();
+    return DB::table('tbl_users')->where('google_id', $googleId)->first();
 }
 
 }

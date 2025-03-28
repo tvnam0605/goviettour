@@ -33,7 +33,7 @@
                         <div class="image" style="max-height: 250px">
                             <a href="#" class="heart"><i class="fas fa-heart"></i></a>
                             
-                            <img src="{{ asset('admin/assets/images/gallery-tours/' . preg_replace('/_\d+\./', '.', $tour->images[0])) }}" alt="Destination">
+                            <img src="{{ asset('clients/assets/images/gallery-tours/' . preg_replace('/_\d+\./', '.', $tour->images[0])) }}" alt="Destination">
 
                         </div>
                         <div class="content">

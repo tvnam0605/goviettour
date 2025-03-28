@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class User extends Model
 {
     use HasFactory;
-    protected $table = 'tlb_users';
+    protected $table = 'tbl_users';
 
     public function getUserId($username){
         return DB::table($this->table)
@@ -22,11 +22,37 @@ class User extends Model
         return $user;
     }
 
-    public function updateUser($id, $dataUpdate){
+    public function updateUser($id, $data){
         $update = DB::table($this->table)
         ->where('userId',$id)
-        ->update($dataUpdate);
+        ->update($data);
 
-        return $dataUpdate;
+        return $data;
+    }
+    public function getMyTours($id)
+    {
+        $myTours =  DB::table('tbl_booking')
+        ->join('tbl_tours', 'tbl_booking.tourId', '=', 'tbl_tours.tourId')
+        ->join('tbl_checkout', 'tbl_booking.bookingId', '=', 'tbl_checkout.bookingId')
+        ->where('tbl_booking.userId', $id)
+        ->orderByDesc('tbl_booking.bookingDate')
+        ->take(3)
+        ->get();
+
+        foreach ($myTours as $tour) {
+            // Lấy rating từ tbl_reviews cho mỗi tour
+            $tour->rating = DB::table('tbl_reviews')
+                ->where('tourId', $tour->tourId)
+                ->where('userId', $id)
+                ->value('rating'); // Dùng value() để lấy giá trị rating
+        }
+        foreach ($myTours as $tour) {
+            // Lấy danh sách hình ảnh thuộc về tour
+            $tour->images = DB::table('tbl_images')
+                ->where('tourId', $tour->tourId)
+                ->pluck('imageUrl');
+        }
+
+        return $myTours;
     }
 }

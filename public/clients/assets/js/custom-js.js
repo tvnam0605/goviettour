@@ -224,21 +224,79 @@ $(document).ready(function () {
             },
         });
     }
+    $(document).on("click", ".pagination-tours a", function (e) {
+        e.preventDefault();
+        $(".loader").show();
+        $("#tours-container").addClass("hidden-content");
 
+        var url = $(this).attr("href");
+        console.log(url);
+
+        $.ajax({
+            url: url,
+            type: "GET",
+            dataType: "json",
+            success: function (response) {
+                // Cập nhật toàn bộ nội dung (tours và phân trang)
+                $("#tours-container")
+                    .html(response.tours)
+                    .removeClass("hidden-content");
+                $("#tours-container .destination-item").addClass("aos-animate");
+                $("#tours-container .pagination-tours").addClass("aos-animate");
+                $(".loader").hide();
+            },
+            error: function (xhr, status, error) {
+                console.log("Có lỗi xảy ra trong quá trình tải dữ liệu!");
+            },
+        });
+    });
+    // $(".clear_filter a").on("click", function (e) {
+    //     e.preventDefault();
+    //     $(".loader").show();
+    //     $("tours-container").addClass("hidden-content");
+    //     $(".price-slider-range").slider("values", [0, 7000000]);
+
+    //     $('input[name="domain"]').prop("checked", false);
+    //     $('input[name="filter_star"]').prop("checked", false);
+    //     $('input[name="duration"]').prop("checked", false);
+
+    //     filterTours(0, 7000000);
+    // });
+
+    // Hàm để clear các filter đã chọn
     $(".clear_filter a").on("click", function (e) {
         e.preventDefault();
         $(".loader").show();
-        $("tours-container").addClass("hidden-content");
+        $("#tours-container").addClass("hidden-content");
+        // Reset slider giá về giá trị mặc định 
         $(".price-slider-range").slider("values", [0, 7000000]);
 
+        // Bỏ chọn radio và checkbox
         $('input[name="domain"]').prop("checked", false);
         $('input[name="filter_star"]').prop("checked", false);
         $('input[name="duration"]').prop("checked", false);
 
-        filterTours(0, 7000000);
-    });
-    // >>>>>>> Stashed changes
 
+        var url = $(this).attr("href");
+
+        $.ajax({
+            url: url,
+            type: "GET",
+            dataType: "json",
+            success: function (response) {
+                // Cập nhật toàn bộ nội dung (tours và phân trang)
+                $("#tours-container")
+                    .html(response.tours)
+                    .removeClass("hidden-content");
+                $("#tours-container .destination-item").addClass("aos-animate");
+                $("#tours-container .pagination-tours").addClass("aos-animate");
+                $(".loader").hide();
+            },
+            error: function (xhr, status, error) {
+                console.log("Có lỗi xảy ra trong quá trình tải dữ liệu!");
+            },
+        });
+    });
     // ===========UserProfile==========
     $(".updateUser").on("submit", function (e) {
         e.preventDefault();
@@ -474,7 +532,7 @@ $(document).ready(function () {
                 (parseInt($("#numAdults").val()) *
                     $("#numAdults").data("price-adults") +
                     parseInt($("#numChildren").val()) *
-                        $("#numChildren").data("price-children"));
+                    $("#numChildren").data("price-children"));
             toastr.success("Áp dụng mã giảm giá thành công!");
         } else {
             discount = 0;
@@ -662,7 +720,7 @@ $(document).ready(function () {
                             // Hiển thị thông tin thanh toán thành công
                             console.log(
                                 "Transaction completed by " +
-                                    details.payer.name.given_name
+                                details.payer.name.given_name
                             );
                             // Tạo input hidden mới
                             var hiddenInput = $("<input>", {
@@ -769,7 +827,116 @@ $(document).ready(function () {
         // Clear booking data after populating the form
         localStorage.removeItem("bookingData");
     }
-    
+
     updateSummary();
     toggleButtonState();
+
+
+    // Trang chi tiết tour
+    let currentRating = 0;
+
+    $("#rating-stars i").on("mouseover", function () {
+        let rating = $(this).data("value");
+        highlightStars(rating);
+    });
+
+    $("#rating-stars i").on("click", function () {
+        currentRating = $(this).data("value");
+        console.log("Sao đã chọn :", currentRating);
+    });
+
+    $("#rating-stars i").on("mouseout", function () {
+        resetStars();
+        if (currentRating > 0) {
+            highlightStars(currentRating);
+        }
+    });
+
+    // Hàm tô màu các sao được chọn
+    function highlightStars(rating) {
+        $("#rating-stars i").each(function () {
+            if ($(this).data("value") <= rating) {
+                $(this).removeClass("far").addClass("fas active");
+            } else {
+                $(this).removeClass("fas active").addClass("far");
+            }
+        });
+    }
+
+    // Hàm đặt lại tất cả sao về trạng thái chưa chọn
+    function resetStars() {
+        $("#rating-stars i").each(function () {
+            $(this).removeClass("fas active").addClass("far");
+        });
+    }
+    let urlCheckBooking = $("#submit-reviews").attr("data-url-checkBooking");
+    let urlSubmitReview = $("#comment-form").attr("action");
+    let tourIdReview = $("#submit-reviews").attr("data-tourId-reviews");
+
+    $("#comment-form").on("submit", function (e) {
+        e.preventDefault();
+
+        let message = $("#message").val().trim();
+
+        // Kiểm tra số sao và nội dung
+        if (currentRating === 0) {
+            toastr.warning("Vui lòng chọn số sao để đánh giá.");
+            return;
+        } else if (message === "") {
+            toastr.warning("Vui lòng nhập nội dung phản hồi.");
+            return;
+        }
+
+        $.ajax({
+            url: urlCheckBooking,
+            method: "POST",
+            data: {
+                tourId: tourIdReview,
+                _token: $('input[name="_token"]').val(),
+            },
+            success: function (response) {
+                if (response.success) {
+                    formReviews = {
+                        tourId: tourIdReview,
+                        rating: currentRating,
+                        message: message,
+                        _token: $('input[name="_token"]').val(),
+                    };
+
+                    // Gửi AJAX request
+                    $.ajax({
+                        url: urlSubmitReview, // Lấy URL từ action của form
+                        method: "POST",
+                        data: formReviews,
+                        success: function (response) {
+                            if (response.success) {
+                                toastr.success(response.message);
+                                $("#partials_reviews").html(response.data);
+                                $("#partials_reviews .comment-body").addClass(
+                                    "aos-animate"
+                                );
+                                // Xử lý reset form hoặc thông báo
+                                $("#message").val("");
+                                $('#comment-form').hide();
+                                resetStars();
+                                currentRating = 0;
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            toastr.error("Đã có lỗi xảy ra. Vui lòng thử lại.");
+                            console.error("Error:", error);
+                        },
+                    });
+                } else {
+                    toastr.error(
+                        "Vui lòng đặt tour và trải nghiệm để có thể đánh giá!"
+                    );
+                }
+            },
+            error: function (xhr, status, error) {
+                toastr.error("Đã có lỗi xảy ra. Vui lòng thử lại.");
+                console.error("Error:", error);
+            },
+        });
+    });
 });

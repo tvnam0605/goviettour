@@ -24,6 +24,7 @@ use App\Http\Controllers\clients\TestimonialController;
 use App\Http\Controllers\clients\TourBookedController;
 use App\Http\Controllers\clients\TourDetailController;
 use App\Http\Controllers\clients\ToursController;
+use App\Http\Controllers\clients\MyTourController;
 use App\Http\Controllers\clients\TravelGuidesController;
 use App\Http\Controllers\LoginGoogleController as ControllersLoginGoogleController;
 
@@ -84,9 +85,15 @@ Route::post('/create-momo-payment', [BookingController::class, 'createMomoPaymen
 
 //tour booked
 Route::get('/tour-booked', [TourBookedController::class, 'index'])->name('tour-booked')->middleware('checkLoginClient');
+Route::post('/cancel-booking', [TourBookedController::class, 'cancelBooking'])->name('cancel-booking');
 
+//My tour
+Route::get('/my-tours', [MyTourController::class, 'index'])->name('my-tours')->middleware('checkLoginClient');
 
-
+//get Tour detail and handle submit reviews
+Route::get('/tour-detail/{id?}', [TourDetailController::class, 'index'])->name('tour-detail');
+Route::post('/checkBooking', [BookingController::class, 'checkBooking'])->name('checkBooking')->middleware('checkLoginClient');
+Route::post('/reviews', [TourDetailController::class, 'reviews'])->name('reviews')->middleware('checkLoginClient');
 //ADMIN
 //route without middleware
 Route::prefix('admin')->group(function () {

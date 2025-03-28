@@ -447,10 +447,10 @@ INSERT INTO `tbl_tours` (`tourId`, `title`, `time`, `description`, `quantity`, `
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tlb_users`
+-- Cấu trúc bảng cho bảng `tbl_users`
 --
 
-CREATE TABLE `tlb_users` (
+CREATE TABLE `tbl_users` (
   `userId` int(11) NOT NULL,
   `google_id` varchar(50) DEFAULT NULL,
   `fullName` varchar(255) DEFAULT NULL,
@@ -469,14 +469,16 @@ CREATE TABLE `tlb_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tlb_users`
+-- Đang đổ dữ liệu cho bảng `tbl_users`
 --
 
-INSERT INTO `tlb_users` (`userId`, `google_id`, `fullName`, `username`, `password`, `email`, `avatar`, `phoneNumber`, `address`, `ipAddress`, `isActive`, `status`, `createdDate`, `updatedDate`, `activation_token`) VALUES
-(29, NULL, NULL, 'thanhla', 'e10adc3949ba59abbe56e057f20f883e', 'totiiteee@gmail.com', '1742564571.png', '999999', 'Đà Lạtff', NULL, 'y', NULL, '2025-03-15 18:00:22', '2025-03-15 18:00:22', NULL),
-(32, '117262954282976031887', 'Nam Tran Van', 'user-google-8260', '25d55ad283aa400af464c76d713c07ad', 'trannamvan0605@gmail.com', '1742195684.png', '0898354417', 'Đăk Nông', NULL, 'y', NULL, '2025-03-17 07:04:16', '2025-03-17 07:04:16', NULL),
-(33, '102131736694418022784', 'Nam Trần Văn', 'user-google-8086', '25d55ad283aa400af464c76d713c07ad', 'anhmk864@gmail.com', '1742197534.jpg', NULL, NULL, NULL, 'y', NULL, '2025-03-17 07:05:57', '2025-03-17 07:05:57', NULL),
-(34, NULL, NULL, 'testq', 'e10adc3949ba59abbe56e057f20f883e', '2115239@dlu.edu.vn', NULL, NULL, NULL, NULL, 'y', NULL, '2025-03-21 13:41:55', '2025-03-21 13:41:55', NULL);
+INSERT INTO `tbl_users` (`userId`, `google_id`, `fullName`, `username`, `password`, `email`, `phoneNumber`, `address`, `ipAddress`, `isActive`, `status`, `createdDate`, `updatedDate`, `activation_token`) VALUES
+(9, NULL, NULL, 'haha', 'e36f42b72dead51a788200bbfdac58d8', 'laathanh09@gmail.com', NULL, NULL, NULL, 'y', NULL, '2025-03-08 18:46:51', '2025-03-08 18:46:51', NULL),
+(14, NULL, NULL, 'hihi', '96e79218965eb72c92a549dd5a330112', '2115268@dlu.edu.vn', NULL, NULL, NULL, 'n', NULL, '2025-03-08 19:13:48', '2025-03-08 19:13:48', 'VMzjTE9qRL4Z5rXMos3D78EseM7nvrcAcvE0QmlxojklZ2hXowlItMbI1RLW'),
+(15, NULL, NULL, 'thanhla', '96e79218965eb72c92a549dd5a330112', 'totiiteee@gmail.com', NULL, NULL, NULL, 'n', NULL, '2025-03-08 19:15:35', '2025-03-08 19:15:35', '2nRBdELpIk71ZGGDEar4zt1hQbmdz00gN2XouNpDMVOQ186z2KG1xbxYeDrw'),
+(16, NULL, NULL, 'tvnam', 'e10adc3949ba59abbe56e057f20f883e', 'anhmk864@gmail.com', NULL, NULL, NULL, 'y', NULL, '2025-03-10 02:45:05', '2025-03-10 02:45:05', NULL),
+(18, '117262954282976031887', 'Nam Tran Van', 'user-google', '25d55ad283aa400af464c76d713c07ad', 'trannamvan0605@gmail.com', NULL, NULL, NULL, 'y', NULL, '2025-03-10 11:25:15', '2025-03-10 11:25:15', NULL);
+
 
 -- --------------------------------------------------------
 
@@ -629,9 +631,9 @@ ALTER TABLE `tbl_tours`
   ADD PRIMARY KEY (`tourId`);
 
 --
--- Chỉ mục cho bảng `tlb_users`
+-- Chỉ mục cho bảng `tbl_users`
 --
-ALTER TABLE `tlb_users`
+ALTER TABLE ``
   ADD PRIMARY KEY (`userId`);
 
 --
@@ -730,10 +732,11 @@ ALTER TABLE `tbl_tours`
   MODIFY `tourId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `tlb_users`
+-- AUTO_INCREMENT cho bảng `tbl_users`
 --
-ALTER TABLE `tlb_users`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+ALTER TABLE `tbl_users`
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
 
 --
 -- AUTO_INCREMENT cho bảng `users`
@@ -756,7 +759,7 @@ ALTER TABLE `tbl_booking`
 --
 ALTER TABLE `tbl_chat`
   ADD CONSTRAINT `fk_chat_admin` FOREIGN KEY (`adminId`) REFERENCES `tbl_admin` (`adminId`),
-  ADD CONSTRAINT `fk_chat_user` FOREIGN KEY (`userId`) REFERENCES `tlb_users` (`userId`);
+  ADD CONSTRAINT `fk_chat_user` FOREIGN KEY (`userId`) REFERENCES `tbl_users` (`userId`);
 
 --
 -- Các ràng buộc cho bảng `tbl_checkout`
@@ -769,7 +772,7 @@ ALTER TABLE `tbl_checkout`
 --
 ALTER TABLE `tbl_history`
   ADD CONSTRAINT `fk_history_tour` FOREIGN KEY (`tourId`) REFERENCES `tbl_tours` (`tourId`),
-  ADD CONSTRAINT `fk_history_user` FOREIGN KEY (`userId`) REFERENCES `tlb_users` (`userId`);
+  ADD CONSTRAINT `fk_history_user` FOREIGN KEY (`userId`) REFERENCES `tbl_users` (`userId`);
 
 --
 -- Các ràng buộc cho bảng `tbl_images`
@@ -787,7 +790,7 @@ ALTER TABLE `tbl_invoice`
 -- Các ràng buộc cho bảng `tbl_reviews`
 --
 ALTER TABLE `tbl_reviews`
-  ADD CONSTRAINT `fk_review_user` FOREIGN KEY (`userId`) REFERENCES `tlb_users` (`userId`),
+  ADD CONSTRAINT `fk_review_user` FOREIGN KEY (`userId`) REFERENCES `tbl_users` (`userId`),
   ADD CONSTRAINT `fk_revirew_tour` FOREIGN KEY (`tourId`) REFERENCES `tbl_tours` (`tourId`);
 
 --

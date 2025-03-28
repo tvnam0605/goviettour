@@ -101,6 +101,18 @@
 .hidden-content {
     display: none; 
 }
+
+.equal-block-fix {
+    display: flex !important;
+    flex-direction: column;
+    height: 100%;
+}
+.equal-content-fix {
+    justify-content: space-around;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
 /*USER*/
 /*Trnag thanh toán*/
 
