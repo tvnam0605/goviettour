@@ -41,7 +41,9 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/tour-detail/{id} ', [TourDetailController::class, 'index'])->name('tour-detail');
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs');
 Route::get('/blog-details', [BlogDetailController::class, 'index'])->name('blog-details');
+//Tìm kiếm
 Route::get('/search', [SearchController::class, 'index'])->name('search');
+Route::get('/search-voice-text', [SearchController::class, 'searchTours'])->name('search-voice-text');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/register', [LoginController::class, 'register'])->name('register');
