@@ -12,69 +12,55 @@ class HomeController extends Controller
 {
     
     private $homeTours;
+    private $tours;
 
     public function __construct()
     {
+        parent::__construct();
         $this->homeTours = new Home();
-        
+        $this->tours = new Tours();
     }
-
     public function index()
     {
         $title = 'Trang chủ';
         $tours = $this->homeTours->getHomeTours();
 
-        //dd(vars: $tours);
-        return view('clients.home', compact('title', 'tours'));
+        $userId = $this->getUserId();
+        if ($userId) {
+            
+            // Gọi API Python để lấy danh sách tour được gợi ý cho từng người dùng 
+            try {
+                $apiUrl = 'http://127.0.0.1:5555/api/user-recommendations';
+                $response = Http::get($apiUrl, [
+                    'user_id' => $userId
+                ]);
 
+                if ($response->successful()) {
+                    $tourIds = $response->json('recommended_tours');
+                } else {
+                    $tourIds = [];
+                }
+            } catch (\Exception $e) {
+                // Xử lý lỗi khi gọi API
+                $tourIds = [];
+                \Log::error('Lỗi khi gọi API liên quan: ' . $e->getMessage());
+            }
+
+            $toursPopular = $this->tours->toursRecommendation($tourIds);
+
+            if (empty($tourIds)) {
+                $toursPopular = $this->tours->toursPopular(6);
+                
+            }
+
+            // dd($toursPopular);
+        }else {
+            $toursPopular = $this->tours->toursPopular(6);
+        }
+
+        // dd($toursPopular);
+        return view('clients.home', compact('title', 'tours', 'toursPopular'));
     }
 
-   /*      @return \Illuminate\Http\Response
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+   
 }
