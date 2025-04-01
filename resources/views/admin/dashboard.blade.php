@@ -195,18 +195,18 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($newBooking as $item)
-                                        <tr>
-                                            <th scope="row">
-                                                <a href="#">{{ $item->bookingId }}</a>
-                                            </th>
-                                            <td>{{ $item->fullName }}</td>
-                                            <td>{{ $item->tour_name }}</td>
-                                            <td>{{ number_format($item->totalPrice, 0, ',', '.') }}</td>
-                                            <td>
-                                                <span class="badge badge-warning">Chưa xác nhận</span>
-                                            </td>
-                                        </tr>
-                                    @endforeach
+                                    <tr>
+                                        <th scope="row">
+                                            <a href="{{ route('admin.booking-detail',['id' => $item->bookingId]) }}">{{ $item->bookingId }}</a>
+                                        </th>
+                                        <td>{{ $item->fullName }}</td>
+                                        <td>{{ $item->tour_name }}</td>
+                                        <td>{{ number_format($item->totalPrice, 0, ',', '.') }}</td>
+                                        <td>
+                                            <span class="badge badge-warning">Chưa xác nhận</span>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
 
@@ -216,17 +216,32 @@
             </div>
 
             <div class="row">
-                <div class="col-md-12 col-sm-12">
+                <div class="col-md-12 col-sm-12 ">
+
                     <div class="x_panel">
                         <div class="x_title">
                             <h2>Doanh thu theo tháng</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                        aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
-                            <canvas id="lineChart"></canvas>
+                            <canvas id="lineChart" data-revenue-per-month = {{ json_encode($revenue)}}></canvas>
                         </div>
+
                     </div>
+
+                    <div class="clearfix"></div>
                 </div>
+
             </div>
         </div>
         <!-- /page content -->

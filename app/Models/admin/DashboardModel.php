@@ -21,7 +21,7 @@ class DashboardModel extends Model
         $totalAmount = DB::table('tbl_checkout')
             ->where('paymentStatus', 'y')
             ->sum('amount');
-        $totalUsers = DB::table('') // Thay 'tbl_users' bằng tên bảng người dùng của bạn
+        $totalUsers = DB::table('tbl_users') 
             ->count();
          // Trả về mảng chứa các dữ liệu tổng hợp
          return [
@@ -64,12 +64,32 @@ class DashboardModel extends Model
     {
         return DB::table('tbl_booking')
             ->join('tbl_tours', 'tbl_booking.tourId', '=', 'tbl_tours.tourId')
-            ->where('tbl_booking.bookingStatus', 'n')
+            ->where('tbl_booking.bookingStatus', 'b')
             ->orderByDesc('tbl_booking.bookingDate')
             ->select('tbl_booking.*', 'tbl_tours.title as tour_name') // Chọn tất cả các cột từ tbl_booking và thêm tên tour từ tbl_tours
             ->take(3)
             ->get();
 
+    }
+
+    public function getRevenuePerMonth()
+    {
+        $monthlyRevenue = DB::table('tbl_booking')
+            ->select(DB::raw('MONTH(bookingDate) as month, SUM(totalPrice) as revenue'))
+            ->where('bookingStatus', 'y')
+            ->groupBy(DB::raw('MONTH(bookingDate)'))
+            ->orderBy('month', 'asc')
+            ->get();
+
+        // Chuẩn bị mảng doanh thu với 12 tháng
+        $revenueData = array_fill(0, 12, 0);  // Mảng chứa doanh thu cho 12 tháng
+
+        // Gán doanh thu cho từng tháng
+        foreach ($monthlyRevenue as $data) {
+                $revenueData[$data->month - 1] = $data->revenue;  // Gán doanh thu cho tháng tương ứng
+        }
+
+        return $revenueData;
     }
 
 }

@@ -31,12 +31,12 @@
                     <li><a href="{{ route('admin.users') }}"><i class="fa fa-table"></i> Quản lý người dùng</a> </li>
                     <li><a><i class="fa fa-table"></i> Quản lý Tours<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="#">Thêm Tours</a></li>
+                            <li><a href="{{ route('admin.page-add-tours') }}">Thêm Tours</a></li>
                             <li><a href="{{ route('admin.tours') }}">Danh sách Tours</a></li>
                         </ul>
                     </li>
 
-                    <li><a href="#"><i class="fa fa-home"></i> Quản lý Booking</a> </li>
+                    <li><a href="{{ route('admin.booking') }}"><i class="fa fa-home"></i> Quản lý Booking</a> </li>
                     <li><a href="#"><i class="fa fa-envelope-o"></i> Liên hệ </a> </li>
                 </ul>
             </div>

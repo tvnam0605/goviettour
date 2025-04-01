@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AdminManagementController;
+use App\Http\Controllers\admin\BookingManagementController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\LoginAdminController;
 use App\Http\Controllers\admin\ToursManagementController;
@@ -127,6 +128,16 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('/tour-edit', [ToursManagementController::class, 'getTourEdit'])->name('admin.tour-edit');
     Route::post('/edit-tour', [ToursManagementController::class, 'updateTour'])->name('admin.edit-tour');
     Route::post('/add-temp-images', [ToursManagementController::class, 'uploadTempImagesTours'])->name('admin.add-temp-images');
+
+    //Management Booking
+    Route::get('/booking', [BookingManagementController::class, 'index'])->name('admin.booking');
+    Route::post('/confirm-booking', [BookingManagementController::class, 'confirmBooking'])->name('admin.confirm-booking');
+    Route::get('/booking-detail/{id?}', [BookingManagementController::class, 'showDetail'])->name('admin.booking-detail');
+    Route::post('/finish-booking', [BookingManagementController::class, 'finishBooking'])->name('admin.finish-booking');
+    Route::post('/received-money', [BookingManagementController::class, 'receiviedMoney'])->name('admin.received');
+    
+    Route::post('/admin/send-pdf', [BookingManagementController::class, 'sendPdf'])->name('admin.send.pdf');
+
 });
 
 

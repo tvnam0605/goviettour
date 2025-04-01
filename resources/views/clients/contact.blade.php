@@ -44,7 +44,7 @@
                             <div class="content">
                                 <h5>Cần Hỗ Trợ & Giúp Đỡ</h5>
                                 <div class="text"><i class="far fa-envelope"></i> <a
-                                        href="mailto:support@gmail.com">support@gmail.com</a></div>
+                                        href="mailto:goviettour-noreply@gmail.com">goviettour-noreply@gmail.com</a></div>
                             </div>
 
                         </div>
@@ -55,8 +55,7 @@
                             <div class="icon"><i class="fas fa-phone"></i></div>
                             <div class="content">
                                 <h5>Cần Hỗ Trợ Gấp</h5>
-                                <div class="text"><i class="far fa-phone"></i> <a href="callto:+0001234588">+000 (123)
-                                        45 88</a></div>
+                                <div class="text"><i class="far fa-phone"></i> <a href="callto:+84898354417">+84 898354417</a></div>
                             </div>
 
                         </div>
@@ -142,7 +141,7 @@
                                 <div class="form-group mb-0">
 
                                     <button type="submit" class="theme-btn style-two">
-                                        <span data-hover="Gửi Bình Luận">Gửi Bình Luận</span>
+                                        <span data-hover="Gửi Bình Luận">Gửi</span>
                                         <i class="fal fa-arrow-right"></i>
                                     </button>
                                     <div id="msgSubmit" class="hidden"></div>

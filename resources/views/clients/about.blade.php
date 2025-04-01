@@ -20,7 +20,7 @@
                             <div class="experience-years rmb-20">
                                 <span class="title bgc-secondary">Số Năm Kinh Nghiệm</span>
                                 <span class="text">Chúng tôi có</span>
-                                <span class="years">28+</span>
+                                <span class="years">2+</span>
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -79,7 +79,7 @@
                     <div class="feature-item style-three bgc-primary">
                         <div class="icon-title">
                             <div class="icon"><i class="flaticon-tourism"></i></div>
-                            <h5><a href="destination-details.html">5000+ Điểm Đến Du Lịch Phổ Biến</a></h5>
+                            <h5><a href="destination-details.html">50+ Điểm Đến Du Lịch Phổ Biến</a></h5>
                         </div>
                         <div class="content">
                             <p>Đội ngũ chuyên gia của chúng tôi luôn tận tâm phát triển các chiến lược tiên tiến để thúc
@@ -139,7 +139,6 @@
 
 
 <!-- Team Area start -->
-<!-- Khu Vực Đội Ngũ Bắt Đầu -->
 <section class="about-team-area pb-70 rel z-1">
     <div class="container">
         <div class="row justify-content-center">
@@ -215,9 +214,9 @@
     <div class="container">
         <div class="section-title text-center text-white counter-text-wrap mb-50" data-aos="fade-up"
             data-aos-duration="1500" data-aos-offset="50">
-            <h2>Cách Hưởng Lợi Từ GoVietTour Tours & Travels</h2>
-            <p>Một địa điểm <span class="count-text plus" data-speed="3000" data-stop="34500">0</span> trải nghiệm
-                phổ biến nhất mà bạn sẽ nhớ mãi</p>
+            <h2>Làm thế nào để hưởng lợi từ các chuyến du lịch của chúng tôi</h2>
+            <p>Website <span class="count-text plus" data-speed="3000" data-stop="34500">0</span> phổ biến nhất
+                kinh nghiệm bạn sẽ nhớ</p>
         </div>
         <div class="row">
             <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1500"
@@ -225,8 +224,8 @@
                 <div class="feature-item style-two">
                     <div class="icon"><i class="flaticon-save-money"></i></div>
                     <div class="content">
-                        <h5><a href="destination-details.html">Đảm Bảo Giá Tốt Nhất</a></h5>
-                        <p>Cắm trại bằng lều là một cách tuyệt vời để kết nối với thiên nhiên</p>
+                        <h5><a href="{{ route('tours') }}">Đảm bảo giá tốt nhất</a></h5>
+                        <p>Cam kết giá ưu đãi nhất, giúp bạn tiết kiệm tối đa chi phí du lịch.</p>
                     </div>
                 </div>
             </div>
@@ -235,8 +234,8 @@
                 <div class="feature-item style-two">
                     <div class="icon"><i class="flaticon-travel-1"></i></div>
                     <div class="content">
-                        <h5><a href="destination-details.html">Điểm Đến Đa Dạng</a></h5>
-                        <p>Đạp xe leo núi là một môn thể thao đầy phấn khích giúp tăng cường thể lực</p>
+                        <h5><a href="{{ route('tours') }}">Điểm đến đa dạng</a></h5>
+                        <p>Hàng nghìn điểm đến hấp dẫn, phù hợp mọi sở thích và phong cách du lịch.</p>
                     </div>
                 </div>
             </div>
@@ -245,8 +244,9 @@
                 <div class="feature-item style-two">
                     <div class="icon"><i class="flaticon-booking"></i></div>
                     <div class="content">
-                        <h5><a href="destination-details.html">Đặt Chỗ Nhanh Chóng</a></h5>
-                        <p>Chèo thuyền kayak là một hoạt động ngoài trời đầy phiêu lưu</p>
+                        <h5><a href="{{ route('tours') }}">Đặt chỗ nhanh</a></h5>
+                        <p>Quy trình đặt chỗ đơn giản, nhanh chóng, đảm bảo chuyến đi suôn sẻ.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -255,8 +255,8 @@
                 <div class="feature-item style-two">
                     <div class="icon"><i class="flaticon-guidepost"></i></div>
                     <div class="content">
-                        <h5><a href="destination-details.html">Hướng Dẫn Viên Tốt Nhất</a></h5>
-                        <p>Câu cá và đi thuyền là những hoạt động mang lại trải nghiệm tuyệt vời</p>
+                        <h5><a href="{{ route('tours') }}">Hướng dẫn du lịch tốt</a></h5>
+                        <p>Đội ngũ hướng dẫn tận tâm, giàu kinh nghiệm, đồng hành cùng bạn mọi hành trình.</p>
                     </div>
                 </div>
             </div>
@@ -269,22 +269,6 @@
 <!-- Features Area end -->
 
 
-<!-- Video Area start -->
-<div class="video-area pt-25 rel z-1">
-    <div class="container">
-        <div class="video-wrap" data-aos="zoom-in" data-aos-duration="1500" data-aos-offset="50">
-            <img src="{{ asset('clients/assets/images/video/video-bg.jpg') }}" alt="Video">
-            <a href="https://www.youtube.com/watch?v=9Y7ma241N8k" class="mfp-iframe video-play" tabindex="-1"><i
-                    class="fas fa-play"></i></a>
-        </div>
-    </div>
-    <div class="for-bg bgc-black">
-        <div class="shape">
-            <img src="{{ asset('clients/assets/images/video/shape2.png') }}" alt="shape">
-        </div>
-    </div>
-</div>
-<!-- Video Area end -->
 
 <!-- Client Logo Area start -->
 <div class="client-logo-area mb-100">
